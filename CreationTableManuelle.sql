@@ -15,6 +15,11 @@ drop table Client
 drop table Chambre
 drop table TypeChambre
 
+drop table Utilisateur
+drop table TypeUtilisateur
+
+
+
 --DROP TABLE ReservationChambre;
 --DROP TABLE Chambre;
 --DROP TABLE TypeChambre;
@@ -66,7 +71,7 @@ CREATE TABLE AssistantSoin (
 
 
 
-
+    
    Print  'Création de la TABLE PlanifSoin...' 
    CREATE TABLE PlanifSoin (
    NoPersonne		INT ,
@@ -121,15 +126,46 @@ create table ReservationChambre (
 	constraint pk_Reservation primary key(NoClient, NoChambre, DateArrivee)
 )
 
+ Print  'Création de la TABLE TypeUtilisateur...'
+create table TypeUtilisateur (
+	NoTypeUtilisteur int primary key,
+	Identification varchar(50)
+)
+
+ Print  'Création de la TABLE Utilisateur...'
+create table Utilisateur (
+	NoUtilisateur int primary key,
+	NomUtilisateur varchar(50) unique,
+	MotDePasse     varchar(50),
+	NoTypeUtilisteur int foreign key references TypeUtilisateur(NoTypeUtilisteur)
+)
+
+
+
+
 
 
 print 'Remplissage des tables ========================================================'
 
-Print  'Remplissage de la TABLE Assitant...'
+Print  'Remplissage de la TABLE Client...'
+insert into Client values(10,'Tremblay','David','Montreal','Canada','3434 rue Thivierge','H8H 2V3','2019-02-06')
+insert into Client values(20,'Gagnon','Samuel','Quebec','Canada','6765 rue Legeault','H9O 2V7','2019-06-14')
+
+Print  'Remplissage de la TABLE Invite...'
+insert into Invite values(11,'Jonathan',10)
+insert into Invite values(12,'John',10)
+insert into Invite values(21,'Chirstopher',20)
+insert into Invite values(22,'Francis',20)
+
+
 Print  'Remplissage de la TABLE TypeSoin...'
 Print  'Remplissage de la TABLE Soin...'
 Print  'Remplissage de la TABLE AssistantSoin...'
 Print  'Remplissage de la TABLE PlanifSoin...'
+ Print  'Remplissage de la TABLE TypeUtilisateur...'
+  Print  'Remplissage de la TABLE Utilisateur...'
+
+
 --A faire 
 -------------
 
