@@ -26,17 +26,17 @@ print ''
    Print  'Création de la TABLE Assitant...' 
    CREATE TABLE Assistant (
    NoAssistant		INT primary key(NoAssistant),
-   Prenom	VARCHAR,
-   Nom	VARCHAR,
-   Specialites   VARCHAR,
-   Remarques   VARCHAR
+   Prenom	varchar(50),
+   Nom	varchar(50),
+   Specialites   varchar(50),
+   Remarques   varchar(50)
    --CONSTRAINT pk_NoAssistant  PRIMARY KEY(NoAssistant)
    );
 
          Print  'Création de la TABLE TypeSoin...' 
    CREATE TABLE TypeSoin (
    NoTypeSoin		INT primary key(NoTypeSoin),
-   Description	VARCHAR
+   Description	varchar(50)
   -- CONSTRAINT pk_NoTypeSoin  PRIMARY KEY(NoTypeSoin)
    );
 
@@ -44,7 +44,7 @@ print ''
 
 CREATE TABLE Soin (
    NoSoin		INT primary key(NoSoin),
-   Description	VARCHAR,
+   Description	varchar(50),
    Duree        DATETIME,
    NoTypeSoin		INT foreign key(NoTypeSoin) references TypeSoin(NoTypeSoin),
    Prix         NUMERIC(10,2)
@@ -69,7 +69,7 @@ CREATE TABLE AssistantSoin (
 
    Print  'Création de la TABLE PlanifSoin...' 
    CREATE TABLE PlanifSoin (
-   NoPersonne		INT,
+   NoPersonne		INT ,
    NoAssistant		INT foreign key(NoAssistant) references Assistant(NoAssistant),
    DateHeure		DATETIME,
    NoSoin			INT foreign key(NoSoin) references Soin(NoSoin)
@@ -78,20 +78,20 @@ CREATE TABLE AssistantSoin (
 
      Print  'Création de la TABLE Client...' 
 create table Client (
-	NoCLient int primary key,
-	Nom varchar,
-	Prenom varchar, 
-	Ville varchar,
-	Pays varchar,
-	Adresse varchar,
-	CodePostal varchar,
+	NoCLient int primary key constraint checkNoClient check(NoCLient%10=0),
+	Nom varchar(50),
+	Prenom varchar(50), 
+	Ville varchar(50),
+	Pays varchar(50),
+	Adresse varchar(50),
+	CodePostal varchar(50),
 	DateInscription datetime
 )
 
      Print  'Création de la TABLE Invite...' 
 create table Invite (
-	NoInvite int primary key,
-	NomPrenom varchar,
+	NoInvite int primary key constraint  checkNoInvite check(NoInvite%10!=0),
+	NomPrenom varchar(50),
 	NoClient int foreign key references Client(NoClient)
 )
 
@@ -99,7 +99,7 @@ create table Invite (
 
 create table TypeChambre (
 	NoTypeChambre int primary key,
-	Description varchar,
+	Description varchar(50),
 	PrixHaut numeric(10,2),
 	PrixBas numeric(10,2),
 	PrixMoyen numeric(10,2)
@@ -108,7 +108,7 @@ create table TypeChambre (
 create table Chambre (
 	NoChambre int primary key,
 	Emplacement int,
-	Decorations varchar,
+	Decorations varchar(50),
 	NoTypeChambre int foreign key references TypeChambre(NoTypeChambre)
 )
   Print  'Création de la TABLE ReservationChambre...'
@@ -121,13 +121,21 @@ create table ReservationChambre (
 	constraint pk_Reservation primary key(NoClient, NoChambre, DateArrivee)
 )
 
+
+
+print 'Remplissage des tables ========================================================'
+
+Print  'Remplissage de la TABLE Assitant...'
+Print  'Remplissage de la TABLE TypeSoin...'
+Print  'Remplissage de la TABLE Soin...'
+Print  'Remplissage de la TABLE AssistantSoin...'
+Print  'Remplissage de la TABLE PlanifSoin...'
 --A faire 
 -------------
 
---1) Dans la table invite, la valeur de NoInv ne doit pas être divisible par 10 (ajoutez une contrainte).
---Exemple, 11, 12, 13, ...  
+  
 
---2) Le numéro de personne dans la table PlanifSoin est soit un no de client, soit un no d’invité.
+--2) Le numéro de personne dans la table PlanifSoin est soit un no de client, soit un no d’invité.)
 
 --3) Les numéros des invités d’un client sont définis comme suit :  
 --Le client 10 a comme invités 11, 12, ..., le client 20 a comme invités 21, 22, ... 
