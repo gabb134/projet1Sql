@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDTP1Guelleh_MarreroDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDVoyagesGuellehDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,6 +61,12 @@
     </Compile>
     <Compile Include="ConnexionSysteme.Designer.cs">
       <DependentUpon>ConnexionSysteme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionUtilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionUtilisateurs.Designer.cs">
+      <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdmin.cs">
       <SubType>Form</SubType>
@@ -74,6 +85,9 @@
     <EmbeddedResource Include="ConnexionSysteme.resx">
       <DependentUpon>ConnexionSysteme.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionUtilisateurs.resx">
+      <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,7 +102,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BDTP1Guelleh_MarreroDataSet1.xsc">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDTP1Guelleh_MarreroDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDTP1Guelleh_MarreroDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDTP1Guelleh_MarreroDataSet1.xss">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="BDVoyagesGuellehDataSet.xsc">
       <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
     </None>
@@ -112,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
