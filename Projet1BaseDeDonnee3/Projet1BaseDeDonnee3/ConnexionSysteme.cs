@@ -34,7 +34,9 @@ namespace Projet1BaseDeDonnee3
 
             /*String t = new String(Convert.ToString(dynNoTypeUtilisteur));*/
 
-            MessageBox.Show(dynNoTypeUtilisteur as string);
+
+
+            MessageBox.Show(Convert.ToString(dynNoTypeUtilisteur));
 
             maConnexion.Close();
         }
