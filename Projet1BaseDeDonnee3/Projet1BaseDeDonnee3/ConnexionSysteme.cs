@@ -28,11 +28,20 @@ namespace Projet1BaseDeDonnee3
             
             string strRequeteNoTypeUSer = "select NoTypeUtilisteur from Utilisateur where NomUtilisateur='" + tbUtilisateur.Text + "' and MotDePasse ='" + tbMotDePasse.Text + "'";
 
-            maCommande = new SqlCommand(strRequete, maConnexion);
+            maCommande = new SqlCommand(strRequeteNoTypeUSer, maConnexion);
 
             dynamic dynNoTypeUser = maCommande.ExecuteScalar();
 
-            string strNoTypeUser = Convert.ToString(dynNoTypeUtilisteur);
+            string strNoTypeUser = Convert.ToString(dynNoTypeUser);
+
+            if (strNoTypeUser == null)
+            {
+                MessageBox.Show("");
+            }
+            else
+            {
+
+            }
 
             maConnexion.Close();
         }
