@@ -13,6 +13,9 @@ namespace Projet1BaseDeDonnee3
 {
     public partial class ConnexionSysteme : Form
     {
+        MenuAdmin menuAdmin = new MenuAdmin();
+        MenuPrepose menuPrepose = new MenuPrepose();
+
         public ConnexionSysteme()
         {
             InitializeComponent();
@@ -35,30 +38,41 @@ namespace Projet1BaseDeDonnee3
             string strNoTypeUser = Convert.ToString(dynNoTypeUser);
 
 
-            if (tbUtilisateur.Text =="" && tbMotDePasse.Text == "")
+            if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
             {
                 MessageBox.Show("Vous devez inserer un utilisateur et un mot de passe pour continuer");
             }
-            
-            else if(tbUtilisateur.Text == "" )
+
+            else if (tbUtilisateur.Text == "")
             {
                 MessageBox.Show("Vous devez inserer un utilisateur pour continuer");
             }
-            else if(tbMotDePasse.Text == "")
+            else if (tbMotDePasse.Text == "")
             {
                 MessageBox.Show("Vous devez inserer un mot de passe pour continuer");
-            if (strNoTypeUser == null)
-            {
-                MessageBox.Show("");
             }
             else
             {
-
+                if (strNoTypeUser == null)
+                {
+                    MessageBox.Show("Nom d'utilisateur ou mot de passe n'existe pas dans la base de données");
+                }
+                else
+                {
+                    if (dynNoTypeUser == 1)
+                    {
+                        this.Hide();
+                        menuAdmin.ShowDialog();
+                        this.Show();
+                    }
+                    else if (dynNoTypeUser == 2)
+                    {
+                        this.Hide();
+                        menuPrepose.ShowDialog();
+                        this.Show();
+                    }
+                }
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> 66104c66327e15bc064b75ffce50bb1531505690
 
             maConnexion.Close();
         }
