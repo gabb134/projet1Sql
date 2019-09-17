@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projet1
+namespace Projet1BaseDeDonnee3
 {
-    public partial class ConnexionAuSysteme : Form
+    public partial class ConnexionSysteme : Form
     {
-        public ConnexionAuSysteme()
+        public ConnexionSysteme()
         {
             InitializeComponent();
         }
