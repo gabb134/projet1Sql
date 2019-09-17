@@ -20,6 +20,12 @@ namespace Projet1BaseDeDonnee3
         private void btnQuitterPrepose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            this.Close();
+        }
+
+        private void btnDeconnexionPrepose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

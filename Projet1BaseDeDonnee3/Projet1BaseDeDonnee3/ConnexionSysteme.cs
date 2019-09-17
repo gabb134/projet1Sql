@@ -59,6 +59,9 @@ namespace Projet1BaseDeDonnee3
                 }
                 else
                 {
+                    tbUtilisateur.Text = "";
+                    tbMotDePasse.Text = "";
+
                     if (dynNoTypeUser == 1)
                     {
                         this.Hide();

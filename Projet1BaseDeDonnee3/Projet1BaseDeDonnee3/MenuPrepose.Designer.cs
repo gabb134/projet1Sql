@@ -96,6 +96,7 @@
             this.btnDeconnexionPrepose.TabIndex = 5;
             this.btnDeconnexionPrepose.Text = "Deconnexion";
             this.btnDeconnexionPrepose.UseVisualStyleBackColor = true;
+            this.btnDeconnexionPrepose.Click += new System.EventHandler(this.btnDeconnexionPrepose_Click);
             // 
             // MenuPrepose
             // 
