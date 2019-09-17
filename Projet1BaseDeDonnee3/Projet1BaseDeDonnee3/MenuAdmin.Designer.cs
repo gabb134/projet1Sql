@@ -52,6 +52,7 @@
             this.btnDeconnexionAdmin.TabIndex = 1;
             this.btnDeconnexionAdmin.Text = "Deconnexion";
             this.btnDeconnexionAdmin.UseVisualStyleBackColor = true;
+            this.btnDeconnexionAdmin.Click += new System.EventHandler(this.btnDeconnexionAdmin_Click);
             // 
             // btnQuitterAdmin
             // 
@@ -62,6 +63,7 @@
             this.btnQuitterAdmin.TabIndex = 2;
             this.btnQuitterAdmin.Text = "Quitter";
             this.btnQuitterAdmin.UseVisualStyleBackColor = true;
+            this.btnQuitterAdmin.Click += new System.EventHandler(this.btnQuitterAdmin_Click);
             // 
             // menuStrip1
             // 

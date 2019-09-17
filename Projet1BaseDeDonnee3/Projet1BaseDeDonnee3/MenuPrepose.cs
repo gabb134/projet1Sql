@@ -16,5 +16,10 @@ namespace Projet1BaseDeDonnee3
         {
             InitializeComponent();
         }
+
+        private void btnQuitterPrepose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

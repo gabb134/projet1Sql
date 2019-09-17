@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnQuitterPrepose = new System.Windows.Forms.Button();
-            this.btnDeconnexionPrepose = new System.Windows.Forms.Button();
             this.optionsPréposésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gérerLesClientsEtLeursInvitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planifierDesSoinsPourLesClientsEtLeursInvitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.réserverDesChambresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuitterPrepose = new System.Windows.Forms.Button();
+            this.btnDeconnexionPrepose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,26 +47,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(317, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // btnQuitterPrepose
-            // 
-            this.btnQuitterPrepose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitterPrepose.Location = new System.Drawing.Point(165, 59);
-            this.btnQuitterPrepose.Name = "btnQuitterPrepose";
-            this.btnQuitterPrepose.Size = new System.Drawing.Size(128, 43);
-            this.btnQuitterPrepose.TabIndex = 6;
-            this.btnQuitterPrepose.Text = "Quitter";
-            this.btnQuitterPrepose.UseVisualStyleBackColor = true;
-            // 
-            // btnDeconnexionPrepose
-            // 
-            this.btnDeconnexionPrepose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeconnexionPrepose.Location = new System.Drawing.Point(26, 59);
-            this.btnDeconnexionPrepose.Name = "btnDeconnexionPrepose";
-            this.btnDeconnexionPrepose.Size = new System.Drawing.Size(128, 43);
-            this.btnDeconnexionPrepose.TabIndex = 5;
-            this.btnDeconnexionPrepose.Text = "Deconnexion";
-            this.btnDeconnexionPrepose.UseVisualStyleBackColor = true;
             // 
             // optionsPréposésToolStripMenuItem
             // 
@@ -95,6 +75,27 @@
             this.réserverDesChambresToolStripMenuItem.Name = "réserverDesChambresToolStripMenuItem";
             this.réserverDesChambresToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
             this.réserverDesChambresToolStripMenuItem.Text = "Réserver des chambres ";
+            // 
+            // btnQuitterPrepose
+            // 
+            this.btnQuitterPrepose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitterPrepose.Location = new System.Drawing.Point(165, 59);
+            this.btnQuitterPrepose.Name = "btnQuitterPrepose";
+            this.btnQuitterPrepose.Size = new System.Drawing.Size(128, 43);
+            this.btnQuitterPrepose.TabIndex = 6;
+            this.btnQuitterPrepose.Text = "Quitter";
+            this.btnQuitterPrepose.UseVisualStyleBackColor = true;
+            this.btnQuitterPrepose.Click += new System.EventHandler(this.btnQuitterPrepose_Click);
+            // 
+            // btnDeconnexionPrepose
+            // 
+            this.btnDeconnexionPrepose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeconnexionPrepose.Location = new System.Drawing.Point(26, 59);
+            this.btnDeconnexionPrepose.Name = "btnDeconnexionPrepose";
+            this.btnDeconnexionPrepose.Size = new System.Drawing.Size(128, 43);
+            this.btnDeconnexionPrepose.TabIndex = 5;
+            this.btnDeconnexionPrepose.Text = "Deconnexion";
+            this.btnDeconnexionPrepose.UseVisualStyleBackColor = true;
             // 
             // MenuPrepose
             // 
