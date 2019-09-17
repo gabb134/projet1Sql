@@ -47,12 +47,18 @@ namespace Projet1BaseDeDonnee3
             else if(tbMotDePasse.Text == "")
             {
                 MessageBox.Show("Vous devez inserer un mot de passe pour continuer");
+            if (strNoTypeUser == null)
+            {
+                MessageBox.Show("");
             }
             else
             {
 
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 66104c66327e15bc064b75ffce50bb1531505690
 
             maConnexion.Close();
         }
