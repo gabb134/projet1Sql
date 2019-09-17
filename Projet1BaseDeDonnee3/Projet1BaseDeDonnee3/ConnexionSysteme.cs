@@ -19,6 +19,9 @@ namespace Projet1BaseDeDonnee3
         public ConnexionSysteme()
         {
             InitializeComponent();
+
+            tbUtilisateur.Text = "testPrepose";
+            tbMotDePasse.Text = "b";
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
