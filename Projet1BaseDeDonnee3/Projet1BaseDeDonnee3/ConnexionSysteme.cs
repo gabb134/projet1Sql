@@ -28,11 +28,31 @@ namespace Projet1BaseDeDonnee3
             
             string strRequeteNoTypeUSer = "select NoTypeUtilisteur from Utilisateur where NomUtilisateur='" + tbUtilisateur.Text + "' and MotDePasse ='" + tbMotDePasse.Text + "'";
 
-            maCommande = new SqlCommand(strRequete, maConnexion);
+            maCommande = new SqlCommand(strRequeteNoTypeUSer, maConnexion);
 
             dynamic dynNoTypeUser = maCommande.ExecuteScalar();
 
-            string strNoTypeUser = Convert.ToString(dynNoTypeUtilisteur);
+            string strNoTypeUser = Convert.ToString(dynNoTypeUser);
+
+
+            if (tbUtilisateur.Text =="" && tbMotDePasse.Text == "")
+            {
+                MessageBox.Show("Vous devez inserer un utilisateur et un mot de passe pour continuer");
+            }
+            
+            else if(tbUtilisateur.Text == "" )
+            {
+                MessageBox.Show("Vous devez inserer un utilisateur pour continuer");
+            }
+            else if(tbMotDePasse.Text == "")
+            {
+                MessageBox.Show("Vous devez inserer un mot de passe pour continuer");
+            }
+            else
+            {
+
+            }
+
 
             maConnexion.Close();
         }
