@@ -3,6 +3,7 @@ use BDTP1Guelleh_Marrero
 
 
 
+
 DROP TABLE AssistantSoin;
 DROP TABLE PlanifSoin;
 DROP TABLE Soin;
@@ -17,7 +18,6 @@ drop table TypeChambre
 
 drop table Utilisateur
 drop table TypeUtilisateur
-
 
 
 --DROP TABLE ReservationChambre;
@@ -35,14 +35,14 @@ print ''
    Nom	varchar(50),
    Specialites   varchar(50),
    Remarques   varchar(50)
-   --CONSTRAINT pk_NoAssistant  PRIMARY KEY(NoAssistant)
+  
    );
 
          Print  'Création de la TABLE TypeSoin...' 
    CREATE TABLE TypeSoin (
    NoTypeSoin		INT primary key(NoTypeSoin),
    Description	varchar(50)
-  -- CONSTRAINT pk_NoTypeSoin  PRIMARY KEY(NoTypeSoin)
+ 
    );
 
    Print  'Création de la TABLE Soin...' 
@@ -64,8 +64,6 @@ CREATE TABLE AssistantSoin (
    NoAssistant	INT foreign key(NoAssistant) references Assistant(NoAssistant),
    NoSoin		INT foreign key(NoSoin) references Soin(NoSoin),
    CONSTRAINT pk_NoAssistantNoSoin  PRIMARY KEY(NoAssistant,NoSoin)
-   --CONSTRAINT fk_NoSoin FOREIGN KEY(NoSoin) references Soin(NoSoin),
-  -- CONSTRAINT fk_NoAssistant FOREIGN KEY(NoAssistant) references Assistant(NoAssistant)
    );
 
 
@@ -89,7 +87,7 @@ create table Client (
 	Ville varchar(50),
 	Pays varchar(50),
 	Adresse varchar(50),
-	CodePostal varchar(50),
+	CodePostal varchar(7),
 	DateInscription datetime
 )
 
@@ -135,7 +133,7 @@ create table TypeUtilisateur (
  Print  'Création de la TABLE Utilisateur...'
 create table Utilisateur (
 	NoUtilisateur int primary key,
-	NomUtilisateur varchar(50) unique,
+	NomUtilisateur varchar(50) constraint unique_NomUtil unique,
 	MotDePasse     varchar(50),
 	NoTypeUtilisteur int foreign key references TypeUtilisateur(NoTypeUtilisteur)
 )
@@ -144,12 +142,45 @@ create table Utilisateur (
 
 
 
-
 print 'Remplissage des tables ========================================================'
+
+
+Print  'Remplissage de la TABLE Assistant...'
+insert into Assistant values(1,'Leclerc','Felix','Java','Asistant un')
+insert into Assistant values(2,'Paquin','Eric','C#','Asistant deux')
+
+Print  'Remplissage de la TABLE TypeSoin...'
+insert into TypeSoin values(1,'TypeSoins un')
+insert into TypeSoin values(2,'TypeSoins deux')
+
+
+
+
+Print  'Remplissage de la TABLE Soin...'
+insert into Soin values(1,'Le premier soin','2:30',1,10)
+insert into Soin values(2,'Le deuxième soin','1:30',2,30)
+
+
+
+
+Print  'Remplissage de la TABLE PlanifSoin...'
+insert into PlanifSoin values(10,1,'2019-05-06 19:14:59',1)
+insert into PlanifSoin values(20,2,'2019-05-09 20:20:59',2)
+
+
+
+Print  'Remplissage de la TABLE AssistantSoin...'
+insert into AssistantSoin values(1,1)
+insert into AssistantSoin values(2,2)
+
+
+
 
 Print  'Remplissage de la TABLE Client...'
 insert into Client values(10,'Tremblay','David','Montreal','Canada','3434 rue Thivierge','H8H 2V3','2019-02-06')
 insert into Client values(20,'Gagnon','Samuel','Quebec','Canada','6765 rue Legeault','H9O 2V7','2019-06-14')
+
+
 
 Print  'Remplissage de la TABLE Invite...'
 insert into Invite values(11,'Jonathan',10)
@@ -158,28 +189,34 @@ insert into Invite values(21,'Chirstopher',20)
 insert into Invite values(22,'Francis',20)
 
 
-Print  'Remplissage de la TABLE TypeSoin...'
-Print  'Remplissage de la TABLE Soin...'
-Print  'Remplissage de la TABLE AssistantSoin...'
-Print  'Remplissage de la TABLE PlanifSoin...'
+
+
+Print  'Remplissage de la TABLE TypeChambre...'
+insert into TypeChambre values (1, '1er type de chambre', 150, 140, 145)
+insert into TypeChambre values (2, '2eme type de chambre', 200, 100, 150)
+
+Print  'Remplissage de la TABLE Chambre...'
+insert into Chambre values (1, 1, '1ere chambre à l''emplacement 1', 1)
+insert into Chambre values (2, 2, '2eme chambre à l''emplacement 2', 1)
+insert into Chambre values (3, 3, '3eme chambre à l''emplacement 3', 2)
+insert into Chambre values (4, 4, '4eme chambre à l''emplacement 4', 2)
+
+Print  'Remplissage de la TABLE ReservationChambre...'
+insert into ReservationChambre values (10, 1, '2019-09-15', '2019-09-23', 2)
+insert into ReservationChambre values (10, 2, '2019-08-01', '2019-09-20', 1)
+insert into ReservationChambre values (20, 3, '2019-09-17', '2019-09-17', 5)
+insert into ReservationChambre values (20, 4, '2019-09-10', '2019-09-25', 10)
+
+
+
+
+
  Print  'Remplissage de la TABLE TypeUtilisateur...'
-  Print  'Remplissage de la TABLE Utilisateur...'
 
+ insert into TypeUtilisateur values(1,'Ceci est Identification un')
+ insert into TypeUtilisateur values(2,'Ceci est Identification deux')
 
---A faire 
--------------
+ Print  'Remplissage de la TABLE Utilisateur...'
 
-  
-
---2) Le numéro de personne dans la table PlanifSoin est soit un no de client, soit un no d’invité.)
-
---3) Les numéros des invités d’un client sont définis comme suit :  
---Le client 10 a comme invités 11, 12, ..., le client 20 a comme invités 21, 22, ... 
---Par conséquent, si dans planifSoin, noPers vaut 10 on sait qu’il s’agit d’un client 
---et si noPersvaut 14, on sait qu’il s’agit d’un invité et que c’est l’invité du client 10.
-
---4) Dans la table typeSoin, il doit y avoir deux (2) types de soins : Beauté et Santé. Ajoutez ces 2 types de soins
---
-
-
---Ajoutez une table typeUtilisateur qui contient un numéro de type d’utilisateurs et son identification. Il existe deux types d’utilisateurs : Admin et PréposéAjoutez une table utilisateur qui contient des utilisateurs. Cette table doit contenir un numéro d’utilisateur (la clef primaire), un nom d’utilisateur (le nom d’utilisateur est unique), un mot de passe et un numéro de type d’utilisateur. Reliez ces deux tables et, dans la table utilisateur, insérez au moins un administrateur et au moins un préposé.  Vous ne devez pas permettre les suppressions en cascade. C’est votre application qui doit gérer les suppressions
+ insert into Utilisateur values(1,'Lemoge','123456',1)
+  insert into Utilisateur values(2,'Lessage','246810',2)
