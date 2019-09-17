@@ -17,6 +17,9 @@ namespace Projet1BaseDeDonnee3
             InitializeComponent();
         }
 
-       
+        private void optionsAdministrateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

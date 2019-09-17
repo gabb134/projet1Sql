@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDTP1Guelleh_MarreroDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConnexionSysteme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +89,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BDTP1Guelleh_MarreroDataSet.xsc">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDTP1Guelleh_MarreroDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDTP1Guelleh_MarreroDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDTP1Guelleh_MarreroDataSet.xss">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

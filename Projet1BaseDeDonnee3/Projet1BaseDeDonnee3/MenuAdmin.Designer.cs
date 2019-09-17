@@ -87,7 +87,7 @@
             this.optionsAdministrateursToolStripMenuItem.Name = "optionsAdministrateursToolStripMenuItem";
             this.optionsAdministrateursToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
             this.optionsAdministrateursToolStripMenuItem.Text = "Options administrateurs";
-//            this.optionsAdministrateursToolStripMenuItem.Click += new System.EventHandler(this.optionsAdministrateursToolStripMenuItem_Click);
+            this.optionsAdministrateursToolStripMenuItem.Click += new System.EventHandler(this.optionsAdministrateursToolStripMenuItem_Click);
             // 
             // gérerLesUtilisateursToolStripMenuItem
             // 
