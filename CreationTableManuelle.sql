@@ -213,10 +213,14 @@ insert into ReservationChambre values (20, 4, '2019-09-10', '2019-09-25', 10)
 
  Print  'Remplissage de la TABLE TypeUtilisateur...'
 
- insert into TypeUtilisateur values(1,'Ceci est Identification un')
- insert into TypeUtilisateur values(2,'Ceci est Identification deux')
+ insert into TypeUtilisateur values(1,'Admin')
+ insert into TypeUtilisateur values(2,'Préposé')
 
  Print  'Remplissage de la TABLE Utilisateur...'
 
  insert into Utilisateur values(1,'Lemoge','123456',1)
-  insert into Utilisateur values(2,'Lessage','246810',2)
+  insert into Utilisateur values(2,'Gariepy','123456',1)
+   insert into Utilisateur values(3,'Porras','123456',1)
+  insert into Utilisateur values(4,'Gabriel','654321',2)
+   insert into Utilisateur values(5,'Mohamed','654321',2)
+  insert into Utilisateur values(16,'Cedric','654321',2)

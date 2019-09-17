@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDTP1Guelleh_MarreroDataSet.Designer.cs">
+    <Compile Include="BDVoyagesGuellehDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDTP1Guelleh_MarreroDataSet.xsd</DependentUpon>
+      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ConnexionSysteme.cs">
       <SubType>Form</SubType>
@@ -89,16 +89,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="BDTP1Guelleh_MarreroDataSet.xsc">
-      <DependentUpon>BDTP1Guelleh_MarreroDataSet.xsd</DependentUpon>
+    <None Include="BDVoyagesGuellehDataSet.xsc">
+      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDTP1Guelleh_MarreroDataSet.xsd">
+    <None Include="BDVoyagesGuellehDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDTP1Guelleh_MarreroDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>BDVoyagesGuellehDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BDTP1Guelleh_MarreroDataSet.xss">
-      <DependentUpon>BDTP1Guelleh_MarreroDataSet.xsd</DependentUpon>
+    <None Include="BDVoyagesGuellehDataSet.xss">
+      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

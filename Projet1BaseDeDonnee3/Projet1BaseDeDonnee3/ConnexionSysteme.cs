@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,23 @@ namespace Projet1BaseDeDonnee3
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
+            SqlConnection maConnexion = new SqlConnection();
+            SqlCommand maCommande;
 
+            maConnexion.ConnectionString = Projet1BaseDeDonnee3.Properties.Settings.Default.BDVoyagesGuellehConnectionString; //maChaineDeConnexion;
+            maConnexion.Open();
+            
+            string strRequete = "select NoTypeUtilisteur from Utilisateur where NomUtilisateur='Gabriel' and MotDePasse ='654321'";
+
+            maCommande = new SqlCommand(strRequete, maConnexion);
+
+            dynamic dynNoTypeUtilisteur = maCommande.ExecuteScalar();
+
+            /*String t = new String(Convert.ToString(dynNoTypeUtilisteur));*/
+
+            MessageBox.Show(dynNoTypeUtilisteur as string);
+
+            maConnexion.Close();
         }
     }
 }

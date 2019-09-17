@@ -26,11 +26,11 @@ namespace Projet1BaseDeDonnee3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;Persist Securit" +
-            "y Info=True;User ID=5B6Marrero;Password=Linuxmaster134")]
-        public string BDTP1Guelleh_MarreroConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=424-SQL2017,5433;Initial Catalog=BDVoyagesGuelleh;Persist Security In" +
+            "fo=True;User ID=5B6Guelleh;Password=Amj2ghT7COd1")]
+        public string BDVoyagesGuellehConnectionString {
             get {
-                return ((string)(this["BDTP1Guelleh_MarreroConnectionString"]));
+                return ((string)(this["BDVoyagesGuellehConnectionString"]));
             }
         }
     }
