@@ -26,15 +26,13 @@ namespace Projet1BaseDeDonnee3
             maConnexion.ConnectionString = Projet1BaseDeDonnee3.Properties.Settings.Default.BDVoyagesGuellehConnectionString; //maChaineDeConnexion;
             maConnexion.Open();
             
-            string strRequete = "select NoTypeUtilisteur from Utilisateur where NomUtilisateur='Gabriel' and MotDePasse ='654321'";
+            string strRequeteNoTypeUSer = "select NoTypeUtilisteur from Utilisateur where NomUtilisateur='" + tbUtilisateur.Text + "' and MotDePasse ='" + tbMotDePasse.Text + "'";
 
             maCommande = new SqlCommand(strRequete, maConnexion);
 
-            dynamic dynNoTypeUtilisteur = maCommande.ExecuteScalar();
+            dynamic dynNoTypeUser = maCommande.ExecuteScalar();
 
-            /*String t = new String(Convert.ToString(dynNoTypeUtilisteur));*/
-
-            MessageBox.Show(dynNoTypeUtilisteur as string);
+            string strNoTypeUser = Convert.ToString(dynNoTypeUtilisteur);
 
             maConnexion.Close();
         }
