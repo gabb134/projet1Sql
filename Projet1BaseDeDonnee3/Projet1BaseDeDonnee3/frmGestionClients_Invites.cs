@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet1BaseDeDonnee3
 {
-    public partial class frmGestionClients : Form
+    public partial class frmGestionClients_Invites : Form
     {
-        public frmGestionClients()
+        public frmGestionClients_Invites()
         {
             InitializeComponent();
         }
@@ -34,7 +34,36 @@ namespace Projet1BaseDeDonnee3
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+
+        // gestion client
+        private void btnAjouterClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModifierClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupprimerClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // gestion invite
+        private void btnAjouterInvite_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModifierInvite_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupprimerInvite_Click(object sender, EventArgs e)
         {
 
         }

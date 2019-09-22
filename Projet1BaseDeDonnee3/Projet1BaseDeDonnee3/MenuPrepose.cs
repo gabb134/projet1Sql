@@ -12,7 +12,7 @@ namespace Projet1BaseDeDonnee3
 {
     public partial class MenuPrepose : Form
     {
-        frmGestionClients MenuClients = new frmGestionClients();
+        frmGestionClients_Invites MenuClients = new frmGestionClients_Invites();
 
         public MenuPrepose()
         {
