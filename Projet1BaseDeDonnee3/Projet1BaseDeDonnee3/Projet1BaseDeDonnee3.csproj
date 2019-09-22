@@ -67,6 +67,11 @@
     </Compile>
     <Compile Include="frmAjouterUtilisateur.Designer.cs">
       <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
+    <Compile Include="frmGestionClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionClients.Designer.cs">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionUtilisateurs.cs">
       <SubType>Form</SubType>
@@ -93,6 +98,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAjouterUtilisateur.resx">
       <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionClients.resx">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionUtilisateurs.resx">
       <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
