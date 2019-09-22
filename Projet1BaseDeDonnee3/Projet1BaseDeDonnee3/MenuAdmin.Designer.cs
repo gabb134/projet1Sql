@@ -96,6 +96,7 @@
             this.gérerLesUtilisateursToolStripMenuItem.Name = "gérerLesUtilisateursToolStripMenuItem";
             this.gérerLesUtilisateursToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
             this.gérerLesUtilisateursToolStripMenuItem.Text = "Gérer les utilisateurs";
+            this.gérerLesUtilisateursToolStripMenuItem.Click += new System.EventHandler(this.gérerLesUtilisateursToolStripMenuItem_Click);
             // 
             // gérerLesClientsEtLeursInvitésToolStripMenuItem
             // 

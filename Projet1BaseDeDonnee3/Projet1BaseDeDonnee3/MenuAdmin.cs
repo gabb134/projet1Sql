@@ -14,7 +14,7 @@ namespace Projet1BaseDeDonnee3
     public partial class MenuAdmin : Form
     {
 
-      
+        frmGestionUtilisateurs frmGestionUtil = new frmGestionUtilisateurs();
         
         public MenuAdmin()
         {
@@ -37,6 +37,13 @@ namespace Projet1BaseDeDonnee3
             this.Close();
 
 
+        }
+
+        private void gérerLesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionUtil.ShowDialog();
+            this.Show();
         }
     }
 }

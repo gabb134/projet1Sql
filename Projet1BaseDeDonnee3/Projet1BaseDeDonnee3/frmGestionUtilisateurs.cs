@@ -11,11 +11,14 @@ using System.Windows.Forms;
 namespace Projet1BaseDeDonnee3
 {
     public partial class frmGestionUtilisateurs : Form
+
     {
         public frmGestionUtilisateurs()
         {
             InitializeComponent();
         }
+        frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
+       
 
         private void utilisateurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -27,9 +30,64 @@ namespace Projet1BaseDeDonnee3
 
         private void frmGestionUtilisateurs_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.TypeUtilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.typeUtilisateurTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.TypeUtilisateur);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.utilisateurTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
 
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+           
+            BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur = bDTP1Guelleh_MarreroDataSet.Utilisateur.NewUtilisateurRow();
+
+            decimal noUtilisateurMax = 0;
+            foreach (BDTP1Guelleh_MarreroDataSet.UtilisateurRow uneLigne in bDTP1Guelleh_MarreroDataSet.Utilisateur.Rows)
+                if (uneLigne.NoUtilisateur > noUtilisateurMax) noUtilisateurMax = uneLigne.NoUtilisateur;
+
+            //Valeur du plus grand no utilisateur = MAX(noUtilisateur)+1
+            unUtilisateur.NoUtilisateur = Convert.ToInt32(noUtilisateurMax+1);
+
+
+          
+
+            frmAjout.unUtilisateur = unUtilisateur;
+           if( frmAjout.ShowDialog()== DialogResult.OK)
+            {
+               
+
+               // MessageBox.Show("allo");
+                if (unUtilisateur.NoUtilisateur != -1)
+                {
+                    bDTP1Guelleh_MarreroDataSet.Utilisateur.AddUtilisateurRow(unUtilisateur);
+                   // MessageBox.Show("bonjour");
+
+                    utilisateurBindingSource.MoveLast();
+
+                    this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
+                    MessageBox.Show("L'utilisateur " + unUtilisateur.NoUtilisateur.ToString() + " a été ajouté", "Ajout d'un utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+            }
+        
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            frmAjout.ShowDialog();
+           
+
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+           
+            foreach (var row in utilisateurBindingSource)
+            {
+                utilisateurBindingSource.Remove(row);
+            }
+           // utilisateurBindingSource.RemoveCurrent();
         }
     }
 }
