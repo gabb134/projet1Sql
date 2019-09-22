@@ -42,9 +42,12 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeUtilisateurTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -56,6 +59,7 @@
             this.btnAjouter.TabIndex = 0;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnModifier
             // 
@@ -66,6 +70,7 @@
             this.btnModifier.TabIndex = 1;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -76,6 +81,7 @@
             this.btnSupprimer.TabIndex = 2;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // bDTP1Guelleh_MarreroDataSet
             // 
@@ -157,11 +163,20 @@
             this.label1.Text = "Gestion des utilisateurs";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // typeUtilisateurBindingSource
+            // 
+            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
+            this.typeUtilisateurBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // typeUtilisateurTableAdapter
+            // 
+            this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
+            // 
             // frmGestionUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(885, 556);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.utilisateurDataGridView);
             this.Controls.Add(this.btnSupprimer);
@@ -173,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +208,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource typeUtilisateurBindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter typeUtilisateurTableAdapter;
     }
 }

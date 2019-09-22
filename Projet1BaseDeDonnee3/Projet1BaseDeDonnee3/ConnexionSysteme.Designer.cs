@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUtilisateur = new System.Windows.Forms.TextBox();
             this.tbMotDePasse = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConnexion
@@ -66,6 +69,7 @@
             // 
             // tbMotDePasse
             // 
+            this.tbMotDePasse.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tbMotDePasse.Location = new System.Drawing.Point(184, 112);
             this.tbMotDePasse.Name = "tbMotDePasse";
             this.tbMotDePasse.Size = new System.Drawing.Size(136, 20);
@@ -91,6 +95,10 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Mot de passe :";
             // 
+            // errMessage
+            // 
+            this.errMessage.ContainerControl = this;
+            // 
             // ConnexionSysteme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +114,7 @@
             this.MaximizeBox = false;
             this.Name = "ConnexionSysteme";
             this.Text = "La connexion au système ";
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +128,7 @@
         private System.Windows.Forms.TextBox tbMotDePasse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errMessage;
     }
 }
 

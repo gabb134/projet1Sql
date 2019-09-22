@@ -20,8 +20,9 @@ namespace Projet1BaseDeDonnee3
         {
             InitializeComponent();
 
-            tbUtilisateur.Text = "testPrepose";
-            tbMotDePasse.Text = "b";
+            tbUtilisateur.Text = "testAdmin";
+            tbMotDePasse.Text = "a";
+            tbMotDePasse.PasswordChar = '*';
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Projet1BaseDeDonnee3
             SqlConnection maConnexion = new SqlConnection();
             SqlCommand maCommande;
 
-            maConnexion.ConnectionString = Projet1BaseDeDonnee3.Properties.Settings.Default.BDVoyagesGuellehConnectionString; //maChaineDeConnexion;
+            maConnexion.ConnectionString = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString; //maChaineDeConnexion;
             maConnexion.Open();
             
             string strRequeteNoTypeUSer = "select NoTypeUtilisteur from Utilisateur where NomUtilisateur='" + tbUtilisateur.Text + "' and MotDePasse ='" + tbMotDePasse.Text + "'";
@@ -41,46 +42,104 @@ namespace Projet1BaseDeDonnee3
             string strNoTypeUser = Convert.ToString(dynNoTypeUser);
 
 
-            if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
-            {
-                MessageBox.Show("Vous devez inserer un utilisateur et un mot de passe pour continuer");
-            }
-
-            else if (tbUtilisateur.Text == "")
-            {
-                MessageBox.Show("Vous devez inserer un utilisateur pour continuer");
-            }
-            else if (tbMotDePasse.Text == "")
-            {
-                MessageBox.Show("Vous devez inserer un mot de passe pour continuer");
-            }
-            else
-            {
-                if (strNoTypeUser == null)
+            /*    if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
                 {
-                    MessageBox.Show("Nom d'utilisateur ou mot de passe n'existe pas dans la base de données");
+                    MessageBox.Show("Vous devez inserer un utilisateur et un mot de passe pour continuer","Attention",MessageBoxButtons.OKCancel,MessageBoxIcon.Error );
+                }
+
+                else if (tbUtilisateur.Text == "")
+                {
+                    MessageBox.Show("Vous devez inserer un utilisateur pour continuer", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+                else if (tbMotDePasse.Text == "")
+                {
+                    MessageBox.Show("Vous devez inserer un mot de passe pour continuer", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    tbUtilisateur.Text = "";
-                    tbMotDePasse.Text = "";
-
-                    if (dynNoTypeUser == 1)
+                    if (strNoTypeUser == null)
                     {
-                        this.Hide();
-                        menuAdmin.ShowDialog();
-                        this.Show();
+                        MessageBox.Show("Nom d'utilisateur ou mot de passe n'existe pas dans la base de données", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                     }
-                    else if (dynNoTypeUser == 2)
+                    else
                     {
-                        this.Hide();
-                        menuPrepose.ShowDialog();
-                        this.Show();
+                        tbUtilisateur.Text = "";
+                        tbMotDePasse.Text = "";
+
+                        if (dynNoTypeUser == 1)
+                        {
+                            this.Hide();
+                            menuAdmin.ShowDialog();
+                            this.Show();
+                        }
+                        else if (dynNoTypeUser == 2)
+                        {
+                            this.Hide();
+                            menuPrepose.ShowDialog();
+                            this.Show();
+                        }
+                    }
+                }*/
+            
+
+            if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
+            {
+                errMessage.SetError(tbUtilisateur, "Vous devez inserer un nom d'utilisatueur!");
+                errMessage.SetError(tbMotDePasse, "Vous devez inserer un mot de passe!");
+            }
+            else
+            {
+                errMessage.SetError(tbUtilisateur, "");
+                errMessage.SetError(tbMotDePasse, "");
+                if (tbUtilisateur.Text == "")
+                {
+                    errMessage.SetError(tbUtilisateur, "Vous devez inserer un nom d'utilisatueur!");
+                }
+                else
+                {
+                    errMessage.SetError(tbUtilisateur, "");
+                    if (tbMotDePasse.Text == "")
+                    {
+                        errMessage.SetError(tbMotDePasse, "Vous devez inserer un mot de passe!");
+
+                    }
+                    else
+                    {
+                        errMessage.SetError(tbMotDePasse, "");
+                        if (strNoTypeUser == null)
+                        {
+                            errMessage.SetError(tbUtilisateur, "Nom d'utilisateur ou mot de passe n'existe pas dans la base de données");
+                            errMessage.SetError(tbMotDePasse, "Nom d'utilisateur ou mot de passe n'existe pas dans la base de données");
+
+                        }
+                        else
+                        {
+
+                            tbUtilisateur.Text = "";
+                            tbMotDePasse.Text = "";
+
+                            if (dynNoTypeUser == 1)
+                            {
+                                this.Hide();
+                                menuAdmin.ShowDialog();
+                                this.Show();
+                            }
+                            else if (dynNoTypeUser == 2)
+                            {
+                                this.Hide();
+                                menuPrepose.ShowDialog();
+                                this.Show();
+                            }
+                        }
                     }
                 }
+
             }
 
-            maConnexion.Close();
+            
+
+
+                maConnexion.Close();
         }
     }
 }
