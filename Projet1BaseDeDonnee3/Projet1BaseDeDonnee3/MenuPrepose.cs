@@ -12,6 +12,8 @@ namespace Projet1BaseDeDonnee3
 {
     public partial class MenuPrepose : Form
     {
+        frmGestionClients MenuClients = new frmGestionClients();
+
         public MenuPrepose()
         {
             InitializeComponent();
@@ -26,6 +28,13 @@ namespace Projet1BaseDeDonnee3
         private void btnDeconnexionPrepose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GérerLesClientsEtLeursInvitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuClients.ShowDialog();
+            this.Show();
         }
     }
 }
