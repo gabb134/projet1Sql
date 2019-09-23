@@ -97,15 +97,8 @@
     <EmbeddedResource Include="ConnexionSysteme.resx">
       <DependentUpon>ConnexionSysteme.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="frmGestionClients_Invites.resx">
       <DependentUpon>frmGestionClients_Invites.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="frmAjouterUtilisateur.resx">
-      <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
-    <EmbeddedResource Include="frmGestionClients.resx">
-      <DependentUpon>frmGestionClients.cs</DependentUpon>
->>>>>>> 97d411828b402d8ad823c405daf6bd7dfa88891d
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionUtilisateurs.resx">
       <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
