@@ -11,14 +11,11 @@ using System.Windows.Forms;
 namespace Projet1BaseDeDonnee3
 {
     public partial class frmGestionUtilisateurs : Form
-
     {
         public frmGestionUtilisateurs()
         {
             InitializeComponent();
         }
-        frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
-       
 
         private void utilisateurBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -50,12 +47,11 @@ namespace Projet1BaseDeDonnee3
             unUtilisateur.NoUtilisateur = Convert.ToInt32(noUtilisateurMax+1);
 
 
-          
+            frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
 
             frmAjout.unUtilisateur = unUtilisateur;
            if( frmAjout.ShowDialog()== DialogResult.OK)
             {
-               
 
                // MessageBox.Show("allo");
                 if (unUtilisateur.NoUtilisateur != -1)
@@ -75,9 +71,7 @@ namespace Projet1BaseDeDonnee3
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            frmAjout.ShowDialog();
            
-
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)

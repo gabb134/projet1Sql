@@ -16,14 +16,11 @@ namespace Projet1BaseDeDonnee3
     {
 
         public BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur;
-
         public frmAjouterUtilisateur()
         {
             InitializeComponent();
-            
         }
-         
-       
+
        
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -45,7 +42,6 @@ namespace Projet1BaseDeDonnee3
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.TypeUtilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.typeUtilisateurTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.TypeUtilisateur);
 
-            
         }
 
    
