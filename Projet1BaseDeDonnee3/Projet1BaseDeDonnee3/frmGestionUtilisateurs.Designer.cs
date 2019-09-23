@@ -44,14 +44,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeUtilisateurTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter();
-            this.typeUtilisateurDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -176,37 +172,11 @@
             // 
             this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
             // 
-            // typeUtilisateurDataGridView
-            // 
-            this.typeUtilisateurDataGridView.AutoGenerateColumns = false;
-            this.typeUtilisateurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.typeUtilisateurDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.typeUtilisateurDataGridView.DataSource = this.typeUtilisateurBindingSource;
-            this.typeUtilisateurDataGridView.Location = new System.Drawing.Point(240, 370);
-            this.typeUtilisateurDataGridView.Name = "typeUtilisateurDataGridView";
-            this.typeUtilisateurDataGridView.Size = new System.Drawing.Size(325, 159);
-            this.typeUtilisateurDataGridView.TabIndex = 6;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "NoTypeUtilisteur";
-            this.dataGridViewTextBoxColumn5.HeaderText = "NoTypeUtilisteur";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Identification";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Identification";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
             // frmGestionUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 556);
-            this.Controls.Add(this.typeUtilisateurDataGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.utilisateurDataGridView);
             this.Controls.Add(this.btnSupprimer);
@@ -219,7 +189,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,8 +210,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource typeUtilisateurBindingSource;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter typeUtilisateurTableAdapter;
-        private System.Windows.Forms.DataGridView typeUtilisateurDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

@@ -34,7 +34,7 @@
             this.tbMotDePasse = new System.Windows.Forms.TextBox();
             this.tbUtilisateur = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAjoutModif = new System.Windows.Forms.Label();
             this.btnFermer = new System.Windows.Forms.Button();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
             this.bDTP1Guelleh_MarreroDataSet = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSet();
@@ -95,15 +95,15 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "No type utilisateur :";
             // 
-            // label1
+            // lblAjoutModif
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-58, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(523, 60);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Ajout d\'un utilisateur";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAjoutModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAjoutModif.Location = new System.Drawing.Point(12, 33);
+            this.lblAjoutModif.Name = "lblAjoutModif";
+            this.lblAjoutModif.Size = new System.Drawing.Size(523, 60);
+            this.lblAjoutModif.TabIndex = 13;
+            this.lblAjoutModif.Text = "Ajout d\'un utilisateur";
+            this.lblAjoutModif.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnFermer
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.cbNoTypeUtilisateur);
             this.Controls.Add(this.btnFermer);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAjoutModif);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -226,7 +226,7 @@
         private System.Windows.Forms.TextBox tbMotDePasse;
         private System.Windows.Forms.TextBox tbUtilisateur;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAjoutModif;
         private System.Windows.Forms.Button btnFermer;
         private System.Windows.Forms.ErrorProvider errMessage;
         private System.Windows.Forms.BindingSource typeUtilisateurBindingSource;

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace Projet1BaseDeDonnee3
 {
     public partial class frmGestionUtilisateurs : Form
+
     {
         public frmGestionUtilisateurs()
         {
@@ -32,6 +33,8 @@ namespace Projet1BaseDeDonnee3
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.utilisateurTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
 
+
+
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -46,9 +49,10 @@ namespace Projet1BaseDeDonnee3
             //Valeur du plus grand no utilisateur = MAX(noUtilisateur)+1
             unUtilisateur.NoUtilisateur = Convert.ToInt32(noUtilisateurMax+1);
 
-
             frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
 
+
+            frmAjout.strValeur = "a";
             frmAjout.unUtilisateur = unUtilisateur;
            if( frmAjout.ShowDialog()== DialogResult.OK)
             {
@@ -71,7 +75,13 @@ namespace Projet1BaseDeDonnee3
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-           
+            frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
+            frmAjout.strValeur ="b";
+
+            //frmAjout.intidUilisateur
+            frmAjout.Show();
+
+
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
