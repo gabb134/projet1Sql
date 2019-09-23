@@ -99,6 +99,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionClients_Invites.resx">
       <DependentUpon>frmGestionClients_Invites.cs</DependentUpon>
+    <EmbeddedResource Include="frmAjouterUtilisateur.resx">
+      <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionClients.resx">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionUtilisateurs.resx">
       <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
