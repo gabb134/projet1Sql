@@ -27,5 +27,18 @@ namespace Projet1BaseDeDonnee3
         {
             this.Close();
         }
+
+        private void GérerLesClientsEtLeursInvitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionClientsInvites frmGestionClientsInvites = new frmGestionClientsInvites();
+            frmGestionClientsInvites.ShowDialog();
+            this.Show();
+        }
+
+        private void MenuPrepose_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
