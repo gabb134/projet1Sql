@@ -92,6 +92,7 @@
             // 
             this.utilisateurBindingSource.DataMember = "Utilisateur";
             this.utilisateurBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            this.utilisateurBindingSource.PositionChanged += new System.EventHandler(this.utilisateurBindingSource_PositionChanged);
             // 
             // utilisateurTableAdapter
             // 

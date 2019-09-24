@@ -72,6 +72,7 @@
             this.tbMotDePasse.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tbMotDePasse.Location = new System.Drawing.Point(184, 112);
             this.tbMotDePasse.Name = "tbMotDePasse";
+            this.tbMotDePasse.PasswordChar = '*';
             this.tbMotDePasse.Size = new System.Drawing.Size(136, 20);
             this.tbMotDePasse.TabIndex = 3;
             // 

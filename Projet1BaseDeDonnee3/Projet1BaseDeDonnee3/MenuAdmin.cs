@@ -45,5 +45,10 @@ namespace Projet1BaseDeDonnee3
             frmGestionUtil.ShowDialog();
             this.Show();
         }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+            //allo
+        }
     }
 }

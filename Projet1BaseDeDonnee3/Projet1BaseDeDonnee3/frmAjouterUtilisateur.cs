@@ -48,7 +48,7 @@ namespace Projet1BaseDeDonnee3
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.TypeUtilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.typeUtilisateurTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.TypeUtilisateur);
 
-            MessageBox.Show(strValeur);
+            //MessageBox.Show(strValeur);
             if (strValeur.Equals("a")) // Ajout
             {
                 //cbModifier.Enabled = false;
@@ -68,7 +68,7 @@ namespace Projet1BaseDeDonnee3
         {
 
 
-            string strNomUtilisateur = tbUtilisateur.Text;
+            string strNomUtilisateur = tbUtilisateur.Text.Trim() ;
             string strMotDePasse = tbMotDePasse.Text.Trim();
 
             if (tbUtilisateur.Text == "")
