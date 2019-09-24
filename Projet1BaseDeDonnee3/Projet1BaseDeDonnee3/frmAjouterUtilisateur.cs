@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace Projet1BaseDeDonnee3
 {
@@ -17,6 +18,8 @@ namespace Projet1BaseDeDonnee3
 
         public BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur;
         public String strValeur = "";
+        public String strNomUtilisateur;
+        public String strMotdePasse;
         public int intidUilisateur = 0;
         public frmAjouterUtilisateur()
         {
@@ -61,7 +64,19 @@ namespace Projet1BaseDeDonnee3
                 cbNoTypeUtilisateur.Enabled = false;
 
                 lblAjoutModif.Text = "Modification d'un utilisateur";
+
+                tbUtilisateur.Text = strNomUtilisateur;
+                tbMotDePasse.Text = strMotdePasse;
+                // MessageBox.Show(strNomUtilisateur);
+
+                // Ouvrir la connexion
+                String maChaineDeConnexion = "Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;User ID=5B6Guelleh;Password=Amj2ghT7COd1";
+                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                maConnexion.Open();
+
+
             }
+          
 
         }
 

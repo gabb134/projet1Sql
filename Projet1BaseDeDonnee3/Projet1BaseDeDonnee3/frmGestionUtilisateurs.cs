@@ -13,6 +13,7 @@ namespace Projet1BaseDeDonnee3
     public partial class frmGestionUtilisateurs : Form
 
     {
+        frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
         public frmGestionUtilisateurs()
         {
             InitializeComponent();
@@ -39,7 +40,10 @@ namespace Projet1BaseDeDonnee3
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-           
+            if (frmAjout==null)
+            {
+                frmAjout = new frmAjouterUtilisateur();
+            }
             BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur = bDTP1Guelleh_MarreroDataSet.Utilisateur.NewUtilisateurRow();
 
             decimal noUtilisateurMax = 0;
@@ -49,7 +53,7 @@ namespace Projet1BaseDeDonnee3
             //Valeur du plus grand no utilisateur = MAX(noUtilisateur)+1
             unUtilisateur.NoUtilisateur = Convert.ToInt32(noUtilisateurMax+1);
 
-            frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
+           
 
 
             frmAjout.strValeur = "a";
@@ -75,11 +79,22 @@ namespace Projet1BaseDeDonnee3
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            frmAjouterUtilisateur frmAjout = new frmAjouterUtilisateur();
-            frmAjout.strValeur ="b";
+          if(frmAjout== null)
+            {
+                 frmAjout = new frmAjouterUtilisateur();
+            }
+          
+           
+           
+                frmAjout.strValeur = "b";
 
-            //frmAjout.intidUilisateur
-            frmAjout.Show();
+                
+                frmAjout.Show();
+
+            
+
+
+
 
 
         }
@@ -96,16 +111,29 @@ namespace Projet1BaseDeDonnee3
 
         private void utilisateurBindingSource_PositionChanged(object sender, EventArgs e)
         {
+            
+            frmAjout.strValeur = "b";
+
 
             int noUtilisateur = utilisateurBindingSource.Position;
             int nbUtilisateurs = utilisateurBindingSource.Count;
 
             if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
             {
+            
                 dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
 
+                frmAjout.strNomUtilisateur = utilisateurSelectionne["NomUtilisateur"];
+                frmAjout.strMotdePasse = utilisateurSelectionne["MotDePasse"];
+
+
+                //MessageBox.Show(frmAjout.strMotdePasse);
+
+                //MessageBox.Show(strNomUtilisateur);
 
             }
+          //  frmAjout.Show();
+           
         }
     }
 }
