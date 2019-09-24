@@ -51,7 +51,7 @@ namespace Projet1BaseDeDonnee3
             //MessageBox.Show(strValeur);
             if (strValeur.Equals("a")) // Ajout
             {
-              //  cbModifier.Enabled = false;
+                //cbModifier.Enabled = false;
             }
             else if (strValeur.Equals("b")) // Modification
             {
