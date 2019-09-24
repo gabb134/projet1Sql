@@ -67,9 +67,9 @@ namespace Projet1BaseDeDonnee3
                 // MessageBox.Show(strNomUtilisateur);
 
                 // Ouvrir la connexion
-                String maChaineDeConnexion = "Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;User ID=5B6Guelleh;Password=Amj2ghT7COd1";
-                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
-                maConnexion.Open();
+               // String maChaineDeConnexion = "Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;User ID=5B6Guelleh;Password=Amj2ghT7COd1";
+               // SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+            //    maConnexion.Open();
 
 
             }
