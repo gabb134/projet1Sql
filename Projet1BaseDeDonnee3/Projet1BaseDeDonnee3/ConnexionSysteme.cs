@@ -20,9 +20,11 @@ namespace Projet1BaseDeDonnee3
         {
             InitializeComponent();
 
-            tbUtilisateur.Text = "testAdmin";
+            /*tbUtilisateur.Text = "testAdmin";
             tbMotDePasse.Text = "a";
-            tbMotDePasse.PasswordChar = '*';
+            tbMotDePasse.PasswordChar = '*';*/
+            tbUtilisateur.Text = "testPrepose";
+            tbMotDePasse.Text = "b";
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -140,6 +142,11 @@ namespace Projet1BaseDeDonnee3
 
 
                 maConnexion.Close();
+        }
+
+        private void ConnexionSysteme_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

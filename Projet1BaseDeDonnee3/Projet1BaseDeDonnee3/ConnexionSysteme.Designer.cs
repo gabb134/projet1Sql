@@ -114,6 +114,7 @@
             this.MaximizeBox = false;
             this.Name = "ConnexionSysteme";
             this.Text = "La connexion au système ";
+            this.Load += new System.EventHandler(this.ConnexionSysteme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
