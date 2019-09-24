@@ -60,9 +60,6 @@ namespace Projet1BaseDeDonnee3
             {
                 //Remplir les labels avec les id utilisateur
                 //cbModifier.Enabled = true;
-
-                cbNoTypeUtilisateur.Enabled = false;
-
                 lblAjoutModif.Text = "Modification d'un utilisateur";
 
                 tbUtilisateur.Text = strNomUtilisateur;
