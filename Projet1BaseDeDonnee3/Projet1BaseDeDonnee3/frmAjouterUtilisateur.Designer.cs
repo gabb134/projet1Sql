@@ -44,7 +44,6 @@
             this.typeUtilisateurBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
-            this.cbModifier = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).BeginInit();
@@ -180,22 +179,11 @@
             this.tableAdapterManager.UpdateOrder = Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
-            // cbModifier
-            // 
-            this.cbModifier.AutoSize = true;
-            this.cbModifier.Location = new System.Drawing.Point(358, 161);
-            this.cbModifier.Name = "cbModifier";
-            this.cbModifier.Size = new System.Drawing.Size(63, 17);
-            this.cbModifier.TabIndex = 18;
-            this.cbModifier.Text = "Modifier";
-            this.cbModifier.UseVisualStyleBackColor = true;
-            // 
             // frmAjouterUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 382);
-            this.Controls.Add(this.cbModifier);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.cbNoTypeUtilisateur);
             this.Controls.Add(this.btnFermer);
@@ -236,6 +224,5 @@
         private System.Windows.Forms.ComboBox cbNoTypeUtilisateur;
         private System.Windows.Forms.BindingSource typeUtilisateurBindingSource1;
         private System.Windows.Forms.Button btnEnregistrer;
-        private System.Windows.Forms.CheckBox cbModifier;
     }
 }
