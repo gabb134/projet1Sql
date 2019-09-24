@@ -51,12 +51,12 @@ namespace Projet1BaseDeDonnee3
             MessageBox.Show(strValeur);
             if (strValeur.Equals("a")) // Ajout
             {
-                cbModifier.Enabled = false;
+                //cbModifier.Enabled = false;
             }
             else if (strValeur.Equals("b")) // Modification
             {
                 //Remplir les labels avec les id utilisateur
-                cbModifier.Enabled = true;
+                //cbModifier.Enabled = true;
                 lblAjoutModif.Text = "Modification d'un utilisateur";
             }
 
