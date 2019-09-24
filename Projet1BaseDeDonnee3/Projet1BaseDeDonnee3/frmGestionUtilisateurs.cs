@@ -93,5 +93,19 @@ namespace Projet1BaseDeDonnee3
             }
            // utilisateurBindingSource.RemoveCurrent();
         }
+
+        private void utilisateurBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+
+            int noUtilisateur = utilisateurBindingSource.Position;
+            int nbUtilisateurs = utilisateurBindingSource.Count;
+
+            if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
+            {
+                dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
+
+
+            }
+        }
     }
 }
