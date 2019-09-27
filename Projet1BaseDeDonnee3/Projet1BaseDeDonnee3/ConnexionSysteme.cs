@@ -16,6 +16,8 @@ namespace Projet1BaseDeDonnee3
         MenuAdmin menuAdmin = new MenuAdmin();
         MenuPrepose menuPrepose = new MenuPrepose();
 
+        frmGestionUtilisateurs frmGestionUtils;
+       
         public ConnexionSysteme()
         {
             InitializeComponent();
@@ -43,6 +45,9 @@ namespace Projet1BaseDeDonnee3
 
             string strNoTypeUser = Convert.ToString(dynNoTypeUser);
 
+          
+
+           
 
             /*    if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
                 {
@@ -82,7 +87,7 @@ namespace Projet1BaseDeDonnee3
                         }
                     }
                 }*/
-            
+
 
             if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
             {
@@ -116,6 +121,9 @@ namespace Projet1BaseDeDonnee3
                         }
                         else
                         {
+                          
+                          
+                            
 
                             tbUtilisateur.Text = "";
                             tbMotDePasse.Text = "";
@@ -146,7 +154,7 @@ namespace Projet1BaseDeDonnee3
 
         private void ConnexionSysteme_Load(object sender, EventArgs e)
         {
-
+          
         }
     }
 }

@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace Projet1BaseDeDonnee3 {
     
     
@@ -10968,6 +10970,8 @@ SELECT NoUtilisateur, NomUtilisateur, MotDePasse, NoTypeUtilisteur FROM Utilisat
         public virtual int Update(string NomUtilisateur, string MotDePasse, global::System.Nullable<int> NoTypeUtilisteur, int Original_NoUtilisateur, string Original_NomUtilisateur, string Original_MotDePasse, global::System.Nullable<int> Original_NoTypeUtilisteur) {
             return this.Update(Original_NoUtilisateur, NomUtilisateur, MotDePasse, NoTypeUtilisteur, Original_NoUtilisateur, Original_NomUtilisateur, Original_MotDePasse, Original_NoTypeUtilisteur);
         }
+
+     
     }
     
     /// <summary>

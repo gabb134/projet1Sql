@@ -64,58 +64,82 @@ namespace Projet1BaseDeDonnee3
 
                 tbUtilisateur.Text = strNomUtilisateur;
                 tbMotDePasse.Text = strMotdePasse;
+                cbNoTypeUtilisateur.Enabled = false;
                 // MessageBox.Show(strNomUtilisateur);
-
-                // Ouvrir la connexion
-               // String maChaineDeConnexion = "Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;User ID=5B6Guelleh;Password=Amj2ghT7COd1";
-               // SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
-            //    maConnexion.Open();
 
 
             }
-          
-
+            
         }
 
    
 
         private void btnEnregistrer_Click_1(object sender, EventArgs e)
         {
-
-
-            string strNomUtilisateur = tbUtilisateur.Text.Trim() ;
-            string strMotDePasse = tbMotDePasse.Text.Trim();
-
-            if (tbUtilisateur.Text == "")
+            if (strValeur.Equals("a"))
             {
-                errMessage.SetError(tbUtilisateur, "Le nom de l'utilisateur ne peut pas être vide");
-            }
-            else
-            {
-                errMessage.SetError(tbUtilisateur, "");
-                if (tbMotDePasse.Text == "")
+                MessageBox.Show("Ajout");
+
+                string strNomUtilisateur = tbUtilisateur.Text.Trim();
+                string strMotDePasse = tbMotDePasse.Text.Trim();
+
+                if (tbUtilisateur.Text == "")
                 {
-                    errMessage.SetError(tbMotDePasse, "Le mot de passe ne peut pas être vide");
+                    errMessage.SetError(tbUtilisateur, "Le nom de l'utilisateur ne peut pas être vide");
                 }
                 else
                 {
-                    errMessage.SetError(tbMotDePasse, "");
-                    if (cbNoTypeUtilisateur.Text == "")
+                    errMessage.SetError(tbUtilisateur, "");
+                    if (tbMotDePasse.Text == "")
                     {
-                        errMessage.SetError(cbNoTypeUtilisateur, "Le no type utilisateur ne peut pas être vide");
+                        errMessage.SetError(tbMotDePasse, "Le mot de passe ne peut pas être vide");
                     }
                     else
                     {
-                        errMessage.SetError(cbNoTypeUtilisateur, "");
-                        unUtilisateur.NomUtilisateur = strNomUtilisateur;
-                        unUtilisateur.MotDePasse = strMotDePasse;
-                        unUtilisateur.NoTypeUtilisteur = Convert.ToInt32(cbNoTypeUtilisateur.SelectedValue.ToString());
-                        DialogResult = DialogResult.OK;
+                        errMessage.SetError(tbMotDePasse, "");
+                        if (cbNoTypeUtilisateur.Text == "")
+                        {
+                            errMessage.SetError(cbNoTypeUtilisateur, "Le no type utilisateur ne peut pas être vide");
+                        }
+                        else
+                        {
+                            errMessage.SetError(cbNoTypeUtilisateur, "");
+                            unUtilisateur.NomUtilisateur = strNomUtilisateur;
+                            unUtilisateur.MotDePasse = strMotDePasse;
+                            unUtilisateur.NoTypeUtilisteur = Convert.ToInt32(cbNoTypeUtilisateur.SelectedValue.ToString());
+                            DialogResult = DialogResult.OK;
 
-                        this.Close();
+                            this.Close();
+                        }
                     }
                 }
             }
+            else if (strValeur.Equals("b"))
+            {
+                MessageBox.Show("modification");
+
+                // Ouvrir la connexion
+                   String maChaineDeConnexion = "Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;User ID=5B6Guelleh;Password=Amj2ghT7COd1";
+                   SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                   maConnexion.Open();
+
+                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur =" + tbUtilisateur.Text ;
+                   String maRequeteUpdateMotDePAsse = "update Utilisateur set MotDePasse =" + tbMotDePasse.Text;
+
+
+
+                   SqlCommand maCommande = new SqlCommand(maRequeteUpdateNom, maConnexion);
+                   SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePAsse, maConnexion);
+
+
+
+
+                   // Fermer la connexion
+                   maConnexion.Close();
+
+            }
+
+
         }
     }
 }

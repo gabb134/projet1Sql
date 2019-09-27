@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,13 @@ namespace Projet1BaseDeDonnee3
     public partial class frmGestionUtilisateurs : Form
 
     {
-        frmAjouterUtilisateur frmAjout; 
+        frmAjouterUtilisateur frmAjout;
+
+        String strConnexion = "";
+        String strNomUtilisateurConnexion;
+
+
+        public int noUtilisateur;
         public frmGestionUtilisateurs()
         {
             InitializeComponent();
@@ -34,7 +41,13 @@ namespace Projet1BaseDeDonnee3
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Utilisateur'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.utilisateurTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
 
+            //utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur, Convert.ToDecimal(noUtilisateur));
 
+
+            if (strConnexion.Equals("a"))
+            {
+
+            }
 
         }
 
@@ -121,12 +134,67 @@ namespace Projet1BaseDeDonnee3
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
+
            
-            foreach (var row in utilisateurBindingSource)
+            
+
+            //  noUtilisateur = utilisateurBindingSource.Position;
+            noUtilisateur = Convert.ToInt32(utilisateurDataGridView.CurrentRow.Cells[0].Value);
+            int nbUtilisateurs = utilisateurBindingSource.Count;
+
+            String strNomUtilisateur = "";
+            String strMotdePasse = "";
+
+            MessageBox.Show("Utilisateur choisi : "+noUtilisateur.ToString());
+           // if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
+          //  {
+
+                dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
+
+                strNomUtilisateur = utilisateurSelectionne["NomUtilisateur"];
+                strMotdePasse = utilisateurSelectionne["MotDePasse"];
+
+                //MessageBox.Show(strNomUtilisateur);
+               //  MessageBox.Show(noUtilisateur.ToString());
+                //MessageBox.Show(frmAjout.strMotdePasse);
+                String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                maConnexion.Open();
+
+                SqlTransaction maTransaction = maConnexion.BeginTransaction();
+                try
+                {
+                    string requeteUtilisateur = "delete from Utilisateur where NoUtilisateur = @noUtilisateur";
+
+                    SqlParameter monParametreSQL1 = new SqlParameter("@noUtilisateur", noUtilisateur);
+                    SqlCommand maCommande1 = new SqlCommand(requeteUtilisateur, maConnexion);
+                    maCommande1.Transaction = maTransaction;
+                    maCommande1.Parameters.Add(monParametreSQL1);
+                    maCommande1.ExecuteNonQuery();
+
+                     maTransaction.Commit();
+                     MessageBox.Show("Transaction réussie, l'utilisateur numéro "+ noUtilisateur+" a été effacé!");
+                    //MessageBox.Show(noUtilisateur.ToString());
+
+                   // utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur, Convert.ToDecimal(noUtilisateur));
+
+                }
+                catch
+                {
+                    maTransaction.Rollback();
+                    MessageBox.Show("Transaction échouée");
+                }
+
+
+                maConnexion.Close();
+           // }
+
+
+            /*foreach (var row in utilisateurBindingSource)
             {
                 utilisateurBindingSource.Remove(row);
-            }
-           // utilisateurBindingSource.RemoveCurrent();
+            }*/
+            // utilisateurBindingSource.RemoveCurrent();
         }
 
       
