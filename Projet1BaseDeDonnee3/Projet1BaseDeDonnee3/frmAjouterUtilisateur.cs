@@ -68,6 +68,8 @@ namespace Projet1BaseDeDonnee3
                 // MessageBox.Show(strNomUtilisateur);
 
 
+
+
             }
             
         }
@@ -76,9 +78,9 @@ namespace Projet1BaseDeDonnee3
 
         private void btnEnregistrer_Click_1(object sender, EventArgs e)
         {
-            if (strValeur.Equals("a"))
+            if (strValeur.Equals("a")) //ajout
             {
-                MessageBox.Show("Ajout");
+            //    MessageBox.Show("Ajout");
 
                 string strNomUtilisateur = tbUtilisateur.Text.Trim();
                 string strMotDePasse = tbMotDePasse.Text.Trim();
@@ -114,13 +116,13 @@ namespace Projet1BaseDeDonnee3
                     }
                 }
             }
-            else if (strValeur.Equals("b"))
+            else if (strValeur.Equals("b")) //modification
             {
                 MessageBox.Show("modification");
 
                 // Ouvrir la connexion
-                   String maChaineDeConnexion = "Data Source=424-SQL2017,5433;Initial Catalog=BDTP1Guelleh_Marrero;User ID=5B6Guelleh;Password=Amj2ghT7COd1";
-                   SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                    maConnexion.Open();
 
                    String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur =" + tbUtilisateur.Text ;
@@ -131,11 +133,14 @@ namespace Projet1BaseDeDonnee3
                    SqlCommand maCommande = new SqlCommand(maRequeteUpdateNom, maConnexion);
                    SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePAsse, maConnexion);
 
+                // int intLignesModifies = maCommande.ExecuteNonQuery();
+                //intLignesModifies = maCommande2.ExecuteNonQuery();
 
+                //   MessageBox.Show(intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 1\n"+ intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 2");
+                DialogResult = DialogResult.OK;
 
-
-                   // Fermer la connexion
-                   maConnexion.Close();
+                // Fermer la connexion
+                maConnexion.Close();
 
             }
 

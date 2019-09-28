@@ -15,10 +15,10 @@ namespace Projet1BaseDeDonnee3
 
     {
         frmAjouterUtilisateur frmAjout;
+        //  ConnexionSysteme t = new ConnexionSysteme();
 
-        String strConnexion = "";
-        String strNomUtilisateurConnexion;
 
+        String strUtilisteurConnextion = "";
 
         public int noUtilisateur;
         public frmGestionUtilisateurs()
@@ -43,19 +43,16 @@ namespace Projet1BaseDeDonnee3
 
             //utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur, Convert.ToDecimal(noUtilisateur));
 
+            // t  = new ConnexionSysteme();
 
-            if (strConnexion.Equals("a"))
-            {
-
-            }
 
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-           
-                frmAjout = new frmAjouterUtilisateur();
-         
+
+            frmAjout = new frmAjouterUtilisateur();
+
             BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur = bDTP1Guelleh_MarreroDataSet.Utilisateur.NewUtilisateurRow();
 
             decimal noUtilisateurMax = 0;
@@ -63,34 +60,45 @@ namespace Projet1BaseDeDonnee3
                 if (uneLigne.NoUtilisateur > noUtilisateurMax) noUtilisateurMax = uneLigne.NoUtilisateur;
 
             //Valeur du plus grand no utilisateur = MAX(noUtilisateur)+1
-            unUtilisateur.NoUtilisateur = Convert.ToInt32(noUtilisateurMax+1);
+            unUtilisateur.NoUtilisateur = Convert.ToInt32(noUtilisateurMax + 1);
 
-           
 
 
             frmAjout.strValeur = "a";
             frmAjout.unUtilisateur = unUtilisateur;
-           if( frmAjout.ShowDialog()== DialogResult.OK)
+            if (frmAjout.ShowDialog() == DialogResult.OK)
             {
 
-               // MessageBox.Show("allo");
+                // MessageBox.Show("allo");
                 if (unUtilisateur.NoUtilisateur != -1)
                 {
                     bDTP1Guelleh_MarreroDataSet.Utilisateur.AddUtilisateurRow(unUtilisateur);
-                   // MessageBox.Show("bonjour");
+                    // MessageBox.Show("bonjour");
 
-                    utilisateurBindingSource.MoveLast();
+                 /*  if(Convert.ToInt32(utilisateurDataGridView.CurrentRow.Cells[0].Value) != 1)
+                    {
 
-                    this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
-                    MessageBox.Show("L'utilisateur " + unUtilisateur.NoUtilisateur.ToString() + " a été ajouté", "Ajout d'un utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        utilisateurBindingSource.MoveFirst();
+
+                        this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
+                        MessageBox.Show("L'utilisateur " + unUtilisateur.NoUtilisateur.ToString() + " a été ajouté", "Ajout d'un utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }*/
+                   
+                        utilisateurBindingSource.MoveLast();
+
+                        this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
+                        MessageBox.Show("L'utilisateur " + unUtilisateur.NoUtilisateur.ToString() + " a été ajouté", "Ajout d'un utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+
                 }
-                
+
             }
-        
+
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
+          
 
             //   frmAjout = new frmAjouterUtilisateur();
 
@@ -99,8 +107,9 @@ namespace Projet1BaseDeDonnee3
 
             frmAjout.strValeur = "b";
 
+          
 
-            int noUtilisateur = utilisateurBindingSource.Position;
+                int noUtilisateur = utilisateurBindingSource.Position;
             int nbUtilisateurs = utilisateurBindingSource.Count;
 
             if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
@@ -115,16 +124,21 @@ namespace Projet1BaseDeDonnee3
                 //MessageBox.Show(frmAjout.strMotdePasse);
 
                 //MessageBox.Show(strNomUtilisateur);
+                if (frmAjout.ShowDialog() == DialogResult.OK)
+                {
+                    utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur);
+                }
 
+                
             }
 
 
-          //  frmAjout.strValeur = "b";
+            //  frmAjout.strValeur = "b";
 
-                
-                frmAjout.Show();
 
-            
+            frmAjout.Show();
+
+
 
 
 
@@ -135,8 +149,8 @@ namespace Projet1BaseDeDonnee3
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
 
-           
-            
+
+
 
             //  noUtilisateur = utilisateurBindingSource.Position;
             noUtilisateur = Convert.ToInt32(utilisateurDataGridView.CurrentRow.Cells[0].Value);
@@ -145,49 +159,69 @@ namespace Projet1BaseDeDonnee3
             String strNomUtilisateur = "";
             String strMotdePasse = "";
 
-            MessageBox.Show("Utilisateur choisi : "+noUtilisateur.ToString());
-           // if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
-          //  {
+            strUtilisteurConnextion = ConnexionSysteme.strUtilisateurConnexion;
 
-                dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
+           // MessageBox.Show("Utilisateur choisi : " + noUtilisateur.ToString());
+          
+            dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
 
-                strNomUtilisateur = utilisateurSelectionne["NomUtilisateur"];
-                strMotdePasse = utilisateurSelectionne["MotDePasse"];
+            strNomUtilisateur = utilisateurSelectionne["NomUtilisateur"];
+            strMotdePasse = utilisateurSelectionne["MotDePasse"];
 
-                //MessageBox.Show(strNomUtilisateur);
-               //  MessageBox.Show(noUtilisateur.ToString());
-                //MessageBox.Show(frmAjout.strMotdePasse);
-                String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
-                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
-                maConnexion.Open();
+            //MessageBox.Show(strNomUtilisateur);
+            //  MessageBox.Show(noUtilisateur.ToString());
+            //MessageBox.Show(frmAjout.strMotdePasse);
+            String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+            SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+            maConnexion.Open();
 
-                SqlTransaction maTransaction = maConnexion.BeginTransaction();
-                try
+            SqlTransaction maTransaction = maConnexion.BeginTransaction();
+            try
+            {
+                string requeteUtilisateur = "delete from Utilisateur where NoUtilisateur = @noUtilisateur";
+
+                SqlParameter monParametreSQL1 = new SqlParameter("@noUtilisateur", noUtilisateur);
+                SqlCommand maCommande1 = new SqlCommand(requeteUtilisateur, maConnexion);
+                maCommande1.Transaction = maTransaction;
+                maCommande1.Parameters.Add(monParametreSQL1);
+                maCommande1.ExecuteNonQuery();
+
+
+                if (strNomUtilisateur.Equals(strUtilisteurConnextion))
                 {
-                    string requeteUtilisateur = "delete from Utilisateur where NoUtilisateur = @noUtilisateur";
+                    maTransaction.Rollback();
+                    MessageBox.Show("vous ne pouvez pas supprimer l'utilisateur courant.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                    SqlParameter monParametreSQL1 = new SqlParameter("@noUtilisateur", noUtilisateur);
-                    SqlCommand maCommande1 = new SqlCommand(requeteUtilisateur, maConnexion);
-                    maCommande1.Transaction = maTransaction;
-                    maCommande1.Parameters.Add(monParametreSQL1);
-                    maCommande1.ExecuteNonQuery();
 
-                     maTransaction.Commit();
-                     MessageBox.Show("Transaction réussie, l'utilisateur numéro "+ noUtilisateur+" a été effacé!");
-                    //MessageBox.Show(noUtilisateur.ToString());
 
-                   // utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur, Convert.ToDecimal(noUtilisateur));
+                maTransaction.Commit();
+                MessageBox.Show("Transaction réussie, l'utilisateur numéro " + noUtilisateur + " a été effacé!");
+                //MessageBox.Show(noUtilisateur.ToString());
+
+                // utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur, Convert.ToDecimal(noUtilisateur));
+                utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur);
+            }
+            catch
+            {
+                if (strNomUtilisateur.Equals(strUtilisteurConnextion))
+                {
+
 
                 }
-                catch
+                else
                 {
                     maTransaction.Rollback();
                     MessageBox.Show("Transaction échouée");
                 }
+                    
 
 
-                maConnexion.Close();
-           // }
+            }
+
+
+            maConnexion.Close();
+            // }
 
 
             /*foreach (var row in utilisateurBindingSource)
@@ -197,6 +231,6 @@ namespace Projet1BaseDeDonnee3
             // utilisateurBindingSource.RemoveCurrent();
         }
 
-      
+
     }
 }

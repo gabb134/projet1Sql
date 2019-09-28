@@ -16,8 +16,9 @@ namespace Projet1BaseDeDonnee3
         MenuAdmin menuAdmin = new MenuAdmin();
         MenuPrepose menuPrepose = new MenuPrepose();
 
-        frmGestionUtilisateurs frmGestionUtils;
        
+
+        public static String strUtilisateurConnexion = ""; //Pour le recuperer dans frmGestionUtilisateurs
         public ConnexionSysteme()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace Projet1BaseDeDonnee3
             string strNoTypeUser = Convert.ToString(dynNoTypeUser);
 
           
-
+            
            
 
             /*    if (tbUtilisateur.Text == "" && tbMotDePasse.Text == "")
@@ -121,9 +122,10 @@ namespace Projet1BaseDeDonnee3
                         }
                         else
                         {
-                          
-                          
-                            
+
+
+                            strUtilisateurConnexion = tbUtilisateur.Text; //Pour le recuperer dans frmGestionUtilisateurs
+                           
 
                             tbUtilisateur.Text = "";
                             tbMotDePasse.Text = "";
