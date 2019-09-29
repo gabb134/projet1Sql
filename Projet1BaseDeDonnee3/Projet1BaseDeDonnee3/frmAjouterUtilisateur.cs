@@ -120,24 +120,27 @@ namespace Projet1BaseDeDonnee3
             {
                 MessageBox.Show("modification");
 
+                String strNomUtilisateurModif = tbUtilisateur.Text;
+                String strMotDePasseModif = tbMotDePasse.Text;
                 // Ouvrir la connexion
                 String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                    maConnexion.Open();
 
-                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur =" + tbUtilisateur.Text ;
-                   String maRequeteUpdateMotDePAsse = "update Utilisateur set MotDePasse =" + tbMotDePasse.Text;
+                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = " + "\'" + tbUtilisateur.Text + "\'" + "where NomUtilisateur = " + "'" + strNomUtilisateurModif + "'";
+                    String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateurModif + "'";
 
 
+                SqlCommand maCommande1 = new SqlCommand(maRequeteUpdateNom, maConnexion);
+                SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePasse, maConnexion);
+                           //  maCommande = new SqlCommand(maRequeteUpdateMotDePAsse, maConnexion);
+              
 
-                   SqlCommand maCommande = new SqlCommand(maRequeteUpdateNom, maConnexion);
-                   SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePAsse, maConnexion);
-
-                // int intLignesModifies = maCommande.ExecuteNonQuery();
-                //intLignesModifies = maCommande2.ExecuteNonQuery();
+                maCommande1.ExecuteNonQuery();
+                 maCommande2.ExecuteNonQuery();
 
                 //   MessageBox.Show(intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 1\n"+ intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 2");
-                DialogResult = DialogResult.OK;
+                //DialogResult = DialogResult.OK;
 
                 // Fermer la connexion
                 maConnexion.Close();

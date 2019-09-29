@@ -124,10 +124,7 @@ namespace Projet1BaseDeDonnee3
                 //MessageBox.Show(frmAjout.strMotdePasse);
 
                 //MessageBox.Show(strNomUtilisateur);
-                if (frmAjout.ShowDialog() == DialogResult.OK)
-                {
-                    utilisateurTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Utilisateur);
-                }
+             
 
                 
             }
