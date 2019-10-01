@@ -20,6 +20,9 @@ namespace Projet1BaseDeDonnee3
         public String strValeur = "";
         public String strNomUtilisateur;
         public String strMotdePasse;
+
+       // public String strNomUtilisateurSelectionnee;
+       // public String strMotDePasseSelectionnee;
         public int intidUilisateur = 0;
         public frmAjouterUtilisateur()
         {
@@ -67,7 +70,7 @@ namespace Projet1BaseDeDonnee3
                 cbNoTypeUtilisateur.Enabled = false;
                 // MessageBox.Show(strNomUtilisateur);
 
-
+                
 
 
             }
@@ -119,25 +122,27 @@ namespace Projet1BaseDeDonnee3
             else if (strValeur.Equals("b")) //modification
             {
                 MessageBox.Show("modification");
+                MessageBox.Show(strNomUtilisateur);
+                //***Utiliser les donnees recuperer de l'autre forme
 
-                String strNomUtilisateurModif = tbUtilisateur.Text;
-                String strMotDePasseModif = tbMotDePasse.Text;
+
+             //   String strNomUtilisateurModif = tbUtilisateur.Text;
+               // String strMotDePasseModif = tbMotDePasse.Text;
                 // Ouvrir la connexion
                 String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                    maConnexion.Open();
 
-                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = " + "\'" + tbUtilisateur.Text + "\'" + "where NomUtilisateur = " + "'" + strNomUtilisateurModif + "'";
-                    String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateurModif + "'";
+                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = " + "\'" + tbUtilisateur.Text + "\'" + "where NomUtilisateur = " + "'" + strNomUtilisateur + "'";
+                    String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateur + "'";
 
 
                 SqlCommand maCommande1 = new SqlCommand(maRequeteUpdateNom, maConnexion);
-                SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePasse, maConnexion);
-                           //  maCommande = new SqlCommand(maRequeteUpdateMotDePAsse, maConnexion);
-              
-
                 maCommande1.ExecuteNonQuery();
+                SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePasse, maConnexion);
+
                  maCommande2.ExecuteNonQuery();
+               
 
                 //   MessageBox.Show(intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 1\n"+ intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 2");
                 //DialogResult = DialogResult.OK;
@@ -146,6 +151,7 @@ namespace Projet1BaseDeDonnee3
                 maConnexion.Close();
 
             }
+            
 
 
         }
