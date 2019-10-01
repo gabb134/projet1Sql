@@ -64,10 +64,10 @@ namespace Projet1BaseDeDonnee3
                 //Remplir les labels avec les id utilisateur
                 //cbModifier.Enabled = true;
                 lblAjoutModif.Text = "Modification d'un utilisateur";
-
+                
                 tbUtilisateur.Text = strNomUtilisateur;
                 tbMotDePasse.Text = strMotdePasse;
-                cbNoTypeUtilisateur.Enabled = false;
+                //cbNoTypeUtilisateur.Enabled = false;
                 // MessageBox.Show(strNomUtilisateur);
 
                 
@@ -83,7 +83,7 @@ namespace Projet1BaseDeDonnee3
         {
             if (strValeur.Equals("a")) //ajout
             {
-            //    MessageBox.Show("Ajout");
+                //    MessageBox.Show("Ajout");
 
                 string strNomUtilisateur = tbUtilisateur.Text.Trim();
                 string strMotDePasse = tbMotDePasse.Text.Trim();
@@ -120,28 +120,28 @@ namespace Projet1BaseDeDonnee3
                 }
             }
             else if (strValeur.Equals("b")) //modification
-            {
+            { //Fair aussi pour le type d'utilisateur, et ne pas oublie que celui qui sign in (utilisateur courant) ne peut pas modifier son type utilisateur 
                 MessageBox.Show("modification");
                 MessageBox.Show(strNomUtilisateur);
                 //***Utiliser les donnees recuperer de l'autre forme
 
 
-             //   String strNomUtilisateurModif = tbUtilisateur.Text;
-               // String strMotDePasseModif = tbMotDePasse.Text;
+                //   String strNomUtilisateurModif = tbUtilisateur.Text;
+                // String strMotDePasseModif = tbMotDePasse.Text;
                 // Ouvrir la connexion
                 String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
                 SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
-                   maConnexion.Open();
+                maConnexion.Open();
 
-                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = " + "\'" + tbUtilisateur.Text + "\'" + "where NomUtilisateur = " + "'" + strNomUtilisateur + "'";
-                    String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateur + "'";
+                String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = '" + tbUtilisateur.Text + "'" +", MotDePasse = '" + tbMotDePasse.Text + "'" +"where NomUtilisateur = '"  + strNomUtilisateur + "'";
+                    //String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateur + "'";
 
 
                 SqlCommand maCommande1 = new SqlCommand(maRequeteUpdateNom, maConnexion);
                 maCommande1.ExecuteNonQuery();
-                SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePasse, maConnexion);
+                //SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePasse, maConnexion);
 
-                 maCommande2.ExecuteNonQuery();
+               //  maCommande2.ExecuteNonQuery();
                
 
                 //   MessageBox.Show(intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 1\n"+ intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 2");
