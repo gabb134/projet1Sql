@@ -27,6 +27,8 @@ namespace Projet1BaseDeDonnee3
 
         private void frmGestionClientsInvites_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Invite'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.inviteTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Invite);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Client'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.clientTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Client);
 
