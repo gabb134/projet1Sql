@@ -121,6 +121,7 @@ namespace Projet1BaseDeDonnee3
             }
             else if (strValeur.Equals("b")) //modification
             { //Fair aussi pour le type d'utilisateur, et ne pas oublie que celui qui sign in (utilisateur courant) ne peut pas modifier son type utilisateur 
+                //Recharger dataGridView pour voir les modification et fermer ce formulair lorsque je save
                 MessageBox.Show("modification");
                 MessageBox.Show(strNomUtilisateur);
                 //***Utiliser les donnees recuperer de l'autre forme
