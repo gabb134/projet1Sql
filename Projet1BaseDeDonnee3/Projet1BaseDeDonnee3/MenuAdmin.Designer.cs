@@ -109,6 +109,7 @@
             this.gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem.Name = "gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem";
             this.gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
             this.gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem.Text = "Gérer les assistants et les soins qu’ils offrent";
+            this.gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem.Click += new System.EventHandler(this.gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem_Click);
             // 
             // gérerLesSoinsToolStripMenuItem
             // 

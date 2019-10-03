@@ -10,3 +10,9 @@ select * from TypeUtilisateur
 update Utilisateur set NomUtilisateur = 'gabo' where NomUtilisateur = 'gab'
 
 
+select * from Assistant
+
+select * from AssistantSoin
+
+
+select * from Soin

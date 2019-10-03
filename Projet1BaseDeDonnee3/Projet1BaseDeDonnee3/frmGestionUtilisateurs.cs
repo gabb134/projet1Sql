@@ -237,6 +237,6 @@ namespace Projet1BaseDeDonnee3
             // utilisateurBindingSource.RemoveCurrent();
         }
 
-
+       
     }
 }
