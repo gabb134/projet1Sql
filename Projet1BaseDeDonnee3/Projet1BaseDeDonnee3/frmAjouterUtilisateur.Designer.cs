@@ -54,7 +54,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 157);
+            this.label3.Location = new System.Drawing.Point(144, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 16);
             this.label3.TabIndex = 9;
@@ -64,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 129);
+            this.label2.Location = new System.Drawing.Point(144, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 16);
             this.label2.TabIndex = 8;
@@ -72,14 +72,14 @@
             // 
             // tbMotDePasse
             // 
-            this.tbMotDePasse.Location = new System.Drawing.Point(198, 158);
+            this.tbMotDePasse.Location = new System.Drawing.Point(300, 167);
             this.tbMotDePasse.Name = "tbMotDePasse";
             this.tbMotDePasse.Size = new System.Drawing.Size(121, 20);
             this.tbMotDePasse.TabIndex = 7;
             // 
             // tbUtilisateur
             // 
-            this.tbUtilisateur.Location = new System.Drawing.Point(198, 125);
+            this.tbUtilisateur.Location = new System.Drawing.Point(300, 134);
             this.tbUtilisateur.Name = "tbUtilisateur";
             this.tbUtilisateur.Size = new System.Drawing.Size(121, 20);
             this.tbUtilisateur.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 191);
+            this.label4.Location = new System.Drawing.Point(144, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 16);
             this.label4.TabIndex = 12;
@@ -97,7 +97,7 @@
             // lblAjoutModif
             // 
             this.lblAjoutModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAjoutModif.Location = new System.Drawing.Point(12, 33);
+            this.lblAjoutModif.Location = new System.Drawing.Point(12, 47);
             this.lblAjoutModif.Name = "lblAjoutModif";
             this.lblAjoutModif.Size = new System.Drawing.Size(523, 60);
             this.lblAjoutModif.TabIndex = 13;
@@ -107,7 +107,7 @@
             // btnFermer
             // 
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFermer.Location = new System.Drawing.Point(358, 270);
+            this.btnFermer.Location = new System.Drawing.Point(293, 276);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(107, 79);
             this.btnFermer.TabIndex = 15;
@@ -134,7 +134,7 @@
             this.cbNoTypeUtilisateur.DataSource = this.typeUtilisateurBindingSource1;
             this.cbNoTypeUtilisateur.DisplayMember = "Identification";
             this.cbNoTypeUtilisateur.FormattingEnabled = true;
-            this.cbNoTypeUtilisateur.Location = new System.Drawing.Point(198, 191);
+            this.cbNoTypeUtilisateur.Location = new System.Drawing.Point(300, 200);
             this.cbNoTypeUtilisateur.Name = "cbNoTypeUtilisateur";
             this.cbNoTypeUtilisateur.Size = new System.Drawing.Size(121, 21);
             this.cbNoTypeUtilisateur.TabIndex = 16;
@@ -153,7 +153,7 @@
             // btnEnregistrer
             // 
             this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnregistrer.Location = new System.Drawing.Point(212, 270);
+            this.btnEnregistrer.Location = new System.Drawing.Point(147, 276);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(107, 79);
             this.btnEnregistrer.TabIndex = 17;
