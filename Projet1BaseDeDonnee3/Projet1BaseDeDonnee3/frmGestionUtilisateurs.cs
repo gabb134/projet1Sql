@@ -109,31 +109,40 @@ namespace Projet1BaseDeDonnee3
 
           
 
-                int noUtilisateur = utilisateurBindingSource.Position;
+            int noUtilisateur = utilisateurBindingSource.Position;
             int nbUtilisateurs = utilisateurBindingSource.Count;
 
             if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
             {
 
                 dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
+                
 
                 frmAjout.strNomUtilisateur = utilisateurSelectionne["NomUtilisateur"];
                 frmAjout.strMotdePasse = utilisateurSelectionne["MotDePasse"];
-
+                frmAjout.intType = utilisateurSelectionne["NoTypeUtilisteur"];
 
                 //MessageBox.Show(frmAjout.strMotdePasse);
 
                 //MessageBox.Show(strNomUtilisateur);
-             
 
-                
+               
+
+            }
+            if (frmAjout.ShowDialog() == DialogResult.OK)
+            {
+                //Update de le datagridview pour voir la modification
+                utilisateurDataGridView.CurrentRow.Cells[1].Value = frmAjout.strNomUtilisateurModifier;
+                utilisateurDataGridView.CurrentRow.Cells[2].Value = frmAjout.strMotdePasseModifier;
+                utilisateurDataGridView.CurrentRow.Cells[3].Value = frmAjout.intTypeModier;
+
             }
 
 
             //  frmAjout.strValeur = "b";
 
 
-            frmAjout.Show();
+           /// frmAjout.Show();
 
 
 

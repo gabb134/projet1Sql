@@ -68,6 +68,24 @@
     <Compile Include="frmAjouterUtilisateur.Designer.cs">
       <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGererAssistantEtSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererAssistantEtSoins.Designer.cs">
+      <DependentUpon>frmGererAssistantEtSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGererChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererChambre.Designer.cs">
+      <DependentUpon>frmGererChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGererSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererSoins.Designer.cs">
+      <DependentUpon>frmGererSoins.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionClientsInvites.cs">
       <SubType>Form</SubType>
     </Compile>
