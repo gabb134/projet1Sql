@@ -14,6 +14,8 @@ namespace Projet1BaseDeDonnee3
     {
         public int intChoix;
 
+        public string strNo, strNom, strPrenom, strVille, strPays, strAdresse, strCodePostal, strDate;
+
         public frmClientAjoutModification()
         {
             InitializeComponent();
@@ -30,6 +32,10 @@ namespace Projet1BaseDeDonnee3
                 gbPlaceholder.Text = "Ajout d'un nouveau client";
 
                 btnPlaceholderEnregistrer.Text = "Ajouter le client";
+
+                tbNo.Text = "10";
+
+                tbDate.Text = DateTime.Today.ToString("yyyy-MM-dd");
             }
             else if (intChoix == 2)
             {
@@ -40,7 +46,56 @@ namespace Projet1BaseDeDonnee3
                 gbPlaceholder.Text = "Modifier ce client";
 
                 btnPlaceholderEnregistrer.Text = "Modifier ce client";
+
+                tbNo.Text = strNo;
+                tbNom.Text = strNom;
+                tbPrenom.Text = strPrenom;
+                tbVille.Text = strVille;
+                tbPays.Text = strPays;
+                tbAdresse.Text = strAdresse;
+                tbCodePostal.Text = strCodePostal;
+                tbDate.Text = strDate;
             }
+        }
+
+        private void btnPlaceholderEnregistrer_Click(object sender, EventArgs e)
+        {
+            string strClientNo = tbNo.Text.Trim(),
+                    strClientNom = tbNom.Text.Trim(), 
+                    strClientPrenom = tbPrenom.Text.Trim(), 
+                    strClientVille = tbVille.Text.Trim(), 
+                    strClientPays = tbPays.Text.Trim(), 
+                    strClientAdresse = tbAdresse.Text.Trim(), 
+                    strClientCodePostal = tbCodePostal.Text.Trim(),
+                    strClientDate = tbDate.Text.Trim();
+
+            List<string> lstStrings = new List<string>();
+
+            lstStrings.Add(strClientNo);
+            lstStrings.Add(strClientNom);
+            lstStrings.Add(strClientPrenom);
+            lstStrings.Add(strClientVille);
+            lstStrings.Add(strClientPays);
+            lstStrings.Add(strClientAdresse);
+            lstStrings.Add(strClientCodePostal);
+            lstStrings.Add(strClientDate);
+
+            for (int i = 0; i < lstStrings.Count; i++)
+            {
+                if (lstStrings[i] == "")
+                {
+                    //errMsgClient.SetError(lstStrings[i], "Le mot de passe ne peut pas être vide");
+                }
+            }
+
+            /*if (intChoix == 1)
+            {
+
+            }
+            else if (intChoix == 2)
+            {
+
+            }*/
         }
 
         private void tbDate_TextChanged(object sender, EventArgs e)

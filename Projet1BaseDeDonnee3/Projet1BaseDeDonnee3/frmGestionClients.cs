@@ -47,6 +47,19 @@ namespace Projet1BaseDeDonnee3
 
             frmClientAjout.intChoix = 2;
 
+            dynamic clientSelectionne = clientBindingSource.Current;
+
+            //MessageBox.Show(Convert.ToString(clientSelectionne["NoClient"]));
+
+            frmClientAjout.strNo = Convert.ToString(clientSelectionne["NoClient"]);
+            frmClientAjout.strNom = Convert.ToString(clientSelectionne["Nom"]);
+            frmClientAjout.strPrenom = Convert.ToString(clientSelectionne["Prenom"]);
+            frmClientAjout.strVille = Convert.ToString(clientSelectionne["Ville"]);
+            frmClientAjout.strPays = Convert.ToString(clientSelectionne["Pays"]);
+            frmClientAjout.strAdresse = Convert.ToString(clientSelectionne["Adresse"]);
+            frmClientAjout.strCodePostal = Convert.ToString(clientSelectionne["CodePostal"]);
+            frmClientAjout.strDate = Convert.ToString(clientSelectionne["DateInscription"]);
+
             frmClientAjout.ShowDialog();
         }
     }

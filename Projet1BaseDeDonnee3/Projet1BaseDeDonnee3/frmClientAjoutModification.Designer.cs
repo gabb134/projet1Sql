@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbNo = new System.Windows.Forms.TextBox();
             this.tbDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +49,9 @@
             this.gbPlaceholder = new System.Windows.Forms.GroupBox();
             this.btnPlaceholderEnregistrer = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.errMsgClient = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbPlaceholder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errMsgClient)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,15 +74,14 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "No du client";
             // 
-            // textBox1
+            // tbNo
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(263, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(33, 30);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "50";
+            this.tbNo.Enabled = false;
+            this.tbNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNo.Location = new System.Drawing.Point(263, 69);
+            this.tbNo.Name = "tbNo";
+            this.tbNo.Size = new System.Drawing.Size(33, 30);
+            this.tbNo.TabIndex = 7;
             // 
             // tbDate
             // 
@@ -89,7 +91,6 @@
             this.tbDate.Name = "tbDate";
             this.tbDate.Size = new System.Drawing.Size(119, 30);
             this.tbDate.TabIndex = 9;
-            this.tbDate.Text = "02/10/2019";
             this.tbDate.TextChanged += new System.EventHandler(this.tbDate_TextChanged);
             // 
             // label3
@@ -167,7 +168,7 @@
             this.tbNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNom.Location = new System.Drawing.Point(98, 135);
             this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(100, 30);
+            this.tbNom.Size = new System.Drawing.Size(117, 30);
             this.tbNom.TabIndex = 22;
             // 
             // tbCodePostal
@@ -175,7 +176,7 @@
             this.tbCodePostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCodePostal.Location = new System.Drawing.Point(381, 221);
             this.tbCodePostal.Name = "tbCodePostal";
-            this.tbCodePostal.Size = new System.Drawing.Size(100, 30);
+            this.tbCodePostal.Size = new System.Drawing.Size(115, 30);
             this.tbCodePostal.TabIndex = 23;
             // 
             // tbVille
@@ -183,7 +184,7 @@
             this.tbVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbVille.Location = new System.Drawing.Point(98, 221);
             this.tbVille.Name = "tbVille";
-            this.tbVille.Size = new System.Drawing.Size(100, 30);
+            this.tbVille.Size = new System.Drawing.Size(117, 30);
             this.tbVille.TabIndex = 24;
             // 
             // tbPrenom
@@ -191,7 +192,7 @@
             this.tbPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrenom.Location = new System.Drawing.Point(98, 177);
             this.tbPrenom.Name = "tbPrenom";
-            this.tbPrenom.Size = new System.Drawing.Size(100, 30);
+            this.tbPrenom.Size = new System.Drawing.Size(117, 30);
             this.tbPrenom.TabIndex = 25;
             // 
             // tbAdresse
@@ -199,7 +200,7 @@
             this.tbAdresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAdresse.Location = new System.Drawing.Point(381, 177);
             this.tbAdresse.Name = "tbAdresse";
-            this.tbAdresse.Size = new System.Drawing.Size(100, 30);
+            this.tbAdresse.Size = new System.Drawing.Size(191, 30);
             this.tbAdresse.TabIndex = 26;
             // 
             // tbPays
@@ -207,7 +208,7 @@
             this.tbPays.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPays.Location = new System.Drawing.Point(381, 135);
             this.tbPays.Name = "tbPays";
-            this.tbPays.Size = new System.Drawing.Size(100, 30);
+            this.tbPays.Size = new System.Drawing.Size(115, 30);
             this.tbPays.TabIndex = 27;
             // 
             // gbPlaceholder
@@ -229,6 +230,7 @@
             this.btnPlaceholderEnregistrer.Size = new System.Drawing.Size(175, 63);
             this.btnPlaceholderEnregistrer.TabIndex = 4;
             this.btnPlaceholderEnregistrer.UseVisualStyleBackColor = true;
+            this.btnPlaceholderEnregistrer.Click += new System.EventHandler(this.btnPlaceholderEnregistrer_Click);
             // 
             // btnAnnuler
             // 
@@ -241,11 +243,15 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
+            // errMsgClient
+            // 
+            this.errMsgClient.ContainerControl = this;
+            // 
             // frmClientAjoutModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 467);
+            this.ClientSize = new System.Drawing.Size(583, 467);
             this.Controls.Add(this.gbPlaceholder);
             this.Controls.Add(this.tbPays);
             this.Controls.Add(this.tbAdresse);
@@ -261,12 +267,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbNo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmClientAjoutModification";
             this.Load += new System.EventHandler(this.frmClientAjoutModification_Load);
             this.gbPlaceholder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errMsgClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +283,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNo;
         private System.Windows.Forms.TextBox tbDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -294,5 +301,6 @@
         private System.Windows.Forms.GroupBox gbPlaceholder;
         private System.Windows.Forms.Button btnPlaceholderEnregistrer;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.ErrorProvider errMsgClient;
     }
 }
