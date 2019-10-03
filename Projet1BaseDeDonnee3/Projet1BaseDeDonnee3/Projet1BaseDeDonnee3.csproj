@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="frmGererSoins.Designer.cs">
       <DependentUpon>frmGererSoins.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientAjoutModification.cs">
       <SubType>Form</SubType>
     </Compile>
