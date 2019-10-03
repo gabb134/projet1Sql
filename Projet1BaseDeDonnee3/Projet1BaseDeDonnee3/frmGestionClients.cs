@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet1BaseDeDonnee3
 {
-    public partial class frmGestionClientsInvites : Form
+    public partial class frmGestionClients : Form
     {
-        public frmGestionClientsInvites()
+        public frmGestionClients()
         {
             InitializeComponent();
         }
@@ -25,32 +25,29 @@ namespace Projet1BaseDeDonnee3
 
         }
 
-        private void frmGestionClientsInvites_Load(object sender, EventArgs e)
+        private void frmGestionClients_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Invite'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.inviteTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Invite);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Client'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.clientTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Client);
 
         }
 
-        private void btnGestionClients_Click(object sender, EventArgs e)
+        private void btnAjouterClient_Click(object sender, EventArgs e)
         {
-            frmGestionClients frmGestionClients = new frmGestionClients();
+            frmClientAjoutModification frmClientAjout = new frmClientAjoutModification();
 
-            this.Hide();
-            frmGestionClients.ShowDialog();
-            this.Show();
+            frmClientAjout.intChoix = 1;
+
+            frmClientAjout.ShowDialog();
         }
 
-        private void btnGestionInvites_Click(object sender, EventArgs e)
+        private void btnModifierClient_Click(object sender, EventArgs e)
         {
+            frmClientAjoutModification frmClientAjout = new frmClientAjoutModification();
 
-        }
+            frmClientAjout.intChoix = 2;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            frmClientAjout.ShowDialog();
         }
     }
 }
