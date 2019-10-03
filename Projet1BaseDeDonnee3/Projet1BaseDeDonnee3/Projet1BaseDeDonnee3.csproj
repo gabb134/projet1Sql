@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C403F1D-85ED-49B6-BC13-9781CFCBC6AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Projet1BaseDeDonnee3</RootNamespace>
+    <AssemblyName>Projet1BaseDeDonnee3</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BDTP1Guelleh_MarreroDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDVoyagesGuellehDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConnexionSysteme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnexionSysteme.Designer.cs">
+      <DependentUpon>ConnexionSysteme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAjouterUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjouterUtilisateur.Designer.cs">
+      <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGererAssistantEtSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererAssistantEtSoins.Designer.cs">
+      <DependentUpon>frmGererAssistantEtSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGererChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererChambre.Designer.cs">
+      <DependentUpon>frmGererChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGererSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererSoins.Designer.cs">
+      <DependentUpon>frmGererSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientAjoutModification.Designer.cs">
+      <DependentUpon>frmClientAjoutModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionClients.Designer.cs">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionClientsInvites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionClientsInvites.Designer.cs">
+      <DependentUpon>frmGestionClientsInvites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionUtilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionUtilisateurs.Designer.cs">
+      <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrepose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrepose.Designer.cs">
+      <DependentUpon>MenuPrepose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConnexionSysteme.resx">
+      <DependentUpon>ConnexionSysteme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjouterUtilisateur.resx">
+      <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientAjoutModification.resx">
+      <DependentUpon>frmClientAjoutModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionClients.resx">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionClientsInvites.resx">
+      <DependentUpon>frmGestionClientsInvites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionUtilisateurs.resx">
+      <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrepose.resx">
+      <DependentUpon>MenuPrepose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="BDTP1Guelleh_MarreroDataSet1.xsc">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDTP1Guelleh_MarreroDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDTP1Guelleh_MarreroDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDTP1Guelleh_MarreroDataSet1.xss">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDVoyagesGuellehDataSet.xsc">
+      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDVoyagesGuellehDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDVoyagesGuellehDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDVoyagesGuellehDataSet.xss">
+      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
