@@ -85,6 +85,17 @@
     </Compile>
     <Compile Include="frmGererSoins.Designer.cs">
       <DependentUpon>frmGererSoins.cs</DependentUpon>
+    <Compile Include="frmClientAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientAjoutModification.Designer.cs">
+      <DependentUpon>frmClientAjoutModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionClients.Designer.cs">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionClientsInvites.cs">
       <SubType>Form</SubType>
@@ -117,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAjouterUtilisateur.resx">
       <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientAjoutModification.resx">
+      <DependentUpon>frmClientAjoutModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionClients.resx">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionClientsInvites.resx">
       <DependentUpon>frmGestionClientsInvites.cs</DependentUpon>
