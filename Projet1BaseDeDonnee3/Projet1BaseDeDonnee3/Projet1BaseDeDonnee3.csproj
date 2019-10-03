@@ -97,6 +97,18 @@
     <Compile Include="frmGestionClients.Designer.cs">
       <DependentUpon>frmGestionClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClientAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientAjoutModification.Designer.cs">
+      <DependentUpon>frmClientAjoutModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionClients.Designer.cs">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionClientsInvites.cs">
       <SubType>Form</SubType>
     </Compile>
