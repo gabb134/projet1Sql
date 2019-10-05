@@ -116,6 +116,7 @@
             this.gérerLesSoinsToolStripMenuItem.Name = "gérerLesSoinsToolStripMenuItem";
             this.gérerLesSoinsToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
             this.gérerLesSoinsToolStripMenuItem.Text = "Gérer les soins ";
+            this.gérerLesSoinsToolStripMenuItem.Click += new System.EventHandler(this.gérerLesSoinsToolStripMenuItem_Click);
             // 
             // planifierDesSoinsPourLesClientsEtLeursInvitésToolStripMenuItem
             // 
@@ -128,6 +129,7 @@
             this.gérerLesChambresToolStripMenuItem.Name = "gérerLesChambresToolStripMenuItem";
             this.gérerLesChambresToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
             this.gérerLesChambresToolStripMenuItem.Text = "Gérer les chambres ";
+            this.gérerLesChambresToolStripMenuItem.Click += new System.EventHandler(this.gérerLesChambresToolStripMenuItem_Click);
             // 
             // réserverDesChambrespourLesClientsToolStripMenuItem
             // 

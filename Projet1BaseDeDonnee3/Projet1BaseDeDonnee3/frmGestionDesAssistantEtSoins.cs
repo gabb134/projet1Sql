@@ -31,10 +31,14 @@ namespace Projet1BaseDeDonnee3
 
         private void frmGererAssistantEtSoins_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.AssistantSoin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.assistantSoinTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.AssistantSoin);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Assistant'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.assistantTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Assistant);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Soin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.soinTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Soin);
+
+
 
         }
 
@@ -50,6 +54,11 @@ namespace Projet1BaseDeDonnee3
             this.Hide();
             frmGestionSoins.ShowDialog();
             this.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -72,6 +72,24 @@
     <Compile Include="frmAjoutReservationChambre.Designer.cs">
       <DependentUpon>frmAjoutReservationChambre.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAssistantsAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssistantsAjoutModification.designer.cs">
+      <DependentUpon>frmAssistantsAjoutModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationChambres.designer.cs">
+      <DependentUpon>frmGestionAjoutModificationChambres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationSoinsSeul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationSoinsSeul.designer.cs">
+      <DependentUpon>frmGestionAjoutModificationSoinsSeul.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionDesAssistantEtSoins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +126,23 @@
     <Compile Include="frmGestionDesAssistants.Designer.cs">
       <DependentUpon>frmGestionDesAssistants.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionDesChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesChambres.designer.cs">
+      <DependentUpon>frmGestionDesChambres.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionDesSoins.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGestionDesSoins.Designer.cs">
       <DependentUpon>frmGestionDesSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionDesSoinsSeul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesSoinsSeul.designer.cs">
+      <DependentUpon>frmGestionDesSoinsSeul.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionInvites.cs">
       <SubType>Form</SubType>
@@ -137,6 +167,12 @@
     </Compile>
     <Compile Include="frmGestionReservationChambre.Designer.cs">
       <DependentUpon>frmGestionReservationChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSoinsAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSoinsAjoutModification.designer.cs">
+      <DependentUpon>frmSoinsAjoutModification.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdmin.cs">
       <SubType>Form</SubType>
@@ -164,6 +200,15 @@
     <EmbeddedResource Include="frmAjoutReservationChambre.resx">
       <DependentUpon>frmAjoutReservationChambre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAssistantsAjoutModification.resx">
+      <DependentUpon>frmAssistantsAjoutModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionAjoutModificationChambres.resx">
+      <DependentUpon>frmGestionAjoutModificationChambres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionAjoutModificationSoinsSeul.resx">
+      <DependentUpon>frmGestionAjoutModificationSoinsSeul.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionDesAssistantEtSoins.resx">
       <DependentUpon>frmGestionDesAssistantEtSoins.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,8 +221,14 @@
     <EmbeddedResource Include="frmGestionDesAssistants.resx">
       <DependentUpon>frmGestionDesAssistants.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesChambres.resx">
+      <DependentUpon>frmGestionDesChambres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionDesSoins.resx">
       <DependentUpon>frmGestionDesSoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesSoinsSeul.resx">
+      <DependentUpon>frmGestionDesSoinsSeul.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionInvites.resx">
       <DependentUpon>frmGestionInvites.cs</DependentUpon>
@@ -190,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionReservationChambre.resx">
       <DependentUpon>frmGestionReservationChambre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSoinsAjoutModification.resx">
+      <DependentUpon>frmSoinsAjoutModification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>

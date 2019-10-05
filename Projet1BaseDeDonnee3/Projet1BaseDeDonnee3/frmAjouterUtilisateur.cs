@@ -242,5 +242,10 @@ namespace Projet1BaseDeDonnee3
 
 
         }
+
+        private void lblAjoutModif_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

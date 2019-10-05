@@ -136,6 +136,10 @@ namespace Projet1BaseDeDonnee3
                 utilisateurDataGridView.CurrentRow.Cells[2].Value = frmAjout.strMotdePasseModifier;
                 utilisateurDataGridView.CurrentRow.Cells[3].Value = frmAjout.intTypeModier;
 
+
+                this.Validate();
+                this.utilisateurBindingSource.EndEdit();
+                this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
             }
 
 
