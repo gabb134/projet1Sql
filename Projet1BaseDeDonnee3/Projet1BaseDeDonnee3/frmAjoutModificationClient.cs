@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Projet1BaseDeDonnee3
 {
-    public partial class frmClientAjoutModification : Form
+    public partial class frmAjoutModificationClient : Form
     {
         public int intChoix;
 
         public string strNo, strNom, strPrenom, strVille, strPays, strAdresse, strCodePostal, strDate;
 
-        public frmClientAjoutModification()
+        public frmAjoutModificationClient()
         {
             InitializeComponent();
         }

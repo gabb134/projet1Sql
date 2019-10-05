@@ -1,6 +1,6 @@
 ﻿namespace Projet1BaseDeDonnee3
 {
-    partial class frmClientAjoutModification
+    partial class frmAjoutModificationClient
     {
         /// <summary>
         /// Required designer variable.

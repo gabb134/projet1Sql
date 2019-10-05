@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Projet1BaseDeDonnee3
 {
-    public partial class frmInviteAjoutModification : Form
+    public partial class frmAjoutModificationInvite : Form
     {
         public int intChoix;
         public string strNoInvite = "", strNom = "", strPrenom = "", strNoClient;
 
-        public frmInviteAjoutModification()
+        public frmAjoutModificationInvite()
         {
             InitializeComponent();
         }

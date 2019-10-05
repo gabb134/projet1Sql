@@ -110,7 +110,7 @@ namespace Projet1BaseDeDonnee3
             else
                 intNoInvite = 1;*/
 
-            frmInviteAjoutModification frmInviteAjout = new frmInviteAjoutModification();
+            frmAjoutModificationInvite frmInviteAjout = new frmAjoutModificationInvite();
 
             frmInviteAjout.intChoix = 1;
 
@@ -126,7 +126,7 @@ namespace Projet1BaseDeDonnee3
 
         private void btnModifierInvite_Click(object sender, EventArgs e)
         {
-            frmInviteAjoutModification frmInviteAjout = new frmInviteAjoutModification();
+            frmAjoutModificationInvite frmInviteAjout = new frmAjoutModificationInvite();
 
             frmInviteAjout.intChoix = 2;
 

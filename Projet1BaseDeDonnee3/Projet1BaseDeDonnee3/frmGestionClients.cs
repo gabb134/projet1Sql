@@ -88,7 +88,7 @@ namespace Projet1BaseDeDonnee3
             else
                 intNoClient = 10;
 
-            frmClientAjoutModification frmClientAjout = new frmClientAjoutModification();
+            frmAjoutModificationClient frmClientAjout = new frmAjoutModificationClient();
 
             frmClientAjout.intChoix = 1;
 
@@ -102,7 +102,7 @@ namespace Projet1BaseDeDonnee3
 
         private void btnModifierClient_Click(object sender, EventArgs e)
         {
-            frmClientAjoutModification frmClientAjout = new frmClientAjoutModification();
+            frmAjoutModificationClient frmClientAjout = new frmAjoutModificationClient();
 
             frmClientAjout.intChoix = 2;
 

@@ -40,5 +40,13 @@ namespace Projet1BaseDeDonnee3
         {
 
         }
+
+        private void réserverDesChambresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionReservationChambre frmGestionReservationChambre = new frmGestionReservationChambre();
+            frmGestionReservationChambre.ShowDialog();
+            this.Show();
+        }
     }
 }

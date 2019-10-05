@@ -1,6 +1,6 @@
 ﻿namespace Projet1BaseDeDonnee3
 {
-    partial class frmInviteAjoutModification
+    partial class frmAjoutModificationInvite
     {
         /// <summary>
         /// Required designer variable.
