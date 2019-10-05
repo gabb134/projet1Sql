@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 9);
+            this.label1.Location = new System.Drawing.Point(92, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(242, 32);
             this.label1.TabIndex = 5;
@@ -169,7 +169,7 @@
             this.tbNom.Location = new System.Drawing.Point(98, 135);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(117, 30);
-            this.tbNom.TabIndex = 22;
+            this.tbNom.TabIndex = 1;
             // 
             // tbCodePostal
             // 
@@ -177,7 +177,7 @@
             this.tbCodePostal.Location = new System.Drawing.Point(381, 221);
             this.tbCodePostal.Name = "tbCodePostal";
             this.tbCodePostal.Size = new System.Drawing.Size(115, 30);
-            this.tbCodePostal.TabIndex = 23;
+            this.tbCodePostal.TabIndex = 6;
             // 
             // tbVille
             // 
@@ -185,7 +185,7 @@
             this.tbVille.Location = new System.Drawing.Point(98, 221);
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(117, 30);
-            this.tbVille.TabIndex = 24;
+            this.tbVille.TabIndex = 3;
             // 
             // tbPrenom
             // 
@@ -193,7 +193,7 @@
             this.tbPrenom.Location = new System.Drawing.Point(98, 177);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(117, 30);
-            this.tbPrenom.TabIndex = 25;
+            this.tbPrenom.TabIndex = 2;
             // 
             // tbAdresse
             // 
@@ -201,7 +201,7 @@
             this.tbAdresse.Location = new System.Drawing.Point(381, 177);
             this.tbAdresse.Name = "tbAdresse";
             this.tbAdresse.Size = new System.Drawing.Size(191, 30);
-            this.tbAdresse.TabIndex = 26;
+            this.tbAdresse.TabIndex = 5;
             // 
             // tbPays
             // 
@@ -209,14 +209,14 @@
             this.tbPays.Location = new System.Drawing.Point(381, 135);
             this.tbPays.Name = "tbPays";
             this.tbPays.Size = new System.Drawing.Size(115, 30);
-            this.tbPays.TabIndex = 27;
+            this.tbPays.TabIndex = 4;
             // 
             // gbPlaceholder
             // 
             this.gbPlaceholder.Controls.Add(this.btnPlaceholderEnregistrer);
             this.gbPlaceholder.Controls.Add(this.btnAnnuler);
             this.gbPlaceholder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbPlaceholder.Location = new System.Drawing.Point(17, 336);
+            this.gbPlaceholder.Location = new System.Drawing.Point(60, 335);
             this.gbPlaceholder.Name = "gbPlaceholder";
             this.gbPlaceholder.Size = new System.Drawing.Size(464, 120);
             this.gbPlaceholder.TabIndex = 28;
@@ -228,7 +228,7 @@
             this.btnPlaceholderEnregistrer.Location = new System.Drawing.Point(6, 37);
             this.btnPlaceholderEnregistrer.Name = "btnPlaceholderEnregistrer";
             this.btnPlaceholderEnregistrer.Size = new System.Drawing.Size(175, 63);
-            this.btnPlaceholderEnregistrer.TabIndex = 4;
+            this.btnPlaceholderEnregistrer.TabIndex = 7;
             this.btnPlaceholderEnregistrer.UseVisualStyleBackColor = true;
             this.btnPlaceholderEnregistrer.Click += new System.EventHandler(this.btnPlaceholderEnregistrer_Click);
             // 
@@ -238,7 +238,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(283, 37);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(175, 63);
-            this.btnAnnuler.TabIndex = 5;
+            this.btnAnnuler.TabIndex = 8;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -251,7 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 467);
+            this.ClientSize = new System.Drawing.Size(590, 467);
             this.Controls.Add(this.gbPlaceholder);
             this.Controls.Add(this.tbPays);
             this.Controls.Add(this.tbAdresse);
@@ -270,6 +270,9 @@
             this.Controls.Add(this.tbNo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmClientAjoutModification";
             this.Load += new System.EventHandler(this.frmClientAjoutModification_Load);
             this.gbPlaceholder.ResumeLayout(false);

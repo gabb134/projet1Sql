@@ -10,8 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-
 namespace Projet1BaseDeDonnee3 {
     
     
@@ -56,8 +54,6 @@ namespace Projet1BaseDeDonnee3 {
         
         private global::System.Data.DataRelation relationFK__Chambre__NoTypeC__54A177DD;
         
-        private global::System.Data.DataRelation relationFK__Invite__NoClient__4FDCC2C0;
-        
         private global::System.Data.DataRelation relationFK__PlanifSoi__NoAss__483BA0F8;
         
         private global::System.Data.DataRelation relationFK__PlanifSoi__NoSoi__492FC531;
@@ -69,6 +65,8 @@ namespace Projet1BaseDeDonnee3 {
         private global::System.Data.DataRelation relationFK__Soin__NoTypeSoin__418EA369;
         
         private global::System.Data.DataRelation relationFK__Utilisate__NoTyp__5E2AE217;
+        
+        private global::System.Data.DataRelation relationFK__Invite__NoClient__0D5AD24C;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -483,13 +481,13 @@ namespace Projet1BaseDeDonnee3 {
             this.relationFK__Assistant__NoAss__446B1014 = this.Relations["FK__Assistant__NoAss__446B1014"];
             this.relationFK__Assistant__NoSoi__455F344D = this.Relations["FK__Assistant__NoSoi__455F344D"];
             this.relationFK__Chambre__NoTypeC__54A177DD = this.Relations["FK__Chambre__NoTypeC__54A177DD"];
-            this.relationFK__Invite__NoClient__4FDCC2C0 = this.Relations["FK__Invite__NoClient__4FDCC2C0"];
             this.relationFK__PlanifSoi__NoAss__483BA0F8 = this.Relations["FK__PlanifSoi__NoAss__483BA0F8"];
             this.relationFK__PlanifSoi__NoSoi__492FC531 = this.Relations["FK__PlanifSoi__NoSoi__492FC531"];
             this.relationFK__Reservati__NoCha__587208C1 = this.Relations["FK__Reservati__NoCha__587208C1"];
             this.relationFK__Reservati__NoCli__577DE488 = this.Relations["FK__Reservati__NoCli__577DE488"];
             this.relationFK__Soin__NoTypeSoin__418EA369 = this.Relations["FK__Soin__NoTypeSoin__418EA369"];
             this.relationFK__Utilisate__NoTyp__5E2AE217 = this.Relations["FK__Utilisate__NoTyp__5E2AE217"];
+            this.relationFK__Invite__NoClient__0D5AD24C = this.Relations["FK__Invite__NoClient__0D5AD24C"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -536,10 +534,6 @@ namespace Projet1BaseDeDonnee3 {
                         this.tableTypeChambre.NoTypeChambreColumn}, new global::System.Data.DataColumn[] {
                         this.tableChambre.NoTypeChambreColumn}, false);
             this.Relations.Add(this.relationFK__Chambre__NoTypeC__54A177DD);
-            this.relationFK__Invite__NoClient__4FDCC2C0 = new global::System.Data.DataRelation("FK__Invite__NoClient__4FDCC2C0", new global::System.Data.DataColumn[] {
-                        this.tableClient.NoCLientColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInvite.NoClientColumn}, false);
-            this.Relations.Add(this.relationFK__Invite__NoClient__4FDCC2C0);
             this.relationFK__PlanifSoi__NoAss__483BA0F8 = new global::System.Data.DataRelation("FK__PlanifSoi__NoAss__483BA0F8", new global::System.Data.DataColumn[] {
                         this.tableAssistant.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tablePlanifSoin.NoAssistantColumn}, false);
@@ -564,6 +558,10 @@ namespace Projet1BaseDeDonnee3 {
                         this.tableTypeUtilisateur.NoTypeUtilisteurColumn}, new global::System.Data.DataColumn[] {
                         this.tableUtilisateur.NoTypeUtilisteurColumn}, false);
             this.Relations.Add(this.relationFK__Utilisate__NoTyp__5E2AE217);
+            this.relationFK__Invite__NoClient__0D5AD24C = new global::System.Data.DataRelation("FK__Invite__NoClient__0D5AD24C", new global::System.Data.DataColumn[] {
+                        this.tableClient.NoCLientColumn}, new global::System.Data.DataColumn[] {
+                        this.tableInvite.NoClientColumn}, false);
+            this.Relations.Add(this.relationFK__Invite__NoClient__0D5AD24C);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2100,14 +2098,14 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InviteRow AddInviteRow(int NoInvite, string NomPrenom, ClientRow parentClientRowByFK__Invite__NoClient__4FDCC2C0) {
+            public InviteRow AddInviteRow(int NoInvite, string NomPrenom, ClientRow parentClientRowByFK__Invite__NoClient__0D5AD24C) {
                 InviteRow rowInviteRow = ((InviteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoInvite,
                         NomPrenom,
                         null};
-                if ((parentClientRowByFK__Invite__NoClient__4FDCC2C0 != null)) {
-                    columnValuesArray[2] = parentClientRowByFK__Invite__NoClient__4FDCC2C0[0];
+                if ((parentClientRowByFK__Invite__NoClient__0D5AD24C != null)) {
+                    columnValuesArray[2] = parentClientRowByFK__Invite__NoClient__0D5AD24C[0];
                 }
                 rowInviteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInviteRow);
@@ -4977,23 +4975,23 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InviteRow[] GetInviteRows() {
-                if ((this.Table.ChildRelations["FK__Invite__NoClient__4FDCC2C0"] == null)) {
-                    return new InviteRow[0];
-                }
-                else {
-                    return ((InviteRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Invite__NoClient__4FDCC2C0"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ReservationChambreRow[] GetReservationChambreRows() {
                 if ((this.Table.ChildRelations["FK__Reservati__NoCli__577DE488"] == null)) {
                     return new ReservationChambreRow[0];
                 }
                 else {
                     return ((ReservationChambreRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reservati__NoCli__577DE488"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public InviteRow[] GetInviteRows() {
+                if ((this.Table.ChildRelations["FK__Invite__NoClient__0D5AD24C"] == null)) {
+                    return new InviteRow[0];
+                }
+                else {
+                    return ((InviteRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Invite__NoClient__0D5AD24C"])));
                 }
             }
         }
@@ -5059,10 +5057,10 @@ namespace Projet1BaseDeDonnee3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ClientRow ClientRow {
                 get {
-                    return ((ClientRow)(this.GetParentRow(this.Table.ParentRelations["FK__Invite__NoClient__4FDCC2C0"])));
+                    return ((ClientRow)(this.GetParentRow(this.Table.ParentRelations["FK__Invite__NoClient__0D5AD24C"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Invite__NoClient__4FDCC2C0"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Invite__NoClient__0D5AD24C"]);
                 }
             }
             
@@ -7578,7 +7576,7 @@ SELECT NoChambre, Emplacement, Decorations, NoTypeChambre FROM Chambre WHERE (No
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Client] ([NoCLient], [Nom], [Prenom], [Ville], [Pays], [Adresse], [CodePostal], [DateInscription]) VALUES (@NoCLient, @Nom, @Prenom, @Ville, @Pays, @Adresse, @CodePostal, @DateInscription);
-SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription FROM Client WHERE (NoCLient = @NoCLient)";
+SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription FROM Client WHERE (NoCLient = @NoCLient) ORDER BY NoCLient";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoCLient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoCLient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7591,7 +7589,7 @@ SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription 
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Client] SET [NoCLient] = @NoCLient, [Nom] = @Nom, [Prenom] = @Prenom, [Ville] = @Ville, [Pays] = @Pays, [Adresse] = @Adresse, [CodePostal] = @CodePostal, [DateInscription] = @DateInscription WHERE (([NoCLient] = @Original_NoCLient) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Prenom = 1 AND [Prenom] IS NULL) OR ([Prenom] = @Original_Prenom)) AND ((@IsNull_Ville = 1 AND [Ville] IS NULL) OR ([Ville] = @Original_Ville)) AND ((@IsNull_Pays = 1 AND [Pays] IS NULL) OR ([Pays] = @Original_Pays)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_CodePostal = 1 AND [CodePostal] IS NULL) OR ([CodePostal] = @Original_CodePostal)) AND ((@IsNull_DateInscription = 1 AND [DateInscription] IS NULL) OR ([DateInscription] = @Original_DateInscription)));
-SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription FROM Client WHERE (NoCLient = @NoCLient)";
+SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription FROM Client WHERE (NoCLient = @NoCLient) ORDER BY NoCLient";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoCLient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoCLient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7632,7 +7630,7 @@ SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription F" +
-                "ROM dbo.Client";
+                "ROM dbo.Client order by \r\nNoClient";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8104,10 +8102,10 @@ SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Invite] WHERE (([NoInvite] = @Original_NoInvite) AND ((@IsNull" +
-                "_NomPrenom = 1 AND [NomPrenom] IS NULL) OR ([NomPrenom] = @Original_NomPrenom)) " +
-                "AND ((@IsNull_NoClient = 1 AND [NoClient] IS NULL) OR ([NoClient] = @Original_No" +
-                "Client)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Invite] WHERE (([NoInvite] = @Original_NoInvite) AND ((@IsNull_NomPr" +
+                "enom = 1 AND [NomPrenom] IS NULL) OR ([NomPrenom] = @Original_NomPrenom)) AND ((" +
+                "@IsNull_NoClient = 1 AND [NoClient] IS NULL) OR ([NoClient] = @Original_NoClient" +
+                ")))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoInvite", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoInvite", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NomPrenom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomPrenom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -8116,17 +8114,17 @@ SELECT NoCLient, Nom, Prenom, Ville, Pays, Adresse, CodePostal, DateInscription 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoClient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoClient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Invite] ([NoInvite], [NomPrenom], [NoClient]) VALUES (@NoInvit" +
-                "e, @NomPrenom, @NoClient);\r\nSELECT NoInvite, NomPrenom, NoClient FROM Invite WHE" +
-                "RE (NoInvite = @NoInvite)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Invite] ([NoInvite], [NomPrenom], [NoClient]) VALUES (@NoInvite, @No" +
+                "mPrenom, @NoClient);\r\nSELECT NoInvite, NomPrenom, NoClient FROM Invite WHERE (No" +
+                "Invite = @NoInvite) ORDER BY NoClient";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoInvite", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoInvite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomPrenom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomPrenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoClient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoClient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Invite] SET [NoInvite] = @NoInvite, [NomPrenom] = @NomPrenom, [NoClient] = @NoClient WHERE (([NoInvite] = @Original_NoInvite) AND ((@IsNull_NomPrenom = 1 AND [NomPrenom] IS NULL) OR ([NomPrenom] = @Original_NomPrenom)) AND ((@IsNull_NoClient = 1 AND [NoClient] IS NULL) OR ([NoClient] = @Original_NoClient)));
-SELECT NoInvite, NomPrenom, NoClient FROM Invite WHERE (NoInvite = @NoInvite)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Invite] SET [NoInvite] = @NoInvite, [NomPrenom] = @NomPrenom, [NoClient] = @NoClient WHERE (([NoInvite] = @Original_NoInvite) AND ((@IsNull_NomPrenom = 1 AND [NomPrenom] IS NULL) OR ([NomPrenom] = @Original_NomPrenom)) AND ((@IsNull_NoClient = 1 AND [NoClient] IS NULL) OR ([NoClient] = @Original_NoClient)));
+SELECT NoInvite, NomPrenom, NoClient FROM Invite WHERE (NoInvite = @NoInvite) ORDER BY NoClient";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoInvite", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoInvite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NomPrenom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NomPrenom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8148,11 +8146,22 @@ SELECT NoInvite, NomPrenom, NoClient FROM Invite WHERE (NoInvite = @NoInvite)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NoInvite, NomPrenom, NoClient FROM dbo.Invite";
+            this._commandCollection[0].CommandText = "SELECT        NoInvite, NomPrenom, NoClient\r\nFROM            Invite\r\nORDER BY NoC" +
+                "lient";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "select cast(count(*) as bit) from invite where noClient= @noClient";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noClient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoClient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT NoClient FROM Invite where NoInvite = @noInvite";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noInvite", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoInvite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8337,6 +8346,69 @@ SELECT NoInvite, NomPrenom, NoClient FROM Invite WHERE (NoInvite = @NoInvite)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string NomPrenom, global::System.Nullable<int> NoClient, int Original_NoInvite, string Original_NomPrenom, global::System.Nullable<int> Original_NoClient) {
             return this.Update(Original_NoInvite, NomPrenom, NoClient, Original_NoInvite, Original_NomPrenom, Original_NoClient);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object getClientHasInvite(global::System.Nullable<int> noClient) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((noClient.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(noClient.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object getNoClient(int noInvite) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(noInvite));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     
@@ -8862,12 +8934,17 @@ SELECT NoClient, NoChambre, DateArrivee, DateDepart, NbPersonnes FROM Reservatio
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NoClient, NoChambre, DateArrivee, DateDepart, NbPersonnes FROM dbo.Reserva" +
                 "tionChambre";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT cast(COUNT(*) as bit) FROM ReservationChambre where noClient=@noClient";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noClient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoClient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9060,6 +9137,35 @@ SELECT NoClient, NoChambre, DateArrivee, DateDepart, NbPersonnes FROM Reservatio
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<global::System.DateTime> DateDepart, global::System.Nullable<int> NbPersonnes, int Original_NoClient, int Original_NoChambre, System.DateTime Original_DateArrivee, global::System.Nullable<global::System.DateTime> Original_DateDepart, global::System.Nullable<int> Original_NbPersonnes) {
             return this.Update(Original_NoClient, Original_NoChambre, Original_DateArrivee, DateDepart, NbPersonnes, Original_NoClient, Original_NoChambre, Original_DateArrivee, Original_DateDepart, Original_NbPersonnes);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<bool> getClientHasReservationChambre(int noClient) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(noClient));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<bool>();
+            }
+            else {
+                return new global::System.Nullable<bool>(((bool)(returnValue)));
+            }
         }
     }
     
@@ -10970,8 +11076,6 @@ SELECT NoUtilisateur, NomUtilisateur, MotDePasse, NoTypeUtilisteur FROM Utilisat
         public virtual int Update(string NomUtilisateur, string MotDePasse, global::System.Nullable<int> NoTypeUtilisteur, int Original_NoUtilisateur, string Original_NomUtilisateur, string Original_MotDePasse, global::System.Nullable<int> Original_NoTypeUtilisteur) {
             return this.Update(Original_NoUtilisateur, NomUtilisateur, MotDePasse, NoTypeUtilisteur, Original_NoUtilisateur, Original_NomUtilisateur, Original_MotDePasse, Original_NoTypeUtilisteur);
         }
-
-     
     }
     
     /// <summary>

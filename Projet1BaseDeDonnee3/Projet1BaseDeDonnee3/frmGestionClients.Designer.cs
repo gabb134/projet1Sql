@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bDTP1Guelleh_MarreroDataSet = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSet();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.ClientTableAdapter();
-            this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
             this.label1 = new System.Windows.Forms.Label();
             this.clientDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,46 +39,21 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDTP1Guelleh_MarreroDataSet = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSupprimerClient = new System.Windows.Forms.Button();
             this.btnAjouterClient = new System.Windows.Forms.Button();
             this.btnModifierClient = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            this.clientTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.ClientTableAdapter();
+            this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
+            this.inviteTableAdapter1 = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.InviteTableAdapter();
+            this.reservationChambreTableAdapter1 = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.ReservationChambreTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bDTP1Guelleh_MarreroDataSet
-            // 
-            this.bDTP1Guelleh_MarreroDataSet.DataSetName = "BDTP1Guelleh_MarreroDataSet";
-            this.bDTP1Guelleh_MarreroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataMember = "Client";
-            this.clientBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
-            // 
-            // clientTableAdapter
-            // 
-            this.clientTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AssistantSoinTableAdapter = null;
-            this.tableAdapterManager.AssistantTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChambreTableAdapter = null;
-            this.tableAdapterManager.ClientTableAdapter = this.clientTableAdapter;
-            this.tableAdapterManager.InviteTableAdapter = null;
-            this.tableAdapterManager.PlanifSoinTableAdapter = null;
-            this.tableAdapterManager.ReservationChambreTableAdapter = null;
-            this.tableAdapterManager.SoinTableAdapter = null;
-            this.tableAdapterManager.TypeChambreTableAdapter = null;
-            this.tableAdapterManager.TypeSoinTableAdapter = null;
-            this.tableAdapterManager.TypeUtilisateurTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
             // label1
             // 
@@ -178,6 +149,16 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 125;
             // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "Client";
+            this.clientBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // bDTP1Guelleh_MarreroDataSet
+            // 
+            this.bDTP1Guelleh_MarreroDataSet.DataSetName = "BDTP1Guelleh_MarreroDataSet";
+            this.bDTP1Guelleh_MarreroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSupprimerClient);
@@ -200,6 +181,7 @@
             this.btnSupprimerClient.TabIndex = 7;
             this.btnSupprimerClient.Text = "Supprimer ce client";
             this.btnSupprimerClient.UseVisualStyleBackColor = true;
+            this.btnSupprimerClient.Click += new System.EventHandler(this.btnSupprimerClient_Click);
             // 
             // btnAjouterClient
             // 
@@ -223,20 +205,50 @@
             this.btnModifierClient.UseVisualStyleBackColor = true;
             this.btnModifierClient.Click += new System.EventHandler(this.btnModifierClient_Click);
             // 
+            // clientTableAdapter
+            // 
+            this.clientTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AssistantSoinTableAdapter = null;
+            this.tableAdapterManager.AssistantTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChambreTableAdapter = null;
+            this.tableAdapterManager.ClientTableAdapter = this.clientTableAdapter;
+            this.tableAdapterManager.PlanifSoinTableAdapter = null;
+            this.tableAdapterManager.ReservationChambreTableAdapter = null;
+            this.tableAdapterManager.SoinTableAdapter = null;
+            this.tableAdapterManager.TypeChambreTableAdapter = null;
+            this.tableAdapterManager.TypeSoinTableAdapter = null;
+            this.tableAdapterManager.TypeUtilisateurTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtilisateurTableAdapter = null;
+            // 
+            // inviteTableAdapter1
+            // 
+            this.inviteTableAdapter1.ClearBeforeFill = true;
+            // 
+            // reservationChambreTableAdapter1
+            // 
+            this.reservationChambreTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmGestionClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 423);
+            this.ClientSize = new System.Drawing.Size(1048, 407);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clientDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "frmGestionClients";
             this.Text = "Gestion des clients";
             this.Load += new System.EventHandler(this.frmGestionClients_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,5 +275,7 @@
         private System.Windows.Forms.Button btnSupprimerClient;
         private System.Windows.Forms.Button btnAjouterClient;
         private System.Windows.Forms.Button btnModifierClient;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.InviteTableAdapter inviteTableAdapter1;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.ReservationChambreTableAdapter reservationChambreTableAdapter1;
     }
 }

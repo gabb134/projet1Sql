@@ -26,8 +26,8 @@ namespace Projet1BaseDeDonnee3
             /*tbUtilisateur.Text = "testAdmin";
             tbMotDePasse.Text = "a";
             tbMotDePasse.PasswordChar = '*';*/
-            tbUtilisateur.Text = "testAdmin";
-            tbMotDePasse.Text = "a";
+            tbUtilisateur.Text = "testPrepose";
+            tbMotDePasse.Text = "b";
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)

@@ -87,7 +87,7 @@ create table Client (
 	Ville varchar(50),
 	Pays varchar(50),
 	Adresse varchar(50),
-	CodePostal varchar(50),
+	CodePostal varchar(7),
 	DateInscription datetime
 )
 
@@ -148,14 +148,6 @@ print 'Remplissage des tables ==================================================
 Print  'Remplissage de la TABLE Assistant...'
 insert into Assistant values(1,'Leclerc','Felix','Java','Asistant un')
 insert into Assistant values(2,'Paquin','Eric','C#','Asistant deux')
-insert into Assistant values(3,'Gabriel','Marrero','C#','Asistant trois')
-insert into Assistant values(4,'GUelleh','Mohamed','C#','Asistant trois')
-insert into Assistant values(5,'Kouma','Cedric','C#','Asistant trois')
-insert into Assistant values(6,'Porras','Alex','C#','Asistant trois')
-insert into Assistant values(7,'test','test','C#','Asistant trois')
-insert into Assistant values(8,'test2','test2','C#','Asistant trois')
-insert into Assistant values(9,'test3','tst3','C#','Asistant trois')
-insert into Assistant values(10,'test4','test5','C#','Asistant trois')
 
 Print  'Remplissage de la TABLE TypeSoin...'
 insert into TypeSoin values(1,'TypeSoins un')
@@ -164,16 +156,9 @@ insert into TypeSoin values(2,'TypeSoins deux')
 
 
 
-
-
-
 Print  'Remplissage de la TABLE Soin...'
 insert into Soin values(1,'Le premier soin','2:30',1,10)
 insert into Soin values(2,'Le deuxième soin','1:30',2,30)
-insert into Soin values(3,'Le 3iem soin','1:30',2,30)
-
-
-
 
 
 
@@ -187,22 +172,13 @@ insert into PlanifSoin values(20,2,'2019-05-09 20:20:59',2)
 Print  'Remplissage de la TABLE AssistantSoin...'
 insert into AssistantSoin values(1,1)
 insert into AssistantSoin values(2,2)
-insert into AssistantSoin values(3,3)
-insert into AssistantSoin values(4,1)
-insert into AssistantSoin values(5,2)
-insert into AssistantSoin values(6,3)
-insert into AssistantSoin values(7,1)
-insert into AssistantSoin values(8,2)
-insert into AssistantSoin values(9,1)
-insert into AssistantSoin values(10,2)
+
 
 
 
 Print  'Remplissage de la TABLE Client...'
 insert into Client values(10,'Tremblay','David','Montreal','Canada','3434 rue Thivierge','H8H 2V3','2019-02-06')
 insert into Client values(20,'Gagnon','Samuel','Quebec','Canada','6765 rue Legeault','H9O 2V7','2019-06-14')
-insert into Client values(50,'guelleh','Mohamed','Quebec','Canada','6765 rue Legeault','H9O 2V7','2019-06-14')
-insert into Client values(80,'Marrero','Gabriel','Quebec','Canada','6765 rue Legeault','H9O 2V7','2019-06-14')
 
 
 
@@ -252,4 +228,8 @@ insert into ReservationChambre values (20, 4, '2019-09-10', '2019-09-25', 10)
   insert into Utilisateur values(8,'Cedric','654321',2)
   insert into Utilisateur values(9,'mhg','123',2)
   insert into Utilisateur values(10,'gabo','a',1)
+
+
+
+
 

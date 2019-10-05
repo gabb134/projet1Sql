@@ -140,7 +140,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChambreTableAdapter = null;
             this.tableAdapterManager.ClientTableAdapter = null;
-            this.tableAdapterManager.InviteTableAdapter = null;
+            //this.tableAdapterManager.InviteTableAdapter = null;
             this.tableAdapterManager.PlanifSoinTableAdapter = null;
             this.tableAdapterManager.ReservationChambreTableAdapter = null;
             this.tableAdapterManager.SoinTableAdapter = this.soinTableAdapter;

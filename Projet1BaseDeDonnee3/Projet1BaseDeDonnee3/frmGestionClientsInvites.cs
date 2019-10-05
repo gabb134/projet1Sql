@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,16 +42,53 @@ namespace Projet1BaseDeDonnee3
             this.Hide();
             frmGestionClients.ShowDialog();
             this.Show();
+
+            DisplayDataClient();
         }
 
         private void btnGestionInvites_Click(object sender, EventArgs e)
         {
+            frmGestionInvites frmGestionInvites = new frmGestionInvites();
 
+            this.Hide();
+            frmGestionInvites.ShowDialog();
+            this.Show();
+
+            DisplayDataInvite();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DisplayDataClient()
+        {
+            String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+            SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+            maConnexion.Open();
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from client", maConnexion);
+
+            sqlDataAdapter.Fill(dataTable);
+            clientDataGridView.DataSource = dataTable;
+
+            maConnexion.Close();
+        }
+        private void DisplayDataInvite()
+        {
+            String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+            SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+            maConnexion.Open();
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from invite", maConnexion);
+
+            sqlDataAdapter.Fill(dataTable);
+            inviteDataGridView.DataSource = dataTable;
+
+            maConnexion.Close();
         }
     }
 }

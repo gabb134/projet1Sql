@@ -17,6 +17,7 @@ namespace Projet1BaseDeDonnee3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ConnexionSysteme());
+           // Application.Run(new frmTest());
         }
     }
 }
