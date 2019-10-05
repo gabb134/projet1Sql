@@ -53,6 +53,8 @@ namespace Projet1BaseDeDonnee3
             frmAjoutReservationChambre frmAjoutReservationChambre = new frmAjoutReservationChambre();
 
             frmAjoutReservationChambre.ShowDialog();
+
+            DisplayData();
         }
 
         private void btnSupprimerReservation_Click(object sender, EventArgs e)

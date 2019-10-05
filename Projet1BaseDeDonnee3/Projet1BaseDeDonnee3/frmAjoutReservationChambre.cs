@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,8 @@ namespace Projet1BaseDeDonnee3
 
         private void frmAjoutReservationChambre_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bDTP1Guelleh_MarreroDataSet.getChambreForReservationChambre' table. You can move, or remove it, as needed.
+            this.getChambreForReservationChambreTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.getChambreForReservationChambre);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Client'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.clientTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Client);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Chambre'. Vous pouvez la déplacer ou la supprimer selon les besoins.
@@ -38,6 +41,43 @@ namespace Projet1BaseDeDonnee3
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnAjouterReservationChambre_Click(object sender, EventArgs e)
+        {
+            String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+            SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+            maConnexion.Open();
+
+            SqlTransaction maTransaction = maConnexion.BeginTransaction();
+
+            try
+            {
+                // insert into ReservationChambre values (10, 1, '2019-09-15', '2019-09-23', 2)
+                String maRequeteSQL = "insert into ReservationChambre values ('" +
+                                        cbNoClient.GetItemText(cbNoClient.SelectedItem).ToString().Trim() + "', '" + // cbNoClient.Text.Trim()
+                                        getChambreForReservationChambreDataGridView.CurrentRow.Cells[0].Value.ToString() + "', '" +
+                                        dtpSejourDebut.Value.ToString() + "', '" +
+                                        dtpSejourFin.Value.ToString() + "', '" + 
+                                        numNbPers.Value.ToString() + "')";
+
+                //MessageBox.Show(maRequeteSQL);
+
+                SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
+                maCommande.Transaction = maTransaction;
+
+                maCommande.ExecuteNonQuery();
+                maTransaction.Commit();
+            }
+            catch
+            {
+                maTransaction.Rollback();
+                MessageBox.Show("Transaction échouée");
+            }
+
+            maConnexion.Close(); // Fermer la connexion
+
             this.Close();
         }
     }

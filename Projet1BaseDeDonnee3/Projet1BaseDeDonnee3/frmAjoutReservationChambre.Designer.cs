@@ -45,13 +45,6 @@
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbNoClient = new System.Windows.Forms.ComboBox();
             this.tbNom = new System.Windows.Forms.TextBox();
-            this.numPrixBas = new System.Windows.Forms.NumericUpDown();
-            this.numPrixMoyen = new System.Windows.Forms.NumericUpDown();
-            this.numPrixHaut = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpSejourDebut = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpSejourFin = new System.Windows.Forms.DateTimePicker();
@@ -60,6 +53,15 @@
             this.numNbPers = new System.Windows.Forms.NumericUpDown();
             this.btnAjouterReservationChambre = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.getChambreForReservationChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getChambreForReservationChambreTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.getChambreForReservationChambreTableAdapter();
+            this.getChambreForReservationChambreDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             noCLientLabel = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             prenomLabel = new System.Windows.Forms.Label();
@@ -69,13 +71,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.chambreBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrixBas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrixMoyen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrixHaut)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNbPers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getChambreForReservationChambreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getChambreForReservationChambreDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // noCLientLabel
@@ -104,6 +104,24 @@
             prenomLabel.Size = new System.Drawing.Size(80, 25);
             prenomLabel.TabIndex = 4;
             prenomLabel.Text = "Prénom";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(6, 96);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(105, 25);
+            label6.TabIndex = 2;
+            label6.Text = "Date de fin";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(6, 50);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(134, 25);
+            label7.TabIndex = 0;
+            label7.Text = "Date de début";
             // 
             // label1
             // 
@@ -201,106 +219,6 @@
             this.tbNom.Size = new System.Drawing.Size(120, 30);
             this.tbNom.TabIndex = 8;
             // 
-            // numPrixBas
-            // 
-            this.numPrixBas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPrixBas.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.numPrixBas.Location = new System.Drawing.Point(126, 33);
-            this.numPrixBas.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.numPrixBas.Name = "numPrixBas";
-            this.numPrixBas.Size = new System.Drawing.Size(120, 30);
-            this.numPrixBas.TabIndex = 8;
-            // 
-            // numPrixMoyen
-            // 
-            this.numPrixMoyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPrixMoyen.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.numPrixMoyen.Location = new System.Drawing.Point(126, 100);
-            this.numPrixMoyen.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.numPrixMoyen.Name = "numPrixMoyen";
-            this.numPrixMoyen.Size = new System.Drawing.Size(120, 30);
-            this.numPrixMoyen.TabIndex = 9;
-            // 
-            // numPrixHaut
-            // 
-            this.numPrixHaut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPrixHaut.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.numPrixHaut.Location = new System.Drawing.Point(126, 168);
-            this.numPrixHaut.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.numPrixHaut.Name = "numPrixHaut";
-            this.numPrixHaut.Size = new System.Drawing.Size(120, 30);
-            this.numPrixHaut.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Prix Bas";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Prix Moyen";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Prix Haut";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.numPrixBas);
-            this.groupBox2.Controls.Add(this.numPrixMoyen);
-            this.groupBox2.Controls.Add(this.numPrixHaut);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(37, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(254, 220);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Prix des saisons";
-            // 
             // dtpSejourDebut
             // 
             this.dtpSejourDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,24 +240,6 @@
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Séjour";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(6, 96);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(105, 25);
-            label6.TabIndex = 2;
-            label6.Text = "Date de fin";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(6, 50);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(134, 25);
-            label7.TabIndex = 0;
-            label7.Text = "Date de début";
             // 
             // dtpSejourFin
             // 
@@ -397,17 +297,18 @@
             // btnAjouterReservationChambre
             // 
             this.btnAjouterReservationChambre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterReservationChambre.Location = new System.Drawing.Point(632, 277);
+            this.btnAjouterReservationChambre.Location = new System.Drawing.Point(657, 281);
             this.btnAjouterReservationChambre.Name = "btnAjouterReservationChambre";
             this.btnAjouterReservationChambre.Size = new System.Drawing.Size(254, 63);
             this.btnAjouterReservationChambre.TabIndex = 18;
             this.btnAjouterReservationChambre.Text = "Ajouter cette réservation";
             this.btnAjouterReservationChambre.UseVisualStyleBackColor = true;
+            this.btnAjouterReservationChambre.Click += new System.EventHandler(this.btnAjouterReservationChambre_Click);
             // 
             // btnAnnuler
             // 
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.Location = new System.Drawing.Point(632, 350);
+            this.btnAnnuler.Location = new System.Drawing.Point(657, 358);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(254, 63);
             this.btnAnnuler.TabIndex = 19;
@@ -415,16 +316,78 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
+            // getChambreForReservationChambreBindingSource
+            // 
+            this.getChambreForReservationChambreBindingSource.DataMember = "getChambreForReservationChambre";
+            this.getChambreForReservationChambreBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // getChambreForReservationChambreTableAdapter
+            // 
+            this.getChambreForReservationChambreTableAdapter.ClearBeforeFill = true;
+            // 
+            // getChambreForReservationChambreDataGridView
+            // 
+            this.getChambreForReservationChambreDataGridView.AutoGenerateColumns = false;
+            this.getChambreForReservationChambreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.getChambreForReservationChambreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.getChambreForReservationChambreDataGridView.DataSource = this.getChambreForReservationChambreBindingSource;
+            this.getChambreForReservationChambreDataGridView.Location = new System.Drawing.Point(272, 55);
+            this.getChambreForReservationChambreDataGridView.Name = "getChambreForReservationChambreDataGridView";
+            this.getChambreForReservationChambreDataGridView.Size = new System.Drawing.Size(639, 220);
+            this.getChambreForReservationChambreDataGridView.TabIndex = 19;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoChambre";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NoChambre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Emplacement";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Emplacement";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Decorations";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Decorations";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PrixHaut";
+            this.dataGridViewTextBoxColumn4.HeaderText = "PrixHaut";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PrixBas";
+            this.dataGridViewTextBoxColumn5.HeaderText = "PrixBas";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PrixMoyen";
+            this.dataGridViewTextBoxColumn6.HeaderText = "PrixMoyen";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
             // frmAjoutReservationChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 425);
+            this.ClientSize = new System.Drawing.Size(923, 433);
+            this.Controls.Add(this.getChambreForReservationChambreDataGridView);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnAjouterReservationChambre);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmAjoutReservationChambre";
@@ -435,16 +398,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrixBas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrixMoyen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrixHaut)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNbPers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getChambreForReservationChambreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getChambreForReservationChambreDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,13 +423,6 @@
         private System.Windows.Forms.ComboBox cbNoClient;
         private System.Windows.Forms.TextBox tbNom;
         private System.Windows.Forms.TextBox tbPrenom;
-        private System.Windows.Forms.NumericUpDown numPrixBas;
-        private System.Windows.Forms.NumericUpDown numPrixMoyen;
-        private System.Windows.Forms.NumericUpDown numPrixHaut;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtpSejourDebut;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dtpSejourFin;
@@ -478,5 +431,14 @@
         private System.Windows.Forms.NumericUpDown numNbPers;
         private System.Windows.Forms.Button btnAjouterReservationChambre;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.BindingSource getChambreForReservationChambreBindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.getChambreForReservationChambreTableAdapter getChambreForReservationChambreTableAdapter;
+        private System.Windows.Forms.DataGridView getChambreForReservationChambreDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
