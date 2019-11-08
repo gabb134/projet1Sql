@@ -19,7 +19,7 @@ namespace Projet1BaseDeDonnee3
 
 
         String strUtilisteurConnextion = "";
-
+        public static string utilisateurDatagriview = "";
         public int noUtilisateur;
         public frmGestionUtilisateurs()
         {
@@ -50,7 +50,7 @@ namespace Projet1BaseDeDonnee3
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            utilisateurDatagriview = this.bDTP1Guelleh_MarreroDataSet.Utilisateur.NomUtilisateurColumn.ToString(); // voir comment chercher le nomutilisateur du datagridview
             frmAjout = new frmAjouterUtilisateur();
 
             BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur = bDTP1Guelleh_MarreroDataSet.Utilisateur.NewUtilisateurRow();
@@ -85,7 +85,7 @@ namespace Projet1BaseDeDonnee3
                     }*/
                    
                         utilisateurBindingSource.MoveLast();
-
+                        
                         this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
                         MessageBox.Show("L'utilisateur " + unUtilisateur.NoUtilisateur.ToString() + " a été ajouté", "Ajout d'un utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
@@ -109,31 +109,44 @@ namespace Projet1BaseDeDonnee3
 
           
 
-                int noUtilisateur = utilisateurBindingSource.Position;
+            int noUtilisateur = utilisateurBindingSource.Position;
             int nbUtilisateurs = utilisateurBindingSource.Count;
 
             if (noUtilisateur >= 0 && noUtilisateur < nbUtilisateurs)
             {
 
                 dynamic utilisateurSelectionne = utilisateurBindingSource.Current;
+                
 
                 frmAjout.strNomUtilisateur = utilisateurSelectionne["NomUtilisateur"];
                 frmAjout.strMotdePasse = utilisateurSelectionne["MotDePasse"];
-
+                frmAjout.intType = utilisateurSelectionne["NoTypeUtilisteur"];
 
                 //MessageBox.Show(frmAjout.strMotdePasse);
 
                 //MessageBox.Show(strNomUtilisateur);
-             
 
-                
+               
+
+            }
+            if (frmAjout.ShowDialog() == DialogResult.OK)
+            {
+                //Update de le datagridview pour voir la modification
+                utilisateurDataGridView.CurrentRow.Cells[1].Value = frmAjout.strNomUtilisateurModifier;
+                utilisateurDataGridView.CurrentRow.Cells[2].Value = frmAjout.strMotdePasseModifier;
+                utilisateurDataGridView.CurrentRow.Cells[3].Value = frmAjout.intTypeModier;
+
+
+                this.Validate();
+                this.utilisateurBindingSource.EndEdit();
+                this.utilisateurTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Utilisateur);
             }
 
 
             //  frmAjout.strValeur = "b";
 
 
-            frmAjout.Show();
+           /// frmAjout.Show();
 
 
 
@@ -228,6 +241,6 @@ namespace Projet1BaseDeDonnee3
             // utilisateurBindingSource.RemoveCurrent();
         }
 
-
+       
     }
 }

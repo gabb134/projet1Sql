@@ -46,15 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDTP1Guelleh_MarreroDataSet1.cs">
+      <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDTP1Guelleh_MarreroDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BDVoyagesGuellehDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ConnexionSysteme.cs">
       <SubType>Form</SubType>
@@ -68,17 +66,131 @@
     <Compile Include="frmAjouterUtilisateur.Designer.cs">
       <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAjoutPlanifSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjoutPlanifSoin.Designer.cs">
+      <DependentUpon>frmAjoutPlanifSoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAjoutReservationChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjoutReservationChambre.Designer.cs">
+      <DependentUpon>frmAjoutReservationChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAssistantsAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssistantsAjoutModification.designer.cs">
+      <DependentUpon>frmAssistantsAjoutModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationChambres.designer.cs">
+      <DependentUpon>frmGestionAjoutModificationChambres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationSoinsSeul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionAjoutModificationSoinsSeul.designer.cs">
+      <DependentUpon>frmGestionAjoutModificationSoinsSeul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionDesAssistantEtSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesAssistantEtSoins.Designer.cs">
+      <DependentUpon>frmGestionDesAssistantEtSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGererChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGererChambre.Designer.cs">
+      <DependentUpon>frmGererChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAjoutModificationClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjoutModificationClient.Designer.cs">
+      <DependentUpon>frmAjoutModificationClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionClients.Designer.cs">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionClientsInvites.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGestionClientsInvites.Designer.cs">
       <DependentUpon>frmGestionClientsInvites.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionDesAssistants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesAssistants.Designer.cs">
+      <DependentUpon>frmGestionDesAssistants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionDesChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesChambres.designer.cs">
+      <DependentUpon>frmGestionDesChambres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionDesSoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesSoins.Designer.cs">
+      <DependentUpon>frmGestionDesSoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionDesSoinsSeul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionDesSoinsSeul.designer.cs">
+      <DependentUpon>frmGestionDesSoinsSeul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionInvites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionInvites.Designer.cs">
+      <DependentUpon>frmGestionInvites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionPlanificationSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionPlanificationSoin.Designer.cs">
+      <DependentUpon>frmGestionPlanificationSoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionRapports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionRapports.Designer.cs">
+      <DependentUpon>frmGestionRapports.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionUtilisateurs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGestionUtilisateurs.Designer.cs">
       <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAjoutModificationInvite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjoutModificationInvite.Designer.cs">
+      <DependentUpon>frmAjoutModificationInvite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionReservationChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionReservationChambre.Designer.cs">
+      <DependentUpon>frmGestionReservationChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSoinsAjoutModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSoinsAjoutModification.designer.cs">
+      <DependentUpon>frmSoinsAjoutModification.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdmin.cs">
       <SubType>Form</SubType>
@@ -100,11 +212,65 @@
     <EmbeddedResource Include="frmAjouterUtilisateur.resx">
       <DependentUpon>frmAjouterUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAjoutModificationClient.resx">
+      <DependentUpon>frmAjoutModificationClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjoutPlanifSoin.resx">
+      <DependentUpon>frmAjoutPlanifSoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjoutReservationChambre.resx">
+      <DependentUpon>frmAjoutReservationChambre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAssistantsAjoutModification.resx">
+      <DependentUpon>frmAssistantsAjoutModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionAjoutModificationChambres.resx">
+      <DependentUpon>frmGestionAjoutModificationChambres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionAjoutModificationSoinsSeul.resx">
+      <DependentUpon>frmGestionAjoutModificationSoinsSeul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesAssistantEtSoins.resx">
+      <DependentUpon>frmGestionDesAssistantEtSoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionClients.resx">
+      <DependentUpon>frmGestionClients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionClientsInvites.resx">
       <DependentUpon>frmGestionClientsInvites.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesAssistants.resx">
+      <DependentUpon>frmGestionDesAssistants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesChambres.resx">
+      <DependentUpon>frmGestionDesChambres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesSoins.resx">
+      <DependentUpon>frmGestionDesSoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionDesSoinsSeul.resx">
+      <DependentUpon>frmGestionDesSoinsSeul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionInvites.resx">
+      <DependentUpon>frmGestionInvites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionPlanificationSoin.resx">
+      <DependentUpon>frmGestionPlanificationSoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionRapports.resx">
+      <DependentUpon>frmGestionRapports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionUtilisateurs.resx">
       <DependentUpon>frmGestionUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjoutModificationInvite.resx">
+      <DependentUpon>frmAjoutModificationInvite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionReservationChambre.resx">
+      <DependentUpon>frmGestionReservationChambre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSoinsAjoutModification.resx">
+      <DependentUpon>frmSoinsAjoutModification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
@@ -132,17 +298,6 @@
     </None>
     <None Include="BDTP1Guelleh_MarreroDataSet1.xss">
       <DependentUpon>BDTP1Guelleh_MarreroDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="BDVoyagesGuellehDataSet.xsc">
-      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BDVoyagesGuellehDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDVoyagesGuellehDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BDVoyagesGuellehDataSet.xss">
-      <DependentUpon>BDVoyagesGuellehDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

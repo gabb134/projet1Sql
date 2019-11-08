@@ -14,15 +14,21 @@ using System.Data.SqlClient;
 namespace Projet1BaseDeDonnee3
 {
     public partial class frmAjouterUtilisateur : Form
-    {
+    {//voir comment verifier si l'utilisateur ajouté n'est pas le meme que celui qui existe déjà
 
         public BDTP1Guelleh_MarreroDataSet.UtilisateurRow unUtilisateur;
         public String strValeur = "";
         public String strNomUtilisateur;
         public String strMotdePasse;
+        public int intType;
 
-       // public String strNomUtilisateurSelectionnee;
-       // public String strMotDePasseSelectionnee;
+
+        public String strNomUtilisateurModifier;
+        public String strMotdePasseModifier;
+        public int intTypeModier;
+
+        // public String strNomUtilisateurSelectionnee;
+        // public String strMotDePasseSelectionnee;
         public int intidUilisateur = 0;
         public frmAjouterUtilisateur()
         {
@@ -58,19 +64,37 @@ namespace Projet1BaseDeDonnee3
             if (strValeur.Equals("a")) // Ajout
             {
                 //cbModifier.Enabled = false;
+                this.Text = "Ajout des utilateurs";
             }
             else if (strValeur.Equals("b")) // Modification
             {
                 //Remplir les labels avec les id utilisateur
                 //cbModifier.Enabled = true;
                 lblAjoutModif.Text = "Modification d'un utilisateur";
-
+                
                 tbUtilisateur.Text = strNomUtilisateur;
                 tbMotDePasse.Text = strMotdePasse;
-                cbNoTypeUtilisateur.Enabled = false;
-                // MessageBox.Show(strNomUtilisateur);
 
-                
+             //  MessageBox.Show(intType.ToString());
+                if (intType == 1)
+                {
+                    cbNoTypeUtilisateur.Text = "Admin";
+
+                }
+                else if(intType == 2)
+                {
+                    cbNoTypeUtilisateur.Text = "Préposé";
+                }
+
+                //cbNoTypeUtilisateur.Enabled = false;
+                // MessageBox.Show(strNomUtilisateur);
+                this.Text = "Modification des utilisateurs";
+                String strNomUtilisateurConnexion = ConnexionSysteme.strUtilisateurConnexion;
+
+                if(strNomUtilisateurConnexion == tbUtilisateur.Text)
+                {
+                    cbNoTypeUtilisateur.Enabled = false;
+                }
 
 
             }
@@ -83,7 +107,7 @@ namespace Projet1BaseDeDonnee3
         {
             if (strValeur.Equals("a")) //ajout
             {
-            //    MessageBox.Show("Ajout");
+                //    MessageBox.Show("Ajout");
 
                 string strNomUtilisateur = tbUtilisateur.Text.Trim();
                 string strMotDePasse = tbMotDePasse.Text.Trim();
@@ -108,8 +132,18 @@ namespace Projet1BaseDeDonnee3
                         }
                         else
                         {
+                            
                             errMessage.SetError(cbNoTypeUtilisateur, "");
-                            unUtilisateur.NomUtilisateur = strNomUtilisateur;
+
+                            //parcourir le datagridview et verifier si l'utilisateur que je veux ajouter n'a pas le même nom que celui qui est dans le dataGridView
+
+                            //foreach(DataGridView row in )
+
+                            MessageBox.Show(frmGestionUtilisateurs.utilisateurDatagriview);
+                          
+
+
+                                unUtilisateur.NomUtilisateur = strNomUtilisateur;
                             unUtilisateur.MotDePasse = strMotDePasse;
                             unUtilisateur.NoTypeUtilisteur = Convert.ToInt32(cbNoTypeUtilisateur.SelectedValue.ToString());
                             DialogResult = DialogResult.OK;
@@ -121,38 +155,99 @@ namespace Projet1BaseDeDonnee3
             }
             else if (strValeur.Equals("b")) //modification
             {
-                MessageBox.Show("modification");
-                MessageBox.Show(strNomUtilisateur);
-                //***Utiliser les donnees recuperer de l'autre forme
 
-
-             //   String strNomUtilisateurModif = tbUtilisateur.Text;
-               // String strMotDePasseModif = tbMotDePasse.Text;
-                // Ouvrir la connexion
-                String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
-                SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
-                   maConnexion.Open();
-
-                   String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = " + "\'" + tbUtilisateur.Text + "\'" + "where NomUtilisateur = " + "'" + strNomUtilisateur + "'";
-                    String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateur + "'";
-
-
-                SqlCommand maCommande1 = new SqlCommand(maRequeteUpdateNom, maConnexion);
-                maCommande1.ExecuteNonQuery();
-                SqlCommand maCommande2 = new SqlCommand(maRequeteUpdateMotDePasse, maConnexion);
-
-                 maCommande2.ExecuteNonQuery();
                
+                int intNoTypeChoisi = 0;
+                if(cbNoTypeUtilisateur.Text == "Admin") {
+                    intNoTypeChoisi = 1;
+                }
+                else if(cbNoTypeUtilisateur.Text == "Préposé")
+                {
+                    intNoTypeChoisi = 2;
+                }
 
-                //   MessageBox.Show(intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 1\n"+ intLignesModifies.ToString() + " ligne(s) modifiée(s) dans la commande 2");
-                //DialogResult = DialogResult.OK;
+                string strNomUtilisateur = tbUtilisateur.Text.Trim();
+                string strMotDePasse = tbMotDePasse.Text.Trim();
 
-                // Fermer la connexion
-                maConnexion.Close();
+                if (tbUtilisateur.Text == "")
+                {
+                    errMessage.SetError(tbUtilisateur, "Le nom de l'utilisateur ne peut pas être vide");
+                }
+                else
+                {
+                    errMessage.SetError(tbUtilisateur, "");
+                    if (tbMotDePasse.Text == "")
+                    {
+                        errMessage.SetError(tbMotDePasse, "Le mot de passe ne peut pas être vide");
+                    }
+                    else
+                    {
+                        errMessage.SetError(tbMotDePasse, "");
+                        if (cbNoTypeUtilisateur.Text == "")
+                        {
+                            errMessage.SetError(cbNoTypeUtilisateur, "Le no type utilisateur ne peut pas être vide");
+                        }
+                        else
+                        {
+                          
+                            errMessage.SetError(cbNoTypeUtilisateur, "");
+                            
+                            
+                            // Ouvrir la connexion
+                            String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+                            SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                            maConnexion.Open();
 
+                            SqlTransaction maTransaction = maConnexion.BeginTransaction();
+                            try
+                            {
+
+                                String maRequeteUpdateNom = "update Utilisateur set NomUtilisateur = '" + tbUtilisateur.Text + "'" + ", MotDePasse = '" + tbMotDePasse.Text + "'" + ", NoTypeUtilisteur = '" + intNoTypeChoisi + "'" + "where NomUtilisateur = '" + strNomUtilisateur + "'";
+                                //String maRequeteUpdateMotDePasse = "update Utilisateur set MotDePasse = " + "\'" +tbMotDePasse.Text+"\'" + "where NomUtilisateur = " +"'"+ strNomUtilisateur + "'";
+
+
+
+                                SqlCommand maCommande1 = new SqlCommand(maRequeteUpdateNom, maConnexion);
+                                maCommande1.Transaction = maTransaction;
+                                maCommande1.ExecuteNonQuery();
+
+                             
+                                maTransaction.Commit();
+                                strNomUtilisateurModifier = tbUtilisateur.Text;
+                                strMotdePasseModifier = tbMotDePasse.Text;
+                                intTypeModier = intNoTypeChoisi;
+
+                            }
+                            catch
+                            {
+                               
+                                    maTransaction.Rollback();
+                                    MessageBox.Show("Transaction échouée");
+                                
+
+
+
+                            }
+                            // Fermer la connexion
+                            maConnexion.Close();
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+
+                        }
+                    }
+                }
+
+            
+                
+                
             }
             
 
+
+        }
+
+        private void lblAjoutModif_Click(object sender, EventArgs e)
+        {
 
         }
     }

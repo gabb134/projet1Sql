@@ -15,6 +15,10 @@ namespace Projet1BaseDeDonnee3
     {
 
         frmGestionUtilisateurs frmGestionUtil = new frmGestionUtilisateurs();
+        frmGestionDesAssistantEtSoins frmGererAsstantEtSoins = new frmGestionDesAssistantEtSoins();
+        frmGestionDesSoinsSeul frmGestionSoinsSeul = new frmGestionDesSoinsSeul();
+        frmGestionDesChambres frmGestionChambres = new frmGestionDesChambres();
+
         
         public MenuAdmin()
         {
@@ -49,6 +53,59 @@ namespace Projet1BaseDeDonnee3
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
             //allo
+        }
+
+        private void gérerLesAssistantsEtLesSoinsQuilsOffrentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGererAsstantEtSoins.ShowDialog();
+            this.Show();
+        }
+
+        private void gérerLesSoinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionSoinsSeul.ShowDialog();
+            this.Show();
+        }
+
+        private void gérerLesChambresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionChambres.ShowDialog();
+            this.Show();
+        }
+
+        private void gérerLesClientsEtLeursInvitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionClientsInvites frmGestionClientsInvites = new frmGestionClientsInvites();
+            frmGestionClientsInvites.ShowDialog();
+            this.Show();
+        }
+
+        private void planifierDesSoinsPourLesClientsEtLeursInvitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionPlanificationSoin frmGestionPlanificationSoin = new frmGestionPlanificationSoin();
+            frmGestionPlanificationSoin.ShowDialog();
+            this.Show();
+        }
+
+        private void réserverDesChambrespourLesClientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionReservationChambre frmGestionReservationChambre = new frmGestionReservationChambre();
+            frmGestionReservationChambre.ShowDialog();
+            this.Show();
+        }
+
+        private void visualiserDesRapportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmGestionRapports frmGestionRapports = new frmGestionRapports();
+            frmGestionRapports.ShowDialog();
+            this.Show();
         }
     }
 }

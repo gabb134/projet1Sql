@@ -44,9 +44,23 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnGestionClients = new System.Windows.Forms.Button();
+            this.inviteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inviteTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.InviteTableAdapter();
+            this.btnGestionInvites = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.inviteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.inviteDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inviteDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bDTP1Guelleh_MarreroDataSet
@@ -94,11 +108,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.clientDataGridView.DataSource = this.clientBindingSource;
-            this.clientDataGridView.Location = new System.Drawing.Point(14, 52);
-            this.clientDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clientDataGridView.Location = new System.Drawing.Point(10, 42);
             this.clientDataGridView.Name = "clientDataGridView";
             this.clientDataGridView.RowHeadersWidth = 51;
-            this.clientDataGridView.Size = new System.Drawing.Size(1364, 281);
+            this.clientDataGridView.Size = new System.Drawing.Size(1023, 228);
             this.clientDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -169,10 +182,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(627, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(470, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 39);
+            this.label1.Size = new System.Drawing.Size(103, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Clients";
             // 
@@ -180,28 +192,112 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(627, 483);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(131, 295);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 39);
+            this.label2.Size = new System.Drawing.Size(97, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Invités";
             // 
+            // btnGestionClients
+            // 
+            this.btnGestionClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionClients.Location = new System.Drawing.Point(6, 37);
+            this.btnGestionClients.Name = "btnGestionClients";
+            this.btnGestionClients.Size = new System.Drawing.Size(301, 63);
+            this.btnGestionClients.TabIndex = 4;
+            this.btnGestionClients.Text = "Gestion des clients";
+            this.btnGestionClients.UseVisualStyleBackColor = true;
+            this.btnGestionClients.Click += new System.EventHandler(this.btnGestionClients_Click);
+            // 
+            // inviteBindingSource
+            // 
+            this.inviteBindingSource.DataMember = "Invite";
+            this.inviteBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // inviteTableAdapter
+            // 
+            this.inviteTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnGestionInvites
+            // 
+            this.btnGestionInvites.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionInvites.Location = new System.Drawing.Point(6, 139);
+            this.btnGestionInvites.Name = "btnGestionInvites";
+            this.btnGestionInvites.Size = new System.Drawing.Size(301, 63);
+            this.btnGestionInvites.TabIndex = 5;
+            this.btnGestionInvites.Text = "Gestion des invités";
+            this.btnGestionInvites.UseVisualStyleBackColor = true;
+            this.btnGestionInvites.Click += new System.EventHandler(this.btnGestionInvites_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnGestionClients);
+            this.groupBox1.Controls.Add(this.btnGestionInvites);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(720, 330);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(313, 208);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gestion des clients et des invités";
+            // 
+            // inviteBindingSource1
+            // 
+            this.inviteBindingSource1.DataMember = "FK__Invite__NoClient__0D5AD24C";
+            this.inviteBindingSource1.DataSource = this.clientBindingSource;
+            // 
+            // inviteDataGridView1
+            // 
+            this.inviteDataGridView1.AutoGenerateColumns = false;
+            this.inviteDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inviteDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.inviteDataGridView1.DataSource = this.inviteBindingSource1;
+            this.inviteDataGridView1.Location = new System.Drawing.Point(12, 330);
+            this.inviteDataGridView1.Name = "inviteDataGridView1";
+            this.inviteDataGridView1.Size = new System.Drawing.Size(355, 220);
+            this.inviteDataGridView1.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "NoInvite";
+            this.dataGridViewTextBoxColumn12.HeaderText = "NoInvite";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "NomPrenom";
+            this.dataGridViewTextBoxColumn13.HeaderText = "NomPrenom";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "NoClient";
+            this.dataGridViewTextBoxColumn14.HeaderText = "NoClient";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
             // frmGestionClientsInvites
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 910);
+            this.ClientSize = new System.Drawing.Size(1053, 556);
+            this.Controls.Add(this.inviteDataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clientDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGestionClientsInvites";
-            this.Text = "frmGestionClientsInvites";
+            this.Text = "Gestion des clients et des invités";
             this.Load += new System.EventHandler(this.frmGestionClientsInvites_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inviteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inviteDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +320,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnGestionClients;
+        private System.Windows.Forms.BindingSource inviteBindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.InviteTableAdapter inviteTableAdapter;
+        private System.Windows.Forms.Button btnGestionInvites;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.BindingSource inviteBindingSource1;
+        private System.Windows.Forms.DataGridView inviteDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }

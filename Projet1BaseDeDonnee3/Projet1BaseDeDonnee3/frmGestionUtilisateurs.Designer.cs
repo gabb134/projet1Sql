@@ -36,26 +36,28 @@
             this.utilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.utilisateurTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.UtilisateurTableAdapter();
             this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
+            this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeUtilisateurTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter();
             this.utilisateurDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.typeUtilisateurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeUtilisateurTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAjouter
             // 
             this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(656, 101);
+            this.btnAjouter.Location = new System.Drawing.Point(27, 41);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(107, 79);
+            this.btnAjouter.Size = new System.Drawing.Size(299, 62);
             this.btnAjouter.TabIndex = 0;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -64,9 +66,9 @@
             // btnModifier
             // 
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(656, 228);
+            this.btnModifier.Location = new System.Drawing.Point(347, 41);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(107, 79);
+            this.btnModifier.Size = new System.Drawing.Size(299, 62);
             this.btnModifier.TabIndex = 1;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -75,9 +77,9 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(656, 348);
+            this.btnSupprimer.Location = new System.Drawing.Point(662, 41);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(107, 79);
+            this.btnSupprimer.Size = new System.Drawing.Size(299, 62);
             this.btnSupprimer.TabIndex = 2;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -92,7 +94,6 @@
             // 
             this.utilisateurBindingSource.DataMember = "Utilisateur";
             this.utilisateurBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
-//            this.utilisateurBindingSource.PositionChanged += new System.EventHandler(this.utilisateurBindingSource_PositionChanged);
             // 
             // utilisateurTableAdapter
             // 
@@ -115,6 +116,25 @@
             this.tableAdapterManager.UpdateOrder = Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = this.utilisateurTableAdapter;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(302, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(523, 60);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Gestion des utilisateurs";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // typeUtilisateurBindingSource
+            // 
+            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
+            this.typeUtilisateurBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // typeUtilisateurTableAdapter
+            // 
+            this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
+            // 
             // utilisateurDataGridView
             // 
             this.utilisateurDataGridView.AutoGenerateColumns = false;
@@ -125,10 +145,10 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.utilisateurDataGridView.DataSource = this.utilisateurBindingSource;
-            this.utilisateurDataGridView.Location = new System.Drawing.Point(36, 125);
+            this.utilisateurDataGridView.Location = new System.Drawing.Point(334, 173);
             this.utilisateurDataGridView.Name = "utilisateurDataGridView";
-            this.utilisateurDataGridView.Size = new System.Drawing.Size(444, 220);
-            this.utilisateurDataGridView.TabIndex = 4;
+            this.utilisateurDataGridView.Size = new System.Drawing.Size(447, 220);
+            this.utilisateurDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -154,42 +174,35 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "NoTypeUtilisteur";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(523, 60);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Gestion des utilisateurs";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // typeUtilisateurBindingSource
-            // 
-            this.typeUtilisateurBindingSource.DataMember = "TypeUtilisateur";
-            this.typeUtilisateurBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
-            // 
-            // typeUtilisateurTableAdapter
-            // 
-            this.typeUtilisateurTableAdapter.ClearBeforeFill = true;
+            this.groupBox1.Controls.Add(this.btnAjouter);
+            this.groupBox1.Controls.Add(this.btnModifier);
+            this.groupBox1.Controls.Add(this.btnSupprimer);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(30, 433);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1023, 120);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gestion des utilisateurs";
             // 
             // frmGestionUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 556);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1188, 603);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.utilisateurDataGridView);
-            this.Controls.Add(this.btnSupprimer);
-            this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.btnAjouter);
+            this.Controls.Add(this.label1);
             this.Name = "frmGestionUtilisateurs";
-            this.Text = "frmGestionUtilisateurs";
+            this.Text = "Gestion des utilisateurs";
             this.Load += new System.EventHandler(this.frmGestionUtilisateurs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -203,13 +216,14 @@
         private System.Windows.Forms.BindingSource utilisateurBindingSource;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.UtilisateurTableAdapter utilisateurTableAdapter;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource typeUtilisateurBindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter typeUtilisateurTableAdapter;
         private System.Windows.Forms.DataGridView utilisateurDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource typeUtilisateurBindingSource;
-        private BDTP1Guelleh_MarreroDataSetTableAdapters.TypeUtilisateurTableAdapter typeUtilisateurTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

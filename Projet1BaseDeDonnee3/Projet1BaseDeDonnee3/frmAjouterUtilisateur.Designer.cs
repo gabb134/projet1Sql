@@ -53,33 +53,33 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 157);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.Size = new System.Drawing.Size(127, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Mot de passe :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 129);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(65, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 16);
+            this.label2.Size = new System.Drawing.Size(162, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nom de l\'utilisateur";
             // 
             // tbMotDePasse
             // 
-            this.tbMotDePasse.Location = new System.Drawing.Point(198, 158);
+            this.tbMotDePasse.Location = new System.Drawing.Point(233, 179);
             this.tbMotDePasse.Name = "tbMotDePasse";
             this.tbMotDePasse.Size = new System.Drawing.Size(121, 20);
             this.tbMotDePasse.TabIndex = 7;
             // 
             // tbUtilisateur
             // 
-            this.tbUtilisateur.Location = new System.Drawing.Point(198, 125);
+            this.tbUtilisateur.Location = new System.Drawing.Point(233, 146);
             this.tbUtilisateur.Name = "tbUtilisateur";
             this.tbUtilisateur.Size = new System.Drawing.Size(121, 20);
             this.tbUtilisateur.TabIndex = 6;
@@ -87,27 +87,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 191);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(65, 208);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 16);
+            this.label4.Size = new System.Drawing.Size(164, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "No type utilisateur :";
             // 
             // lblAjoutModif
             // 
-            this.lblAjoutModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAjoutModif.Location = new System.Drawing.Point(12, 33);
+            this.lblAjoutModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAjoutModif.Location = new System.Drawing.Point(-57, 55);
             this.lblAjoutModif.Name = "lblAjoutModif";
             this.lblAjoutModif.Size = new System.Drawing.Size(523, 60);
             this.lblAjoutModif.TabIndex = 13;
             this.lblAjoutModif.Text = "Ajout d\'un utilisateur";
             this.lblAjoutModif.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAjoutModif.Click += new System.EventHandler(this.lblAjoutModif_Click);
             // 
             // btnFermer
             // 
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFermer.Location = new System.Drawing.Point(358, 270);
+            this.btnFermer.Location = new System.Drawing.Point(245, 303);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(107, 79);
             this.btnFermer.TabIndex = 15;
@@ -134,7 +135,7 @@
             this.cbNoTypeUtilisateur.DataSource = this.typeUtilisateurBindingSource1;
             this.cbNoTypeUtilisateur.DisplayMember = "Identification";
             this.cbNoTypeUtilisateur.FormattingEnabled = true;
-            this.cbNoTypeUtilisateur.Location = new System.Drawing.Point(198, 191);
+            this.cbNoTypeUtilisateur.Location = new System.Drawing.Point(233, 212);
             this.cbNoTypeUtilisateur.Name = "cbNoTypeUtilisateur";
             this.cbNoTypeUtilisateur.Size = new System.Drawing.Size(121, 21);
             this.cbNoTypeUtilisateur.TabIndex = 16;
@@ -153,7 +154,7 @@
             // btnEnregistrer
             // 
             this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnregistrer.Location = new System.Drawing.Point(212, 270);
+            this.btnEnregistrer.Location = new System.Drawing.Point(99, 303);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(107, 79);
             this.btnEnregistrer.TabIndex = 17;
@@ -183,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 382);
+            this.ClientSize = new System.Drawing.Size(446, 424);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.cbNoTypeUtilisateur);
             this.Controls.Add(this.btnFermer);

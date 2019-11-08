@@ -22,12 +22,12 @@ namespace Projet1BaseDeDonnee3
         public ConnexionSysteme()
         {
             InitializeComponent();
-
-            /*tbUtilisateur.Text = "testAdmin";
-            tbMotDePasse.Text = "a";
-            tbMotDePasse.PasswordChar = '*';*/
             tbUtilisateur.Text = "testAdmin";
             tbMotDePasse.Text = "a";
+            /*
+            tbMotDePasse.PasswordChar = '*';*/
+            /*tbUtilisateur.Text = "testPrepose";
+            tbMotDePasse.Text = "b";*/
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
