@@ -1,11 +1,18 @@
-Projet 1 Base de données 3
+Projet 1 Bd3
 
-choses à faire 
+chose � faire :
 
-- Gestion des utilisateurs (ajout, suppression et modification) 
+Gestio utilisateurs 
 
-o Ajout :   Tous les champs sont obligatoires.   Les noms des utilisateurs doivent être uniques et non modifiables.  
- 
-o Modification :  Un utilisateur ne peut modifier son propre type d’utilisateur. Cependant, il peut modifier le type des autres utilisateurs.  
- 
-o Suppression :  Un utilisateur ne peut supprimer son propre compte, mais peut supprimer d’autres utilisateurs. On ne devrait jamais supprimer l’administrateur initial (exple no 1). 
+1. regler le fait qu'il ne peut pas avoir 2 utilisateurs avec le m�me nom (�a marche)
+2. relger le fait que dans le datagrodview, il faut voir prepose ou admin au lieu de 1 ou 2
+
+
+Gestion des assistant et leurs soins 
+
+1. voir comment fair epour qu'on voit les soins des assiatant dans les datagrid view
+2. Pouvoir ajouter des soins, modifier et supprimer des soins a des assitants
+
+Gestion des soins
+
+1. regler la suppressions des soins

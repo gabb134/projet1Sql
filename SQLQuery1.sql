@@ -10,3 +10,5 @@ select * from TypeUtilisateur
 update Utilisateur set NomUtilisateur = 'gabo' where NomUtilisateur = 'gab'
 
 
+
+select NomUtilisateur from Utilisateur

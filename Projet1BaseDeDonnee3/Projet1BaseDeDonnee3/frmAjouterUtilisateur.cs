@@ -136,19 +136,39 @@ namespace Projet1BaseDeDonnee3
                             errMessage.SetError(cbNoTypeUtilisateur, "");
 
                             //parcourir le datagridview et verifier si l'utilisateur que je veux ajouter n'a pas le même nom que celui qui est dans le dataGridView
+                            String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
+                            SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
+                            maConnexion.Open();
 
-                            //foreach(DataGridView row in )
+                            string maRequeteNomUtilisateur = "select NomUtilisateur from Utilisateur where NomUtilisateur = @nomEntre";
 
-                            MessageBox.Show(frmGestionUtilisateurs.utilisateurDatagriview);
-                          
+                            SqlCommand maCommande = new SqlCommand(maRequeteNomUtilisateur, maConnexion);
+
+                            SqlParameter monParametreSQL = new SqlParameter("@nomEntre", strNomUtilisateur);
+                            maCommande.Parameters.Add(monParametreSQL);
+
+                            dynamic nomUtil =  maCommande.ExecuteScalar();
+
+                            MessageBox.Show(strNomUtilisateur);
+                            // MessageBox.Show(nomUtil.ToString());
+                            if(nomUtil != null) // nom utilisateur existe alors il ne peut pas le creer
+                            {
+                                errMessage.SetError(tbUtilisateur, "Le nom de l'utilisateur existe déjà, veuillez insérer un autre.");
+                            }
+                            else// Nom utilisateur n'existe pas,m lors il peut le créee
+                            {
+                                errMessage.SetError(tbUtilisateur, "");
+                               unUtilisateur.NomUtilisateur = strNomUtilisateur;
+                                unUtilisateur.MotDePasse = strMotDePasse;
+                                unUtilisateur.NoTypeUtilisteur = Convert.ToInt32(cbNoTypeUtilisateur.SelectedValue.ToString());
+                                DialogResult = DialogResult.OK;
+
+                                this.Close();
+                            }
+
+                            maConnexion.Close();
 
 
-                                unUtilisateur.NomUtilisateur = strNomUtilisateur;
-                            unUtilisateur.MotDePasse = strMotDePasse;
-                            unUtilisateur.NoTypeUtilisteur = Convert.ToInt32(cbNoTypeUtilisateur.SelectedValue.ToString());
-                            DialogResult = DialogResult.OK;
-
-                            this.Close();
                         }
                     }
                 }
