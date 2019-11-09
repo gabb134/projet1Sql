@@ -45,11 +45,14 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.utilisateur1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.utilisateur1TableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.Utilisateur1TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.utilisateur1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -187,6 +190,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion des utilisateurs";
             // 
+            // utilisateur1BindingSource
+            // 
+            this.utilisateur1BindingSource.DataMember = "Utilisateur1";
+            this.utilisateur1BindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // utilisateur1TableAdapter
+            // 
+            this.utilisateur1TableAdapter.ClearBeforeFill = true;
+            // 
             // frmGestionUtilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +215,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeUtilisateurBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilisateurDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.utilisateur1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +238,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.BindingSource utilisateur1BindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.Utilisateur1TableAdapter utilisateur1TableAdapter;
     }
 }

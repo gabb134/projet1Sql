@@ -60,5 +60,10 @@ namespace Projet1BaseDeDonnee3
         {
 
         }
+
+        private void soinDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
