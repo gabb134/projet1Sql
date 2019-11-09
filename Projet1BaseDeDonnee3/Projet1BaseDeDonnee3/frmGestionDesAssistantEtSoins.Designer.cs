@@ -31,34 +31,34 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.assistantDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGestionAssistant = new System.Windows.Forms.Button();
+            this.btnGestionSoins = new System.Windows.Forms.Button();
+            this.assistantSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDTP1Guelleh_MarreroDataSet = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSet();
             this.soinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.soinTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.SoinTableAdapter();
             this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
             this.assistantTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantTableAdapter();
-            this.assistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.assistantDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGestionAssistant = new System.Windows.Forms.Button();
-            this.btnGestionSoins = new System.Windows.Forms.Button();
-            this.assistantSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assistantSoinTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantSoinTableAdapter();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soinDataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +76,96 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 354);
+            this.label2.Location = new System.Drawing.Point(512, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 32);
+            this.label2.Size = new System.Drawing.Size(274, 32);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Soins";
+            this.label2.Text = "Soins des assistants";
+            // 
+            // assistantDataGridView
+            // 
+            this.assistantDataGridView.AutoGenerateColumns = false;
+            this.assistantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assistantDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.assistantDataGridView.DataSource = this.assistantBindingSource;
+            this.assistantDataGridView.Location = new System.Drawing.Point(12, 81);
+            this.assistantDataGridView.Name = "assistantDataGridView";
+            this.assistantDataGridView.Size = new System.Drawing.Size(447, 248);
+            this.assistantDataGridView.TabIndex = 5;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnGestionAssistant);
+            this.groupBox1.Controls.Add(this.btnGestionSoins);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(309, 399);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(339, 208);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gestion des assistants et des soins";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnGestionAssistant
+            // 
+            this.btnGestionAssistant.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionAssistant.Location = new System.Drawing.Point(19, 38);
+            this.btnGestionAssistant.Name = "btnGestionAssistant";
+            this.btnGestionAssistant.Size = new System.Drawing.Size(301, 63);
+            this.btnGestionAssistant.TabIndex = 4;
+            this.btnGestionAssistant.Text = "Gestion des assistant";
+            this.btnGestionAssistant.UseVisualStyleBackColor = true;
+            this.btnGestionAssistant.Click += new System.EventHandler(this.btnGestionAssistant_Click);
+            // 
+            // btnGestionSoins
+            // 
+            this.btnGestionSoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionSoins.Location = new System.Drawing.Point(19, 139);
+            this.btnGestionSoins.Name = "btnGestionSoins";
+            this.btnGestionSoins.Size = new System.Drawing.Size(301, 63);
+            this.btnGestionSoins.TabIndex = 5;
+            this.btnGestionSoins.Text = "Gestion des soins";
+            this.btnGestionSoins.UseVisualStyleBackColor = true;
+            this.btnGestionSoins.Click += new System.EventHandler(this.btnGestionSoins_Click);
+            // 
+            // assistantSoinBindingSource
+            // 
+            this.assistantSoinBindingSource.DataMember = "FK__Assistant__NoAss__446B1014";
+            this.assistantSoinBindingSource.DataSource = this.assistantBindingSource;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NoAssistant";
+            this.dataGridViewTextBoxColumn6.HeaderText = "NoAssistant";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Prenom";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Prenom";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Nom";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Nom";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Specialites";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Specialites";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // assistantBindingSource
+            // 
+            this.assistantBindingSource.DataMember = "Assistant";
+            this.assistantBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            this.assistantBindingSource.PositionChanged += new System.EventHandler(this.assistantBindingSource_PositionChanged);
             // 
             // bDTP1Guelleh_MarreroDataSet
             // 
@@ -117,123 +202,9 @@
             // 
             this.assistantTableAdapter.ClearBeforeFill = true;
             // 
-            // assistantBindingSource
-            // 
-            this.assistantBindingSource.DataMember = "Assistant";
-            this.assistantBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
-            // 
-            // assistantDataGridView
-            // 
-            this.assistantDataGridView.AutoGenerateColumns = false;
-            this.assistantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assistantDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.assistantDataGridView.DataSource = this.assistantBindingSource;
-            this.assistantDataGridView.Location = new System.Drawing.Point(12, 81);
-            this.assistantDataGridView.Name = "assistantDataGridView";
-            this.assistantDataGridView.Size = new System.Drawing.Size(447, 248);
-            this.assistantDataGridView.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NoAssistant";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NoAssistant";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Prenom";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Prenom";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Nom";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Nom";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Specialites";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Specialites";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnGestionAssistant);
-            this.groupBox1.Controls.Add(this.btnGestionSoins);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(582, 373);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 208);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gestion des assistants et des soins";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btnGestionAssistant
-            // 
-            this.btnGestionAssistant.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionAssistant.Location = new System.Drawing.Point(19, 38);
-            this.btnGestionAssistant.Name = "btnGestionAssistant";
-            this.btnGestionAssistant.Size = new System.Drawing.Size(301, 63);
-            this.btnGestionAssistant.TabIndex = 4;
-            this.btnGestionAssistant.Text = "Gestion des assistant";
-            this.btnGestionAssistant.UseVisualStyleBackColor = true;
-            this.btnGestionAssistant.Click += new System.EventHandler(this.btnGestionAssistant_Click);
-            // 
-            // btnGestionSoins
-            // 
-            this.btnGestionSoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionSoins.Location = new System.Drawing.Point(19, 139);
-            this.btnGestionSoins.Name = "btnGestionSoins";
-            this.btnGestionSoins.Size = new System.Drawing.Size(301, 63);
-            this.btnGestionSoins.TabIndex = 5;
-            this.btnGestionSoins.Text = "Gestion des soins";
-            this.btnGestionSoins.UseVisualStyleBackColor = true;
-            this.btnGestionSoins.Click += new System.EventHandler(this.btnGestionSoins_Click);
-            // 
-            // assistantSoinBindingSource
-            // 
-            this.assistantSoinBindingSource.DataMember = "FK__Assistant__NoAss__446B1014";
-            this.assistantSoinBindingSource.DataSource = this.assistantBindingSource;
-            // 
             // assistantSoinTableAdapter
             // 
             this.assistantSoinTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Prix";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Prix";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NoTypeSoin";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NoTypeSoin";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Duree";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Duree";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoSoin";
-            this.dataGridViewTextBoxColumn1.HeaderText = "NoSoin";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // soinDataGridView
             // 
@@ -246,17 +217,46 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.soinDataGridView.DataSource = this.soinBindingSource;
-            this.soinDataGridView.Location = new System.Drawing.Point(12, 400);
+            this.soinDataGridView.Location = new System.Drawing.Point(502, 81);
             this.soinDataGridView.Name = "soinDataGridView";
-            this.soinDataGridView.Size = new System.Drawing.Size(547, 181);
+            this.soinDataGridView.Size = new System.Drawing.Size(431, 248);
             this.soinDataGridView.TabIndex = 7;
-            this.soinDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.soinDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoSoin";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NoSoin";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Duree";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Duree";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NoTypeSoin";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NoTypeSoin";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Prix";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Prix";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // frmGestionDesAssistantEtSoins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 680);
+            this.ClientSize = new System.Drawing.Size(981, 626);
             this.Controls.Add(this.soinDataGridView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.assistantDataGridView);
@@ -265,12 +265,12 @@
             this.Name = "frmGestionDesAssistantEtSoins";
             this.Text = "Gestion des assistant et des soins";
             this.Load += new System.EventHandler(this.frmGererAssistantEtSoins_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.assistantSoinBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,11 +297,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.BindingSource assistantSoinBindingSource;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantSoinTableAdapter assistantSoinTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView soinDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }

@@ -120,8 +120,8 @@ namespace Projet1BaseDeDonnee3
                                    // unSoinsSeul.NoSoin = Convert.ToInt32(tbSoin.Text);
                                     unSoinsSeul.NoTypeSoin = Convert.ToInt32(cbTypeSoin.SelectedValue.ToString());
                                     unSoinsSeul.Description = tbDescription.Text;
-                                    unSoinsSeul.Duree = DateTime.Parse(tbDuree.Text);
-                                    unSoinsSeul.Prix = Convert.ToDecimal(tbPrix.Text);
+                                    unSoinsSeul.Duree =Convert.ToInt32(tbDuree.Text);
+                                    unSoinsSeul.Prix = Convert.ToInt32(tbPrix.Text);
 
                                     DialogResult = DialogResult.OK;
                                     this.Close();

@@ -3121,7 +3121,7 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoinRow AddSoinRow(int NoSoin, string Description, System.DateTime Duree, TypeSoinRow parentTypeSoinRowByFK__Soin__NoTypeSoin__418EA369, decimal Prix) {
+            public SoinRow AddSoinRow(int NoSoin, string Description, int Duree, TypeSoinRow parentTypeSoinRowByFK__Soin__NoTypeSoin__418EA369, int Prix) {
                 SoinRow rowSoinRow = ((SoinRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoSoin,
@@ -3175,11 +3175,11 @@ namespace Projet1BaseDeDonnee3 {
                 base.Columns.Add(this.columnNoSoin);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
-                this.columnDuree = new global::System.Data.DataColumn("Duree", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnDuree = new global::System.Data.DataColumn("Duree", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDuree);
                 this.columnNoTypeSoin = new global::System.Data.DataColumn("NoTypeSoin", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoTypeSoin);
-                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrix);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNoSoin}, true));
@@ -6078,10 +6078,10 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Duree {
+            public int Duree {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableSoin.DureeColumn]));
+                        return ((int)(this[this.tableSoin.DureeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Duree\' dans la table \'Soin\' est DBNull.", e);
@@ -6110,10 +6110,10 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal Prix {
+            public int Prix {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSoin.PrixColumn]));
+                        return ((int)(this[this.tableSoin.PrixColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Prix\' dans la table \'Soin\' est DBNull.", e);
@@ -10575,11 +10575,17 @@ SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @N
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM dbo.Soin";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        NoSoin, Description, Duree, NoTypeSoin, Prix\r\nFROM            Soin\r" +
+                "\nWHERE        (NoSoin = @NoSoin)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoSoin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10601,6 +10607,32 @@ SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @N
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BDTP1Guelleh_MarreroDataSet.SoinDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BDTP1Guelleh_MarreroDataSet.SoinDataTable dataTable = new BDTP1Guelleh_MarreroDataSet.SoinDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BDTP1Guelleh_MarreroDataSet.SoinDataTable dataTable, int NoSoin) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NoSoin));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BDTP1Guelleh_MarreroDataSet.SoinDataTable GetDataBy(int NoSoin) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NoSoin));
             BDTP1Guelleh_MarreroDataSet.SoinDataTable dataTable = new BDTP1Guelleh_MarreroDataSet.SoinDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -88,8 +88,8 @@ namespace Projet1BaseDeDonnee3
                                 //Ajout dans la table Soin
                                 unSoin.NoTypeSoin = Convert.ToInt32(cbTypeSoin.SelectedValue.ToString());
                                 unSoin.Description = tbDescription.Text;
-                                unSoin.Duree = DateTime.Parse(tbDuree.Text);
-                                unSoin.Prix = Convert.ToDecimal(tbPrix.Text);
+                                unSoin.Duree =Convert.ToInt32(tbDuree.Text);
+                                unSoin.Prix = Convert.ToInt32(tbPrix.Text);
 
                               
 

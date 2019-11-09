@@ -16,3 +16,8 @@ Gestion des assistant et leurs soins
 Gestion des soins
 
 1. regler la suppressions des soins
+
+
+TypeCHambre 
+
+1. faire type chambre au complet

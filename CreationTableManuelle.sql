@@ -50,7 +50,7 @@ print ''
 CREATE TABLE Soin (
    NoSoin		INT primary key(NoSoin),
    Description	varchar(50),
-   Duree        DATETIME,
+   Duree        INT,
    NoTypeSoin		INT foreign key(NoTypeSoin) references TypeSoin(NoTypeSoin),
    Prix         NUMERIC(10,2)
    --CONSTRAINT pk_NoSoin  PRIMARY KEY(NoSoin)
@@ -157,8 +157,8 @@ insert into TypeSoin values(2,'TypeSoins deux')
 
 
 Print  'Remplissage de la TABLE Soin...'
-insert into Soin values(1,'Le premier soin','2:30',1,10)
-insert into Soin values(2,'Le deuxième soin','1:30',2,30)
+insert into Soin values(1,'Le premier soin',30,1,10)
+insert into Soin values(2,'Le deuxième soin',20,2,30)
 
 
 
