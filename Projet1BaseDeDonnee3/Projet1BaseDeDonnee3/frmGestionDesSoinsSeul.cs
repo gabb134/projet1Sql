@@ -63,8 +63,14 @@ namespace Projet1BaseDeDonnee3
                     bDTP1Guelleh_MarreroDataSet.Soin.AddSoinRow(unSoinsSeul);
 
                     soinBindingSource.MoveLast();
-
-                    this.soinTableAdapter1.Update(this.bDTP1Guelleh_MarreroDataSet.Soin);
+                  //  try
+                   // {
+                        this.soinTableAdapter1.Update(this.bDTP1Guelleh_MarreroDataSet.Soin);
+                  //  }
+                   // catch(Exception e1)
+                   //MessageBox.Show(e1.ToString());
+                  //  }
+                
 
                     MessageBox.Show("Le soin " + unSoinsSeul.NoSoin.ToString() + " a été ajouté", "Ajout d'un soin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -91,7 +97,7 @@ namespace Projet1BaseDeDonnee3
 
                // frmAjoutModifSoinsSeul.intNoSoin = SoinSelectionne["NoSoin"];
                 frmAjoutModifSoinsSeul.intNoTypeSoin = SoinSelectionne["NoTypeSoin"];
-                frmAjoutModifSoinsSeul.dtDate = Convert.ToDateTime(SoinSelectionne["Duree"]);
+                frmAjoutModifSoinsSeul.intDate = Convert.ToInt32(SoinSelectionne["Duree"]);
                 frmAjoutModifSoinsSeul.strDescription = SoinSelectionne["Description"];
                 frmAjoutModifSoinsSeul.intPrix =Convert.ToInt32( SoinSelectionne["Prix"]);
 
@@ -179,7 +185,7 @@ namespace Projet1BaseDeDonnee3
 
                     this.Validate();
                     this.soinBindingSource.EndEdit();
-                    this.tableAdapterManager.UpdateAll(this.bDTP1Guelleh_MarreroDataSet);
+                    this.soinTableAdapter1.Update(this.bDTP1Guelleh_MarreroDataSet);
 
                 MessageBox.Show("Vous venez de supprimer!");
                 }

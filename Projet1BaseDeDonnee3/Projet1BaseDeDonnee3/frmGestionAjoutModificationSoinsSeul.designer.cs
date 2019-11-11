@@ -36,10 +36,8 @@
             System.Windows.Forms.Label noSoinLabel;
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
-            this.tbPrix = new System.Windows.Forms.TextBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tbSoin = new System.Windows.Forms.TextBox();
-            this.tbDuree = new System.Windows.Forms.TextBox();
             this.lblAjoutModif = new System.Windows.Forms.Label();
             this.bDTP1GuellehMarreroDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDTP1Guelleh_MarreroDataSet = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSet();
@@ -55,6 +53,8 @@
             this.assistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assistantTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantTableAdapter();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbDuree = new System.Windows.Forms.NumericUpDown();
+            this.tbPrix = new System.Windows.Forms.NumericUpDown();
             prixLabel = new System.Windows.Forms.Label();
             noTypeSoinLabel = new System.Windows.Forms.Label();
             dureeLabel = new System.Windows.Forms.Label();
@@ -68,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDuree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPrix)).BeginInit();
             this.SuspendLayout();
             // 
             // prixLabel
@@ -142,13 +144,6 @@
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
-            // tbPrix
-            // 
-            this.tbPrix.Location = new System.Drawing.Point(199, 256);
-            this.tbPrix.Name = "tbPrix";
-            this.tbPrix.Size = new System.Drawing.Size(100, 20);
-            this.tbPrix.TabIndex = 42;
-            // 
             // tbDescription
             // 
             this.tbDescription.Location = new System.Drawing.Point(199, 195);
@@ -162,13 +157,6 @@
             this.tbSoin.Name = "tbSoin";
             this.tbSoin.Size = new System.Drawing.Size(100, 20);
             this.tbSoin.TabIndex = 39;
-            // 
-            // tbDuree
-            // 
-            this.tbDuree.Location = new System.Drawing.Point(199, 229);
-            this.tbDuree.Name = "tbDuree";
-            this.tbDuree.Size = new System.Drawing.Size(100, 20);
-            this.tbDuree.TabIndex = 43;
             // 
             // lblAjoutModif
             // 
@@ -243,6 +231,7 @@
             // 
             this.cbTypeSoin.DataSource = this.typeSoinBindingSource;
             this.cbTypeSoin.DisplayMember = "NoTypeSoin";
+            this.cbTypeSoin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeSoin.FormattingEnabled = true;
             this.cbTypeSoin.Location = new System.Drawing.Point(202, 139);
             this.cbTypeSoin.Name = "cbTypeSoin";
@@ -263,15 +252,49 @@
             // 
             this.errMessage.ContainerControl = this;
             // 
+            // tbDuree
+            // 
+            this.tbDuree.Location = new System.Drawing.Point(199, 230);
+            this.tbDuree.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.tbDuree.Name = "tbDuree";
+            this.tbDuree.Size = new System.Drawing.Size(100, 20);
+            this.tbDuree.TabIndex = 45;
+            this.tbDuree.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tbPrix
+            // 
+            this.tbPrix.Location = new System.Drawing.Point(199, 262);
+            this.tbPrix.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.tbPrix.Name = "tbPrix";
+            this.tbPrix.Size = new System.Drawing.Size(100, 20);
+            this.tbPrix.TabIndex = 46;
+            this.tbPrix.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // frmGestionAjoutModificationSoinsSeul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 450);
+            this.ClientSize = new System.Drawing.Size(475, 481);
+            this.Controls.Add(this.tbPrix);
+            this.Controls.Add(this.tbDuree);
             this.Controls.Add(this.cbTypeSoin);
             this.Controls.Add(this.lblAjoutModif);
-            this.Controls.Add(this.tbDuree);
-            this.Controls.Add(this.tbPrix);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.tbSoin);
             this.Controls.Add(prixLabel);
@@ -292,6 +315,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDuree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,10 +326,8 @@
 
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Button btnFermer;
-        private System.Windows.Forms.TextBox tbPrix;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.TextBox tbSoin;
-        private System.Windows.Forms.TextBox tbDuree;
         private System.Windows.Forms.Label lblAjoutModif;
         private System.Windows.Forms.BindingSource bDTP1GuellehMarreroDataSetBindingSource;
         private BDTP1Guelleh_MarreroDataSet bDTP1Guelleh_MarreroDataSet;
@@ -320,5 +343,7 @@
         private System.Windows.Forms.BindingSource assistantBindingSource;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantTableAdapter assistantTableAdapter;
         private System.Windows.Forms.ErrorProvider errMessage;
+        private System.Windows.Forms.NumericUpDown tbDuree;
+        private System.Windows.Forms.NumericUpDown tbPrix;
     }
 }

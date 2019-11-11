@@ -15,7 +15,7 @@ namespace Projet1BaseDeDonnee3
 
         public String strValeur;
         public BDTP1Guelleh_MarreroDataSet.SoinRow unSoinsSeul;
-        public DateTime dtDate;
+        public int intDate;
         public String strDescription;
       //  public int intNoSoin;
         public int intNoTypeSoin;
@@ -47,16 +47,18 @@ namespace Projet1BaseDeDonnee3
                 this.Text = "Ajout des soins";
                 lblAjoutModif.Text = "Ajout des soins";
                 tbSoin.Enabled = false;
-            }else if (strValeur.Equals("b")) //Lorque le form modifier affiche
+              
+            }
+            else if (strValeur.Equals("b")) //Lorque le form modifier affiche
             {
                 this.Text = "Modification des soins";
                 lblAjoutModif.Text = "Modification des soins";
 
                // tbSoin.Text = intNoSoin.ToString();
                 tbDescription.Text = strDescription;
-                tbDuree.Text = Convert.ToString(dtDate);
-               
-                tbPrix.Text = intPrix.ToString("#.##") + " $";
+                tbDuree.Text = Convert.ToString(intDate);
+
+                tbPrix.Text = intPrix.ToString("#.##");
                 //cbTypeSoin.Text = Convert.ToString(intNoTypeSoin);
                  if(intNoTypeSoin == 1)
                  {
@@ -120,8 +122,10 @@ namespace Projet1BaseDeDonnee3
                                    // unSoinsSeul.NoSoin = Convert.ToInt32(tbSoin.Text);
                                     unSoinsSeul.NoTypeSoin = Convert.ToInt32(cbTypeSoin.SelectedValue.ToString());
                                     unSoinsSeul.Description = tbDescription.Text;
-                                    unSoinsSeul.Duree =Convert.ToInt32(tbDuree.Text);
-                                    unSoinsSeul.Prix = Convert.ToInt32(tbPrix.Text);
+                              //  MessageBox.Show(unSoinsSeul.Duree.GetType().ToString());
+                                unSoinsSeul.Duree = Convert.ToInt32(tbDuree.Text);
+                                //unSoinsSeul.Duree = DateTime.Now;
+                                unSoinsSeul.Prix = Convert.ToInt32(tbPrix.Text);
 
                                     DialogResult = DialogResult.OK;
                                     this.Close();

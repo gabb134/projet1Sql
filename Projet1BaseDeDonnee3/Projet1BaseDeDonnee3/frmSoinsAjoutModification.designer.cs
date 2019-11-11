@@ -42,8 +42,6 @@
             this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
             this.lblAjoutModif = new System.Windows.Forms.Label();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tbDuree = new System.Windows.Forms.TextBox();
-            this.tbPrix = new System.Windows.Forms.TextBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tbSoin = new System.Windows.Forms.TextBox();
             this.typeSoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,6 +54,8 @@
             this.typeSoinBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.typeSoinBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.cbTypeSoin = new System.Windows.Forms.ComboBox();
+            this.tbDuree = new System.Windows.Forms.NumericUpDown();
+            this.tbPrix = new System.Windows.Forms.NumericUpDown();
             prixLabel = new System.Windows.Forms.Label();
             dureeLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -71,7 +71,59 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKSoinNoTypeSoin418EA369BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDuree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPrix)).BeginInit();
             this.SuspendLayout();
+            // 
+            // prixLabel
+            // 
+            prixLabel.AutoSize = true;
+            prixLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            prixLabel.Location = new System.Drawing.Point(112, 246);
+            prixLabel.Name = "prixLabel";
+            prixLabel.Size = new System.Drawing.Size(43, 20);
+            prixLabel.TabIndex = 49;
+            prixLabel.Text = "Prix:";
+            // 
+            // dureeLabel
+            // 
+            dureeLabel.AutoSize = true;
+            dureeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dureeLabel.Location = new System.Drawing.Point(112, 212);
+            dureeLabel.Name = "dureeLabel";
+            dureeLabel.Size = new System.Drawing.Size(108, 20);
+            dureeLabel.TabIndex = 47;
+            dureeLabel.Text = "Duree (min):";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descriptionLabel.Location = new System.Drawing.Point(112, 183);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(105, 20);
+            descriptionLabel.TabIndex = 46;
+            descriptionLabel.Text = "Description:";
+            // 
+            // noSoinLabel
+            // 
+            noSoinLabel.AutoSize = true;
+            noSoinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            noSoinLabel.Location = new System.Drawing.Point(112, 154);
+            noSoinLabel.Name = "noSoinLabel";
+            noSoinLabel.Size = new System.Drawing.Size(77, 20);
+            noSoinLabel.TabIndex = 45;
+            noSoinLabel.Text = "No Soin:";
+            // 
+            // noTypeSoinLabel
+            // 
+            noTypeSoinLabel.AutoSize = true;
+            noTypeSoinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            noTypeSoinLabel.Location = new System.Drawing.Point(100, 128);
+            noTypeSoinLabel.Name = "noTypeSoinLabel";
+            noTypeSoinLabel.Size = new System.Drawing.Size(120, 20);
+            noTypeSoinLabel.TabIndex = 55;
+            noTypeSoinLabel.Text = "No Type Soin:";
             // 
             // btnEnregistrer
             // 
@@ -140,20 +192,6 @@
             // 
             this.errMessage.ContainerControl = this;
             // 
-            // tbDuree
-            // 
-            this.tbDuree.Location = new System.Drawing.Point(235, 216);
-            this.tbDuree.Name = "tbDuree";
-            this.tbDuree.Size = new System.Drawing.Size(100, 20);
-            this.tbDuree.TabIndex = 53;
-            // 
-            // tbPrix
-            // 
-            this.tbPrix.Location = new System.Drawing.Point(235, 243);
-            this.tbPrix.Name = "tbPrix";
-            this.tbPrix.Size = new System.Drawing.Size(100, 20);
-            this.tbPrix.TabIndex = 52;
-            // 
             // tbDescription
             // 
             this.tbDescription.Location = new System.Drawing.Point(235, 182);
@@ -167,46 +205,6 @@
             this.tbSoin.Name = "tbSoin";
             this.tbSoin.Size = new System.Drawing.Size(100, 20);
             this.tbSoin.TabIndex = 50;
-            // 
-            // prixLabel
-            // 
-            prixLabel.AutoSize = true;
-            prixLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            prixLabel.Location = new System.Drawing.Point(112, 246);
-            prixLabel.Name = "prixLabel";
-            prixLabel.Size = new System.Drawing.Size(43, 20);
-            prixLabel.TabIndex = 49;
-            prixLabel.Text = "Prix:";
-            // 
-            // dureeLabel
-            // 
-            dureeLabel.AutoSize = true;
-            dureeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dureeLabel.Location = new System.Drawing.Point(112, 212);
-            dureeLabel.Name = "dureeLabel";
-            dureeLabel.Size = new System.Drawing.Size(108, 20);
-            dureeLabel.TabIndex = 47;
-            dureeLabel.Text = "Duree (min):";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descriptionLabel.Location = new System.Drawing.Point(112, 183);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(105, 20);
-            descriptionLabel.TabIndex = 46;
-            descriptionLabel.Text = "Description:";
-            // 
-            // noSoinLabel
-            // 
-            noSoinLabel.AutoSize = true;
-            noSoinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            noSoinLabel.Location = new System.Drawing.Point(112, 154);
-            noSoinLabel.Name = "noSoinLabel";
-            noSoinLabel.Size = new System.Drawing.Size(77, 20);
-            noSoinLabel.TabIndex = 45;
-            noSoinLabel.Text = "No Soin:";
             // 
             // typeSoinBindingSource
             // 
@@ -255,6 +253,7 @@
             // 
             this.cbTypeSoin.DataSource = this.typeSoinBindingSource;
             this.cbTypeSoin.DisplayMember = "NoTypeSoin";
+            this.cbTypeSoin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeSoin.FormattingEnabled = true;
             this.cbTypeSoin.Location = new System.Drawing.Point(235, 130);
             this.cbTypeSoin.Name = "cbTypeSoin";
@@ -262,25 +261,49 @@
             this.cbTypeSoin.TabIndex = 54;
             this.cbTypeSoin.ValueMember = "NoTypeSoin";
             // 
-            // noTypeSoinLabel
+            // tbDuree
             // 
-            noTypeSoinLabel.AutoSize = true;
-            noTypeSoinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            noTypeSoinLabel.Location = new System.Drawing.Point(100, 128);
-            noTypeSoinLabel.Name = "noTypeSoinLabel";
-            noTypeSoinLabel.Size = new System.Drawing.Size(120, 20);
-            noTypeSoinLabel.TabIndex = 55;
-            noTypeSoinLabel.Text = "No Type Soin:";
+            this.tbDuree.Location = new System.Drawing.Point(235, 212);
+            this.tbDuree.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.tbDuree.Name = "tbDuree";
+            this.tbDuree.Size = new System.Drawing.Size(100, 20);
+            this.tbDuree.TabIndex = 56;
+            this.tbDuree.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tbPrix
+            // 
+            this.tbPrix.Location = new System.Drawing.Point(235, 249);
+            this.tbPrix.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.tbPrix.Name = "tbPrix";
+            this.tbPrix.Size = new System.Drawing.Size(100, 20);
+            this.tbPrix.TabIndex = 57;
+            this.tbPrix.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmSoinsAjoutModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 433);
+            this.ClientSize = new System.Drawing.Size(437, 433);
+            this.Controls.Add(this.tbPrix);
+            this.Controls.Add(this.tbDuree);
             this.Controls.Add(noTypeSoinLabel);
             this.Controls.Add(this.cbTypeSoin);
-            this.Controls.Add(this.tbDuree);
-            this.Controls.Add(this.tbPrix);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.tbSoin);
             this.Controls.Add(prixLabel);
@@ -300,9 +323,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKSoinNoTypeSoin418EA369BindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.fKSoinNoTypeSoin418EA369BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDuree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPrix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,8 +343,6 @@
         private BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label lblAjoutModif;
         private System.Windows.Forms.ErrorProvider errMessage;
-        private System.Windows.Forms.TextBox tbDuree;
-        private System.Windows.Forms.TextBox tbPrix;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.TextBox tbSoin;
         private System.Windows.Forms.BindingSource typeSoinBindingSource;
@@ -332,5 +355,7 @@
         private System.Windows.Forms.BindingSource typeSoinBindingSource4;
         private System.Windows.Forms.ComboBox cbTypeSoin;
         private System.Windows.Forms.BindingSource typeSoinBindingSource5;
+        private System.Windows.Forms.NumericUpDown tbPrix;
+        public System.Windows.Forms.NumericUpDown tbDuree;
     }
 }

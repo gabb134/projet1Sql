@@ -54,25 +54,25 @@ namespace Projet1BaseDeDonnee3 {
         
         private global::System.Data.DataRelation relationFK__Assistant__NoAss__446B1014;
         
-        private global::System.Data.DataRelation relationFK__Assistant__NoSoi__455F344D;
-        
         private global::System.Data.DataRelation relationFK__Chambre__NoTypeC__54A177DD;
         
         private global::System.Data.DataRelation relationFK__PlanifSoi__NoAss__483BA0F8;
         
-        private global::System.Data.DataRelation relationFK__PlanifSoi__NoSoi__492FC531;
-        
         private global::System.Data.DataRelation relationFK__Reservati__NoCha__587208C1;
         
         private global::System.Data.DataRelation relationFK__Reservati__NoCli__577DE488;
-        
-        private global::System.Data.DataRelation relationFK__Soin__NoTypeSoin__418EA369;
         
         private global::System.Data.DataRelation relationFK__Invite__NoClient__0D5AD24C;
         
         private global::System.Data.DataRelation relationFK__Reservati__NoCha__3D5EEB29;
         
         private global::System.Data.DataRelation relationFK__Utilisate__NoTyp__5E2AE217;
+        
+        private global::System.Data.DataRelation relationFK__PlanifSoi__NoSoi__492FC531;
+        
+        private global::System.Data.DataRelation relationFK__Assistant__NoSoi__455F344D;
+        
+        private global::System.Data.DataRelation relationFK__Soin__NoTypeSoin__1333A733;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -529,16 +529,16 @@ namespace Projet1BaseDeDonnee3 {
                 }
             }
             this.relationFK__Assistant__NoAss__446B1014 = this.Relations["FK__Assistant__NoAss__446B1014"];
-            this.relationFK__Assistant__NoSoi__455F344D = this.Relations["FK__Assistant__NoSoi__455F344D"];
             this.relationFK__Chambre__NoTypeC__54A177DD = this.Relations["FK__Chambre__NoTypeC__54A177DD"];
             this.relationFK__PlanifSoi__NoAss__483BA0F8 = this.Relations["FK__PlanifSoi__NoAss__483BA0F8"];
-            this.relationFK__PlanifSoi__NoSoi__492FC531 = this.Relations["FK__PlanifSoi__NoSoi__492FC531"];
             this.relationFK__Reservati__NoCha__587208C1 = this.Relations["FK__Reservati__NoCha__587208C1"];
             this.relationFK__Reservati__NoCli__577DE488 = this.Relations["FK__Reservati__NoCli__577DE488"];
-            this.relationFK__Soin__NoTypeSoin__418EA369 = this.Relations["FK__Soin__NoTypeSoin__418EA369"];
             this.relationFK__Invite__NoClient__0D5AD24C = this.Relations["FK__Invite__NoClient__0D5AD24C"];
             this.relationFK__Reservati__NoCha__3D5EEB29 = this.Relations["FK__Reservati__NoCha__3D5EEB29"];
             this.relationFK__Utilisate__NoTyp__5E2AE217 = this.Relations["FK__Utilisate__NoTyp__5E2AE217"];
+            this.relationFK__PlanifSoi__NoSoi__492FC531 = this.Relations["FK__PlanifSoi__NoSoi__492FC531"];
+            this.relationFK__Assistant__NoSoi__455F344D = this.Relations["FK__Assistant__NoSoi__455F344D"];
+            this.relationFK__Soin__NoTypeSoin__1333A733 = this.Relations["FK__Soin__NoTypeSoin__1333A733"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -581,10 +581,6 @@ namespace Projet1BaseDeDonnee3 {
                         this.tableAssistant.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tableAssistantSoin.NoAssistantColumn}, false);
             this.Relations.Add(this.relationFK__Assistant__NoAss__446B1014);
-            this.relationFK__Assistant__NoSoi__455F344D = new global::System.Data.DataRelation("FK__Assistant__NoSoi__455F344D", new global::System.Data.DataColumn[] {
-                        this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAssistantSoin.NoSoinColumn}, false);
-            this.Relations.Add(this.relationFK__Assistant__NoSoi__455F344D);
             this.relationFK__Chambre__NoTypeC__54A177DD = new global::System.Data.DataRelation("FK__Chambre__NoTypeC__54A177DD", new global::System.Data.DataColumn[] {
                         this.tableTypeChambre.NoTypeChambreColumn}, new global::System.Data.DataColumn[] {
                         this.tableChambre.NoTypeChambreColumn}, false);
@@ -593,10 +589,6 @@ namespace Projet1BaseDeDonnee3 {
                         this.tableAssistant.NoAssistantColumn}, new global::System.Data.DataColumn[] {
                         this.tablePlanifSoin.NoAssistantColumn}, false);
             this.Relations.Add(this.relationFK__PlanifSoi__NoAss__483BA0F8);
-            this.relationFK__PlanifSoi__NoSoi__492FC531 = new global::System.Data.DataRelation("FK__PlanifSoi__NoSoi__492FC531", new global::System.Data.DataColumn[] {
-                        this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePlanifSoin.NoSoinColumn}, false);
-            this.Relations.Add(this.relationFK__PlanifSoi__NoSoi__492FC531);
             this.relationFK__Reservati__NoCha__587208C1 = new global::System.Data.DataRelation("FK__Reservati__NoCha__587208C1", new global::System.Data.DataColumn[] {
                         this.tableChambre.NoChambreColumn}, new global::System.Data.DataColumn[] {
                         this.tableReservationChambre.NoChambreColumn}, false);
@@ -605,10 +597,6 @@ namespace Projet1BaseDeDonnee3 {
                         this.tableClient.NoCLientColumn}, new global::System.Data.DataColumn[] {
                         this.tableReservationChambre.NoClientColumn}, false);
             this.Relations.Add(this.relationFK__Reservati__NoCli__577DE488);
-            this.relationFK__Soin__NoTypeSoin__418EA369 = new global::System.Data.DataRelation("FK__Soin__NoTypeSoin__418EA369", new global::System.Data.DataColumn[] {
-                        this.tableTypeSoin.NoTypeSoinColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSoin.NoTypeSoinColumn}, false);
-            this.Relations.Add(this.relationFK__Soin__NoTypeSoin__418EA369);
             this.relationFK__Invite__NoClient__0D5AD24C = new global::System.Data.DataRelation("FK__Invite__NoClient__0D5AD24C", new global::System.Data.DataColumn[] {
                         this.tableClient.NoCLientColumn}, new global::System.Data.DataColumn[] {
                         this.tableInvite.NoClientColumn}, false);
@@ -621,6 +609,18 @@ namespace Projet1BaseDeDonnee3 {
                         this.tableTypeUtilisateur.NoTypeUtilisteurColumn}, new global::System.Data.DataColumn[] {
                         this.tableUtilisateur.NoTypeUtilisteurColumn}, false);
             this.Relations.Add(this.relationFK__Utilisate__NoTyp__5E2AE217);
+            this.relationFK__PlanifSoi__NoSoi__492FC531 = new global::System.Data.DataRelation("FK__PlanifSoi__NoSoi__492FC531", new global::System.Data.DataColumn[] {
+                        this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePlanifSoin.NoSoinColumn}, false);
+            this.Relations.Add(this.relationFK__PlanifSoi__NoSoi__492FC531);
+            this.relationFK__Assistant__NoSoi__455F344D = new global::System.Data.DataRelation("FK__Assistant__NoSoi__455F344D", new global::System.Data.DataColumn[] {
+                        this.tableSoin.NoSoinColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAssistantSoin.NoSoinColumn}, false);
+            this.Relations.Add(this.relationFK__Assistant__NoSoi__455F344D);
+            this.relationFK__Soin__NoTypeSoin__1333A733 = new global::System.Data.DataRelation("FK__Soin__NoTypeSoin__1333A733", new global::System.Data.DataColumn[] {
+                        this.tableTypeSoin.NoTypeSoinColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSoin.NoTypeSoinColumn}, false);
+            this.Relations.Add(this.relationFK__Soin__NoTypeSoin__1333A733);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3005,9 +3005,9 @@ namespace Projet1BaseDeDonnee3 {
             
             private global::System.Data.DataColumn columnDescription;
             
-            private global::System.Data.DataColumn columnDuree;
-            
             private global::System.Data.DataColumn columnNoTypeSoin;
+            
+            private global::System.Data.DataColumn columnDuree;
             
             private global::System.Data.DataColumn columnPrix;
             
@@ -3062,17 +3062,17 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DureeColumn {
+            public global::System.Data.DataColumn NoTypeSoinColumn {
                 get {
-                    return this.columnDuree;
+                    return this.columnNoTypeSoin;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn NoTypeSoinColumn {
+            public global::System.Data.DataColumn DureeColumn {
                 get {
-                    return this.columnNoTypeSoin;
+                    return this.columnDuree;
                 }
             }
             
@@ -3121,16 +3121,16 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoinRow AddSoinRow(int NoSoin, string Description, int Duree, TypeSoinRow parentTypeSoinRowByFK__Soin__NoTypeSoin__418EA369, int Prix) {
+            public SoinRow AddSoinRow(int NoSoin, string Description, TypeSoinRow parentTypeSoinRowByFK__Soin__NoTypeSoin__1333A733, int Duree, decimal Prix) {
                 SoinRow rowSoinRow = ((SoinRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoSoin,
                         Description,
-                        Duree,
                         null,
+                        Duree,
                         Prix};
-                if ((parentTypeSoinRowByFK__Soin__NoTypeSoin__418EA369 != null)) {
-                    columnValuesArray[3] = parentTypeSoinRowByFK__Soin__NoTypeSoin__418EA369[0];
+                if ((parentTypeSoinRowByFK__Soin__NoTypeSoin__1333A733 != null)) {
+                    columnValuesArray[2] = parentTypeSoinRowByFK__Soin__NoTypeSoin__1333A733[0];
                 }
                 rowSoinRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSoinRow);
@@ -3163,8 +3163,8 @@ namespace Projet1BaseDeDonnee3 {
             internal void InitVars() {
                 this.columnNoSoin = base.Columns["NoSoin"];
                 this.columnDescription = base.Columns["Description"];
-                this.columnDuree = base.Columns["Duree"];
                 this.columnNoTypeSoin = base.Columns["NoTypeSoin"];
+                this.columnDuree = base.Columns["Duree"];
                 this.columnPrix = base.Columns["Prix"];
             }
             
@@ -3175,11 +3175,11 @@ namespace Projet1BaseDeDonnee3 {
                 base.Columns.Add(this.columnNoSoin);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
-                this.columnDuree = new global::System.Data.DataColumn("Duree", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDuree);
                 this.columnNoTypeSoin = new global::System.Data.DataColumn("NoTypeSoin", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoTypeSoin);
-                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnDuree = new global::System.Data.DataColumn("Duree", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDuree);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrix);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNoSoin}, true));
@@ -6078,22 +6078,6 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Duree {
-                get {
-                    try {
-                        return ((int)(this[this.tableSoin.DureeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Duree\' dans la table \'Soin\' est DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSoin.DureeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int NoTypeSoin {
                 get {
                     try {
@@ -6110,10 +6094,26 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Prix {
+            public int Duree {
                 get {
                     try {
-                        return ((int)(this[this.tableSoin.PrixColumn]));
+                        return ((int)(this[this.tableSoin.DureeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Duree\' dans la table \'Soin\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoin.DureeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Prix {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSoin.PrixColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Prix\' dans la table \'Soin\' est DBNull.", e);
@@ -6128,10 +6128,10 @@ namespace Projet1BaseDeDonnee3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public TypeSoinRow TypeSoinRow {
                 get {
-                    return ((TypeSoinRow)(this.GetParentRow(this.Table.ParentRelations["FK__Soin__NoTypeSoin__418EA369"])));
+                    return ((TypeSoinRow)(this.GetParentRow(this.Table.ParentRelations["FK__Soin__NoTypeSoin__1333A733"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Soin__NoTypeSoin__418EA369"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Soin__NoTypeSoin__1333A733"]);
                 }
             }
             
@@ -6149,18 +6149,6 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDureeNull() {
-                return this.IsNull(this.tableSoin.DureeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDureeNull() {
-                this[this.tableSoin.DureeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNoTypeSoinNull() {
                 return this.IsNull(this.tableSoin.NoTypeSoinColumn);
             }
@@ -6169,6 +6157,18 @@ namespace Projet1BaseDeDonnee3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNoTypeSoinNull() {
                 this[this.tableSoin.NoTypeSoinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDureeNull() {
+                return this.IsNull(this.tableSoin.DureeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDureeNull() {
+                this[this.tableSoin.DureeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6185,23 +6185,23 @@ namespace Projet1BaseDeDonnee3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AssistantSoinRow[] GetAssistantSoinRows() {
-                if ((this.Table.ChildRelations["FK__Assistant__NoSoi__455F344D"] == null)) {
-                    return new AssistantSoinRow[0];
-                }
-                else {
-                    return ((AssistantSoinRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Assistant__NoSoi__455F344D"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PlanifSoinRow[] GetPlanifSoinRows() {
                 if ((this.Table.ChildRelations["FK__PlanifSoi__NoSoi__492FC531"] == null)) {
                     return new PlanifSoinRow[0];
                 }
                 else {
                     return ((PlanifSoinRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PlanifSoi__NoSoi__492FC531"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AssistantSoinRow[] GetAssistantSoinRows() {
+                if ((this.Table.ChildRelations["FK__Assistant__NoSoi__455F344D"] == null)) {
+                    return new AssistantSoinRow[0];
+                }
+                else {
+                    return ((AssistantSoinRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Assistant__NoSoi__455F344D"])));
                 }
             }
         }
@@ -6411,11 +6411,11 @@ namespace Projet1BaseDeDonnee3 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SoinRow[] GetSoinRows() {
-                if ((this.Table.ChildRelations["FK__Soin__NoTypeSoin__418EA369"] == null)) {
+                if ((this.Table.ChildRelations["FK__Soin__NoTypeSoin__1333A733"] == null)) {
                     return new SoinRow[0];
                 }
                 else {
-                    return ((SoinRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Soin__NoTypeSoin__418EA369"])));
+                    return ((SoinRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Soin__NoTypeSoin__1333A733"])));
                 }
             }
         }
@@ -10516,53 +10516,39 @@ SELECT NoClient, NoChambre, DateArrivee, DateDepart, NbPersonnes FROM Reservatio
             tableMapping.DataSetTable = "Soin";
             tableMapping.ColumnMappings.Add("NoSoin", "NoSoin");
             tableMapping.ColumnMappings.Add("Description", "Description");
-            tableMapping.ColumnMappings.Add("Duree", "Duree");
             tableMapping.ColumnMappings.Add("NoTypeSoin", "NoTypeSoin");
+            tableMapping.ColumnMappings.Add("Duree", "Duree");
             tableMapping.ColumnMappings.Add("Prix", "Prix");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Soin] WHERE (([NoSoin] = @Original_NoSoin) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Duree = 1 AND [Duree] IS NULL) OR ([Duree] = @Original_Duree)) AND ((@IsNull_NoTypeSoin = 1 AND [NoTypeSoin] IS NULL) OR ([NoTypeSoin] = @Original_NoTypeSoin)) AND ((@IsNull_Prix = 1 AND [Prix] IS NULL) OR ([Prix] = @Original_Prix)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Soin] WHERE (([NoSoin] = @Original_NoSoin))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Duree", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Duree", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NoTypeSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoTypeSoin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoTypeSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoTypeSoin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Prix", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prix", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prix", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Prix", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Soin] ([NoSoin], [Description], [Duree], [NoTypeSoin], [Prix])" +
-                " VALUES (@NoSoin, @Description, @Duree, @NoTypeSoin, @Prix);\r\nSELECT NoSoin, Des" +
-                "cription, Duree, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @NoSoin)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Soin] ([NoSoin], [Description], [NoTypeSoin], [Duree], [Prix]) VALUE" +
+                "S (@NoSoin, @Description, @NoTypeSoin, @Duree, @Prix);\r\nSELECT NoSoin, Descripti" +
+                "on, NoTypeSoin, Duree, Prix FROM Soin WHERE (NoSoin = @NoSoin)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duree", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoTypeSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoTypeSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duree", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prix", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Prix", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Soin] SET [NoSoin] = @NoSoin, [Description] = @Description, [Duree] = @Duree, [NoTypeSoin] = @NoTypeSoin, [Prix] = @Prix WHERE (([NoSoin] = @Original_NoSoin) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Duree = 1 AND [Duree] IS NULL) OR ([Duree] = @Original_Duree)) AND ((@IsNull_NoTypeSoin = 1 AND [NoTypeSoin] IS NULL) OR ([NoTypeSoin] = @Original_NoTypeSoin)) AND ((@IsNull_Prix = 1 AND [Prix] IS NULL) OR ([Prix] = @Original_Prix)));
-SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @NoSoin)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Soin] SET [NoSoin] = @NoSoin, [Description] = @Description, [NoTypeSoin] " +
+                "= @NoTypeSoin, [Duree] = @Duree, [Prix] = @Prix WHERE (([NoSoin] = @Original_NoS" +
+                "oin));\r\nSELECT NoSoin, Description, NoTypeSoin, Duree, Prix FROM Soin WHERE (NoS" +
+                "oin = @NoSoin)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duree", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoTypeSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoTypeSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duree", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prix", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Prix", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Duree", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Duree", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duree", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NoTypeSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoTypeSoin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoTypeSoin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoTypeSoin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Prix", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prix", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prix", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Prix", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10578,12 +10564,12 @@ SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @N
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM dbo.Soin";
+            this._commandCollection[0].CommandText = "SELECT        NoSoin, Description, NoTypeSoin, Duree, Prix\r\nFROM            Soin";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        NoSoin, Description, Duree, NoTypeSoin, Prix\r\nFROM            Soin\r" +
-                "\nWHERE        (NoSoin = @NoSoin)";
+            this._commandCollection[1].CommandText = "SELECT Description, Duree, NoSoin, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @No" +
+                "Soin)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoSoin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NoSoin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -10665,193 +10651,6 @@ SELECT NoSoin, Description, Duree, NoTypeSoin, Prix FROM Soin WHERE (NoSoin = @N
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_NoSoin, string Original_Description, global::System.Nullable<global::System.DateTime> Original_Duree, global::System.Nullable<int> Original_NoTypeSoin, global::System.Nullable<decimal> Original_Prix) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_NoSoin));
-            if ((Original_Description == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Description));
-            }
-            if ((Original_Duree.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Duree.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_NoTypeSoin.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_NoTypeSoin.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Prix.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_Prix.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int NoSoin, string Description, global::System.Nullable<global::System.DateTime> Duree, global::System.Nullable<int> NoTypeSoin, global::System.Nullable<decimal> Prix) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(NoSoin));
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
-            }
-            if ((Duree.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Duree.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((NoTypeSoin.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(NoTypeSoin.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Prix.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(Prix.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NoSoin, string Description, global::System.Nullable<global::System.DateTime> Duree, global::System.Nullable<int> NoTypeSoin, global::System.Nullable<decimal> Prix, int Original_NoSoin, string Original_Description, global::System.Nullable<global::System.DateTime> Original_Duree, global::System.Nullable<int> Original_NoTypeSoin, global::System.Nullable<decimal> Original_Prix) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NoSoin));
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
-            }
-            if ((Duree.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Duree.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((NoTypeSoin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(NoTypeSoin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Prix.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Prix.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_NoSoin));
-            if ((Original_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Description));
-            }
-            if ((Original_Duree.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Duree.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_NoTypeSoin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_NoTypeSoin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Prix.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_Prix.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Description, global::System.Nullable<global::System.DateTime> Duree, global::System.Nullable<int> NoTypeSoin, global::System.Nullable<decimal> Prix, int Original_NoSoin, string Original_Description, global::System.Nullable<global::System.DateTime> Original_Duree, global::System.Nullable<int> Original_NoTypeSoin, global::System.Nullable<decimal> Original_Prix) {
-            return this.Update(Original_NoSoin, Description, Duree, NoTypeSoin, Prix, Original_NoSoin, Original_Description, Original_Duree, Original_NoTypeSoin, Original_Prix);
         }
     }
     
@@ -13071,21 +12870,21 @@ FROM            Utilisateur INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._soinTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._soinTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._typeUtilisateurTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TypeUtilisateur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._typeUtilisateurTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._soinTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._soinTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13184,19 +12983,19 @@ FROM            Utilisateur INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._soinTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._soinTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._typeUtilisateurTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TypeUtilisateur.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._typeUtilisateurTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._soinTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._soinTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13290,19 +13089,19 @@ FROM            Utilisateur INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._typeUtilisateurTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TypeUtilisateur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._typeUtilisateurTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._soinTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Soin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._soinTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._typeUtilisateurTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TypeUtilisateur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._typeUtilisateurTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
