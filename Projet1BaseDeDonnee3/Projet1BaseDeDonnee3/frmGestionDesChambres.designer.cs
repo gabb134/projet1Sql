@@ -42,6 +42,7 @@
             this.btnSupprimerChambre = new System.Windows.Forms.Button();
             this.btnAjouterChambre = new System.Windows.Forms.Button();
             this.btnModifierChambre = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chambreDataGridView)).BeginInit();
@@ -164,11 +165,22 @@
             this.btnModifierChambre.UseVisualStyleBackColor = true;
             this.btnModifierChambre.Click += new System.EventHandler(this.btnModifierChambre_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(457, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Gestion des chambres";
+            // 
             // frmGestionDesChambres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 583);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chambreDataGridView);
             this.Name = "frmGestionDesChambres";
@@ -179,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chambreDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,5 +210,6 @@
         private System.Windows.Forms.Button btnSupprimerChambre;
         private System.Windows.Forms.Button btnAjouterChambre;
         private System.Windows.Forms.Button btnModifierChambre;
+        private System.Windows.Forms.Label label1;
     }
 }

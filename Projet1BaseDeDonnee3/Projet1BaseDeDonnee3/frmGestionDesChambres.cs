@@ -38,19 +38,19 @@ namespace Projet1BaseDeDonnee3
         private void btnAjouterChambre_Click(object sender, EventArgs e)
         {
             frmGestionAjoutModifChambres = new frmGestionAjoutModificationChambres();
-
+            frmGestionAjoutModifChambres.strvaleur = "a";
             BDTP1Guelleh_MarreroDataSet.ChambreRow uneChambre = bDTP1Guelleh_MarreroDataSet.Chambre.NewChambreRow();
 
             decimal noChambreMax = 0;
 
-            foreach (BDTP1Guelleh_MarreroDataSet.ChambreRow uneLigne in bDTP1Guelleh_MarreroDataSet.Assistant.Rows)
+            foreach (BDTP1Guelleh_MarreroDataSet.ChambreRow uneLigne in bDTP1Guelleh_MarreroDataSet.Chambre.Rows)
                 if (uneLigne.NoChambre > noChambreMax) noChambreMax = uneLigne.NoChambre;
 
 
             uneChambre.NoChambre = Convert.ToInt32(noChambreMax+1);
 
 
-            frmGestionAjoutModifChambres.strvaleur = "a";
+            
 
             if(frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
             {

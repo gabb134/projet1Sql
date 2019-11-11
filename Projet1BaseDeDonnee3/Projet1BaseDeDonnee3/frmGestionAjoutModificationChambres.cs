@@ -95,11 +95,19 @@ namespace Projet1BaseDeDonnee3
                     }
                     else
                     {
-                        
                         errMessage.SetError(tbEmplacement, "");
-                        uneChambre.Decorations = tbDecoration.Text;
-                        uneChambre.Emplacement = Convert.ToInt32(tbEmplacement.Text);
-                        uneChambre.NoTypeChambre = Convert.ToInt32(cbNoTypeChambre.Text);
+                        try
+                        {
+                            
+                            uneChambre.Decorations = tbDecoration.Text;
+                            uneChambre.Emplacement = Convert.ToInt32(tbEmplacement.Text);
+                            uneChambre.NoTypeChambre = Convert.ToInt32(cbNoTypeChambre.Text);
+                        }
+                        catch(Exception e2)
+                        {
+                            MessageBox.Show(e2.ToString());
+                        }
+                      
 
 
                         DialogResult = DialogResult.OK;
