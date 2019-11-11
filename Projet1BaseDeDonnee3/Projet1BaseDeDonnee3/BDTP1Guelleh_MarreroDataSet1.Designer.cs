@@ -8154,7 +8154,7 @@ SELECT NoAssistant, NoSoin FROM AssistantSoin WHERE (NoAssistant = @NoAssistant)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<bool> getSoinDansAssistantSoin(int noSoin) {
+        public virtual object getSoinDansAssistantSoin(int noSoin) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(noSoin));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -8173,10 +8173,10 @@ SELECT NoAssistant, NoSoin FROM AssistantSoin WHERE (NoAssistant = @NoAssistant)
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<bool>();
+                return null;
             }
             else {
-                return new global::System.Nullable<bool>(((bool)(returnValue)));
+                return ((object)(returnValue));
             }
         }
     }

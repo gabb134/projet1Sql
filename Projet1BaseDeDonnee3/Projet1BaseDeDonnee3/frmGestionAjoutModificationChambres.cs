@@ -12,7 +12,7 @@ namespace Projet1BaseDeDonnee3
 {
     public partial class frmGestionAjoutModificationChambres : Form
     {
-        BDTP1Guelleh_MarreroDataSet.ChambreRow uneChambre;
+       public BDTP1Guelleh_MarreroDataSet.ChambreRow uneChambre;
 
         public String strvaleur = "";
         public int intEmplacement;
@@ -95,6 +95,7 @@ namespace Projet1BaseDeDonnee3
                     }
                     else
                     {
+                        
                         errMessage.SetError(tbEmplacement, "");
                         uneChambre.Decorations = tbDecoration.Text;
                         uneChambre.Emplacement = Convert.ToInt32(tbEmplacement.Text);
