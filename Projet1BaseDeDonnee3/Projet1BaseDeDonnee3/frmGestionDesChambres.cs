@@ -50,17 +50,26 @@ namespace Projet1BaseDeDonnee3
             uneChambre.NoChambre = Convert.ToInt32(noChambreMax+1);
 
 
-            
-
-            if(frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
+            frmGestionAjoutModifChambres.uneChambre = uneChambre;
+            try
             {
-                if(uneChambre.NoChambre != -1)
+                if (frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
                 {
-                    bDTP1Guelleh_MarreroDataSet.Chambre.AddChambreRow(uneChambre);
-                    chambreBindingSource.MoveLast();
-                    this.chambreTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Chambre);
+                    if (uneChambre.NoChambre != -1)
+                    {
+                        bDTP1Guelleh_MarreroDataSet.Chambre.AddChambreRow(uneChambre);
+                        chambreBindingSource.MoveLast();
+                        this.chambreTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Chambre);
+                        MessageBox.Show("La chambre " + uneChambre.NoChambre.ToString() + " a été ajouté", "Ajout d'une chambre", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+
             }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.ToString());
+            }
+           
         }
 
         private void btnModifierChambre_Click(object sender, EventArgs e)
@@ -76,9 +85,17 @@ namespace Projet1BaseDeDonnee3
             {
                 dynamic chambreSelectionne = chambreBindingSource.Current;
 
-                frmGestionAjoutModifChambres.strDecoration = chambreSelectionne["Decorations"];
-                frmGestionAjoutModifChambres.intEmplacement = chambreSelectionne["Emplacement"];
-                frmGestionAjoutModifChambres.intNoTypeChambre = chambreSelectionne["NoTypeChambre"];
+                try
+                {
+                    frmGestionAjoutModifChambres.strDecoration = chambreSelectionne["Decorations"];
+                    frmGestionAjoutModifChambres.intEmplacement = chambreSelectionne["Emplacement"];
+                    frmGestionAjoutModifChambres.intNoTypeChambre = chambreSelectionne["NoTypeChambre"];
+                }
+                catch(Exception e1)
+                {
+                    MessageBox.Show(e1.ToString());
+                }
+             
 
 
             }
@@ -103,7 +120,11 @@ namespace Projet1BaseDeDonnee3
         }
 
         private void btnSupprimerChambre_Click(object sender, EventArgs e)
-        {
+        {//faire en sorte que si les chambre ont des reservation, il faut mettre un message 
+            chambreBindingSource.RemoveCurrent();
+            this.Validate();
+            this.chambreBindingSource.EndEdit();
+            this.chambreTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet);
 
         }
     }

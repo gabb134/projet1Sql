@@ -59,7 +59,7 @@ namespace Projet1BaseDeDonnee3
                 if(intNoTypeChambre==1)
                 cbNoTypeChambre.Text = 1.ToString();
                 else if(intNoTypeChambre==2)
-                    cbNoTypeChambre.Text = 2.ToString();
+                    cbNoTypeChambre.Text = 1.ToString();
 
 
                 tbChambre.Enabled = false;
@@ -96,17 +96,17 @@ namespace Projet1BaseDeDonnee3
                     else
                     {
                         errMessage.SetError(tbEmplacement, "");
-                        try
-                        {
+                      //  try
+                        //{
                             
                             uneChambre.Decorations = tbDecoration.Text;
                             uneChambre.Emplacement = Convert.ToInt32(tbEmplacement.Text);
-                            uneChambre.NoTypeChambre = Convert.ToInt32(cbNoTypeChambre.Text);
-                        }
-                        catch(Exception e2)
-                        {
-                            MessageBox.Show(e2.ToString());
-                        }
+                            uneChambre.NoTypeChambre = Convert.ToInt32(cbNoTypeChambre.SelectedValue.ToString());
+                      ///  }
+                     // /  catch(Exception e2)
+                     //  {
+                          //  MessageBox.Show(e2.ToString());
+                       //}
                       
 
 
@@ -140,7 +140,7 @@ namespace Projet1BaseDeDonnee3
 
                         strDecoration = tbDecoration.Text;
                         intEmplacement = Convert.ToInt32(tbEmplacement.Text);
-                        intNoTypeChambre = Convert.ToInt32(cbNoTypeChambre.Text);
+                        intNoTypeChambre = Convert.ToInt32(cbNoTypeChambre.SelectedValue.ToString());
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }

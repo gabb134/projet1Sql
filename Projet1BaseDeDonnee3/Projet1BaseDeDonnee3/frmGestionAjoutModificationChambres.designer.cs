@@ -183,6 +183,7 @@
             this.cbNoTypeChambre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "NoTypeChambre", true));
             this.cbNoTypeChambre.DataSource = this.typeChambreBindingSource;
             this.cbNoTypeChambre.DisplayMember = "NoTypeChambre";
+            this.cbNoTypeChambre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNoTypeChambre.FormattingEnabled = true;
             this.cbNoTypeChambre.Location = new System.Drawing.Point(214, 251);
             this.cbNoTypeChambre.Name = "cbNoTypeChambre";
