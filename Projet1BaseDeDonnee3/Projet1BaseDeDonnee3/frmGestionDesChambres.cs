@@ -51,8 +51,7 @@ namespace Projet1BaseDeDonnee3
 
 
             frmGestionAjoutModifChambres.uneChambre = uneChambre;
-            try
-            {
+         
                 if (frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
                 {
                     if (uneChambre.NoChambre != -1)
@@ -64,11 +63,8 @@ namespace Projet1BaseDeDonnee3
                     }
                 }
 
-            }
-            catch (Exception es)
-            {
-                //MessageBox.Show(es.ToString());
-            }
+            
+            
            
         }
 
@@ -85,16 +81,12 @@ namespace Projet1BaseDeDonnee3
             {
                 dynamic chambreSelectionne = chambreBindingSource.Current;
 
-                try
-                {
+              
                     frmGestionAjoutModifChambres.strDecoration = chambreSelectionne["Decorations"];
                     frmGestionAjoutModifChambres.intEmplacement = chambreSelectionne["Emplacement"];
                     frmGestionAjoutModifChambres.intNoTypeChambre = chambreSelectionne["NoTypeChambre"];
-                }
-                catch(Exception e1)
-                {
-                    MessageBox.Show(e1.ToString());
-                }
+                
+             
              
 
 
@@ -106,16 +98,12 @@ namespace Projet1BaseDeDonnee3
 
             if (frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
+              
                     chambreDataGridView.CurrentRow.Cells[1].Value = frmGestionAjoutModifChambres.intEmplacement;
                     chambreDataGridView.CurrentRow.Cells[2].Value = frmGestionAjoutModifChambres.strDecoration;
                     chambreDataGridView.CurrentRow.Cells[3].Value = frmGestionAjoutModifChambres.intNoTypeChambre;
-                }
-                catch(Exception e2)
-                {
-                    MessageBox.Show(e2.ToString());
-                }
+              
+               
 
                 this.Validate();
                 this.chambreBindingSource.EndEdit();
