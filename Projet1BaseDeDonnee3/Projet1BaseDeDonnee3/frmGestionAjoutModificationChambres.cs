@@ -57,9 +57,9 @@ namespace Projet1BaseDeDonnee3
                 tbEmplacement.Text = intEmplacement.ToString();
 
                 if(intNoTypeChambre==1)
-                cbNoTypeChambre.Text = 1.ToString();
+                cbNoTypeChambre.Text = intNoTypeChambre.ToString();
                 else if(intNoTypeChambre==2)
-                    cbNoTypeChambre.Text = 1.ToString();
+                    cbNoTypeChambre.Text = intNoTypeChambre.ToString();
 
 
                 tbChambre.Enabled = false;
@@ -81,21 +81,21 @@ namespace Projet1BaseDeDonnee3
 
                 //Validation
 
-                if(tbDecoration.Text == "")
+                if(tbEmplacement.Text == "")
                 {
-                    errMessage.SetError(tbDecoration, "La décoration ne peut pas être vide");
+                    errMessage.SetError(tbEmplacement, "L'emplacement ne peut pas être vide");
 
                 }
                 else
                 {
-                    errMessage.SetError(tbDecoration, "");
-                    if (tbEmplacement.Text == "")
+                    errMessage.SetError(tbEmplacement, "");
+                    if (tbDecoration.Text == "")
                     {
-                        errMessage.SetError(tbEmplacement, "L'emplacement ne peut pas être vide");
+                        errMessage.SetError(tbDecoration, "La décoration ne peut pas être vide");
                     }
                     else
                     {
-                        errMessage.SetError(tbEmplacement, "");
+                        errMessage.SetError(tbDecoration, "");
                       //  try
                         //{
                             

@@ -67,7 +67,7 @@ namespace Projet1BaseDeDonnee3
             }
             catch (Exception es)
             {
-                MessageBox.Show(es.ToString());
+                //MessageBox.Show(es.ToString());
             }
            
         }
@@ -106,15 +106,20 @@ namespace Projet1BaseDeDonnee3
 
             if (frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
             {
-
-                chambreDataGridView.CurrentRow.Cells[1].Value = frmGestionAjoutModifChambres.intEmplacement;
-                chambreDataGridView.CurrentRow.Cells[2].Value = frmGestionAjoutModifChambres.strDecoration;
-                chambreDataGridView.CurrentRow.Cells[3].Value = frmGestionAjoutModifChambres.intNoTypeChambre;
-
+                try
+                {
+                    chambreDataGridView.CurrentRow.Cells[1].Value = frmGestionAjoutModifChambres.intEmplacement;
+                    chambreDataGridView.CurrentRow.Cells[2].Value = frmGestionAjoutModifChambres.strDecoration;
+                    chambreDataGridView.CurrentRow.Cells[3].Value = frmGestionAjoutModifChambres.intNoTypeChambre;
+                }
+                catch(Exception e2)
+                {
+                    MessageBox.Show(e2.ToString());
+                }
 
                 this.Validate();
                 this.chambreBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.bDTP1Guelleh_MarreroDataSet);
+                this.chambreTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet);
             }
 
         }
