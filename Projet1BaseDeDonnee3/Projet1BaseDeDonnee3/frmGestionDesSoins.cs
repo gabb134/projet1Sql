@@ -79,8 +79,9 @@ namespace Projet1BaseDeDonnee3
                         bDTP1Guelleh_MarreroDataSet.Soin.AddSoinRow(unSoin);
 
                         soinBindingSource.MoveLast();
+                        //assistant choisi
+                        int intNoAssiant = frmSoinsAjoutModif.noAssistant;
 
-                       
 
                         // bDTP1Guelleh_MarreroDataSet.AssistantSoin.AddAssistantSoinRow(unAssistant);
                         String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
@@ -118,9 +119,12 @@ namespace Projet1BaseDeDonnee3
 
                             MessageBox.Show("Le soin " + unSoin.NoSoin.ToString() + " a été ajouté à l'assistant" + unAssistant.NoAssistant, "Ajout d'un soin à un assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                          
+
                             //Ajout dans la table AssistantSoin
                             String strRequeteAjout = "insert into AssistantSoin (NoAssistant,NoSoin) values(@noAssistant,@NoSoin)";
-                            SqlParameter monParametreSQL1 = new SqlParameter("@noAssistant", unAssistant.NoAssistant);
+                            SqlParameter monParametreSQL1 = new SqlParameter("@noAssistant", intNoAssiant);
                             SqlParameter monParametreSQL2 = new SqlParameter("@NoSoin", unSoin.NoSoin);
 
                             SqlCommand maCommande1 = new SqlCommand(strRequeteAjout, maConnexion);
@@ -135,12 +139,14 @@ namespace Projet1BaseDeDonnee3
 
 
 
+                            MessageBox.Show("Ajouté!");
+
                         }
                         catch
                         {
                             maTransaction.Rollback();
                           //  MessageBox.Show("Transaction échouée");
-                            MessageBox.Show("Le soin " + unSoin.NoSoin.ToString() + " a été ajouté à l'assistant " + unAssistant.NoAssistant, "Ajout d'un soin à un assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Le soin " + unSoin.NoSoin.ToString() + " a été ajouté à l'assistant " + intNoAssiant, "Ajout d'un soin à un assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                        

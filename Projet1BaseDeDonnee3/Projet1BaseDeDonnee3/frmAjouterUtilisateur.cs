@@ -149,7 +149,7 @@ namespace Projet1BaseDeDonnee3
 
                             dynamic nomUtil =  maCommande.ExecuteScalar();
 
-                            MessageBox.Show(strNomUtilisateur);
+                            //MessageBox.Show(strNomUtilisateur);
                             // MessageBox.Show(nomUtil.ToString());
                             if(nomUtil != null) // nom utilisateur existe alors il ne peut pas le creer
                             {

@@ -34,6 +34,7 @@
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label noSoinLabel;
             System.Windows.Forms.Label noTypeSoinLabel;
+            System.Windows.Forms.Label label1;
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
             this.bDTP1Guelleh_MarreroDataSet = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSet();
@@ -56,11 +57,16 @@
             this.cbTypeSoin = new System.Windows.Forms.ComboBox();
             this.tbDuree = new System.Windows.Forms.NumericUpDown();
             this.tbPrix = new System.Windows.Forms.NumericUpDown();
+            this.bDTP1GuellehMarreroDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbAssistant = new System.Windows.Forms.ComboBox();
+            this.assistantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assistantTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantTableAdapter();
             prixLabel = new System.Windows.Forms.Label();
             dureeLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             noSoinLabel = new System.Windows.Forms.Label();
             noTypeSoinLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
@@ -73,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDuree)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPrix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDTP1GuellehMarreroDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // prixLabel
@@ -295,11 +303,49 @@
             0,
             0});
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(100, 106);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(84, 20);
+            label1.TabIndex = 58;
+            label1.Text = "Assistant";
+            // 
+            // bDTP1GuellehMarreroDataSetBindingSource
+            // 
+            this.bDTP1GuellehMarreroDataSetBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            this.bDTP1GuellehMarreroDataSetBindingSource.Position = 0;
+            // 
+            // cbAssistant
+            // 
+            this.cbAssistant.DataSource = this.assistantBindingSource;
+            this.cbAssistant.DisplayMember = "NoAssistant";
+            this.cbAssistant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAssistant.FormattingEnabled = true;
+            this.cbAssistant.Location = new System.Drawing.Point(235, 103);
+            this.cbAssistant.Name = "cbAssistant";
+            this.cbAssistant.Size = new System.Drawing.Size(100, 21);
+            this.cbAssistant.TabIndex = 59;
+            this.cbAssistant.ValueMember = "NoAssistant";
+            // 
+            // assistantBindingSource
+            // 
+            this.assistantBindingSource.DataMember = "Assistant";
+            this.assistantBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // assistantTableAdapter
+            // 
+            this.assistantTableAdapter.ClearBeforeFill = true;
+            // 
             // frmSoinsAjoutModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 433);
+            this.Controls.Add(this.cbAssistant);
+            this.Controls.Add(label1);
             this.Controls.Add(this.tbPrix);
             this.Controls.Add(this.tbDuree);
             this.Controls.Add(noTypeSoinLabel);
@@ -323,11 +369,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource3)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.fKSoinNoTypeSoin418EA369BindingSource)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.fKSoinNoTypeSoin418EA369BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeSoinBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDuree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPrix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDTP1GuellehMarreroDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +405,9 @@
         private System.Windows.Forms.BindingSource typeSoinBindingSource5;
         private System.Windows.Forms.NumericUpDown tbPrix;
         public System.Windows.Forms.NumericUpDown tbDuree;
+        private System.Windows.Forms.ComboBox cbAssistant;
+        private System.Windows.Forms.BindingSource bDTP1GuellehMarreroDataSetBindingSource;
+        private System.Windows.Forms.BindingSource assistantBindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantTableAdapter assistantTableAdapter;
     }
 }

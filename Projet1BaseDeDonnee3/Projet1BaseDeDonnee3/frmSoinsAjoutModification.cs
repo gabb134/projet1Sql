@@ -20,6 +20,8 @@ namespace Projet1BaseDeDonnee3
         public int intNoTypeSoin;
         public int intPrix;
 
+        public int noAssistant;
+
 
         public frmSoinsAjoutModification()
         {
@@ -35,6 +37,8 @@ namespace Projet1BaseDeDonnee3
 
         private void frmSoinsAjoutModification_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Assistant'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.assistantTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Assistant);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Soin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.soinTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Soin);
             this.typeSoinTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.TypeSoin);
@@ -91,9 +95,8 @@ namespace Projet1BaseDeDonnee3
                                 unSoin.Duree =Convert.ToInt32(tbDuree.Text);
                                 unSoin.Prix = Convert.ToInt32(tbPrix.Text);
 
-                              
 
-
+                                noAssistant =Convert.ToInt32( cbAssistant.SelectedValue.ToString());
 
                             
 
