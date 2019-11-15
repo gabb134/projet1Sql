@@ -18,6 +18,7 @@ namespace Projet1BaseDeDonnee3
         public int intEmplacement;
         public String strDecoration;
         public int intNoTypeChambre;
+        public int noChambre;
 
         public frmGestionAjoutModificationChambres()
         {
@@ -96,17 +97,17 @@ namespace Projet1BaseDeDonnee3
                     else
                     {
                         errMessage.SetError(tbDecoration, "");
-                      //  try
-                        //{
+                        try
+                        {
                             
                             uneChambre.Decorations = tbDecoration.Text;
                             uneChambre.Emplacement = Convert.ToInt32(tbEmplacement.Text);
                             uneChambre.NoTypeChambre = Convert.ToInt32(cbNoTypeChambre.SelectedValue.ToString());
-                      ///  }
-                     // /  catch(Exception e2)
-                     //  {
-                          //  MessageBox.Show(e2.ToString());
-                       //}
+                       }
+                  catch(Exception e2)
+                      {
+                            MessageBox.Show(e2.ToString());
+                       }
                       
 
 
@@ -138,6 +139,7 @@ namespace Projet1BaseDeDonnee3
                     {
                         errMessage.SetError(tbEmplacement, "");
 
+                        //noChambre = Convert.ToInt32(tbChambre.Text);
                         strDecoration = tbDecoration.Text;
                         intEmplacement = Convert.ToInt32(tbEmplacement.Text);
                         intNoTypeChambre = Convert.ToInt32(cbNoTypeChambre.SelectedValue.ToString());

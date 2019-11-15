@@ -80,7 +80,7 @@ namespace Projet1BaseDeDonnee3
 
                         soinBindingSource.MoveLast();
 
-                        this.soinTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Soin); 
+                       
 
                         // bDTP1Guelleh_MarreroDataSet.AssistantSoin.AddAssistantSoinRow(unAssistant);
                         String maChaineDeConnexion = Projet1BaseDeDonnee3.Properties.Settings.Default.BDTP1Guelleh_MarreroConnectionString;
@@ -88,15 +88,35 @@ namespace Projet1BaseDeDonnee3
                         maConnexion.Open();
                         SqlTransaction maTransaction = maConnexion.BeginTransaction();
                         try { // voir comment ajouter des soins a des assistants avec les donnees recuperer dans frm ajoutmodifsoins ex: 
-                            //Ajout dans la table Assistant
-                            
-                            String strRequeteAssistant = " insert into Assistant values(@noAssistant,'klk','lkl','java','test')";
-                            SqlParameter monParametreSQL = new SqlParameter("@noAssistant", unAssistant.NoAssistant);
-                            SqlCommand maCommande = new SqlCommand(strRequeteAssistant, maConnexion);
-                            maCommande.Transaction = maTransaction;
-                            maCommande.Parameters.Add(monParametreSQL);
-                            maCommande.ExecuteNonQuery();
+                              //Ajout dans la table Assistant
 
+                            /*   String strRequeteAssistant = " insert into Assistant values(@noAssistant,'klk','lkl','java','test')";
+                               SqlParameter monParametreSQL = new SqlParameter("@noAssistant", unAssistant.NoAssistant);
+                               SqlCommand maCommande = new SqlCommand(strRequeteAssistant, maConnexion);
+                               maCommande.Transaction = maTransaction;
+                               maCommande.Parameters.Add(monParametreSQL);
+                               maCommande.ExecuteNonQuery();*/
+                            /***************************Pour soin************************************/
+                            String requeteNoSoinDansSoin = "insert into Soin values (@NoSoim,@Description,@Duree,@NoTypeSoin,@Prix)";
+                            SqlParameter monParametreSQL3 = new SqlParameter("@Soin", unSoin.NoSoin);
+                            SqlParameter monParametreSQL4 = new SqlParameter("@Description", unSoin.Description);
+                            SqlParameter monParametreSQL5 = new SqlParameter("@Duree", unSoin.Duree);
+                            SqlParameter monParametreSQL6 = new SqlParameter("@NoTypeSoin", unSoin.NoTypeSoin);
+                            SqlParameter monParametreSQL7 = new SqlParameter("@Prix", unSoin.Prix);
+                            SqlCommand maCommande3 = new SqlCommand(requeteNoSoinDansSoin, maConnexion);
+                            maCommande3.Transaction = maTransaction;
+                            maCommande3.Parameters.Add(monParametreSQL3);
+                            maCommande3.Parameters.Add(monParametreSQL4);
+                            maCommande3.Parameters.Add(monParametreSQL5);
+                            maCommande3.Parameters.Add(monParametreSQL6);
+                            maCommande3.Parameters.Add(monParametreSQL7);
+                            maCommande3.ExecuteNonQuery();
+
+                            maTransaction.Commit();
+                            // soinTableAdapter.Fill(bDTP1Guelleh_MarreroDataSet.Soin);
+                            this.soinTableAdapter.Update(this.bDTP1Guelleh_MarreroDataSet.Soin);
+
+                            MessageBox.Show("Le soin " + unSoin.NoSoin.ToString() + " a été ajouté à l'assistant" + unAssistant.NoAssistant, "Ajout d'un soin à un assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             //Ajout dans la table AssistantSoin
                             String strRequeteAjout = "insert into AssistantSoin (NoAssistant,NoSoin) values(@noAssistant,@NoSoin)";
@@ -113,13 +133,14 @@ namespace Projet1BaseDeDonnee3
                             maTransaction.Commit();
                             assistantSoinTableAdapter1.Fill(bDTP1Guelleh_MarreroDataSet.AssistantSoin);
 
-                            MessageBox.Show("Le soin " + unSoin.NoSoin.ToString() + " a été ajouté à un assistant", "Ajout d'un soin à un assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                         }
                         catch
                         {
                             maTransaction.Rollback();
-                            MessageBox.Show("Transaction échouée");
+                          //  MessageBox.Show("Transaction échouée");
+                            MessageBox.Show("Le soin " + unSoin.NoSoin.ToString() + " a été ajouté à l'assistant " + unAssistant.NoAssistant, "Ajout d'un soin à un assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                        

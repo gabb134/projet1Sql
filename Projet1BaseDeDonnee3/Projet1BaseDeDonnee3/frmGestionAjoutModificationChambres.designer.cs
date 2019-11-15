@@ -43,8 +43,8 @@
             this.typeChambreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeChambreTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TypeChambreTableAdapter();
             this.tableAdapterManager = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager();
-            this.cbNoTypeChambre = new System.Windows.Forms.ComboBox();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbNoTypeChambre = new System.Windows.Forms.ComboBox();
             noTypeSoinLabel = new System.Windows.Forms.Label();
             dureeLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -178,28 +178,29 @@
             this.tableAdapterManager.UpdateOrder = Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtilisateurTableAdapter = null;
             // 
+            // errMessage
+            // 
+            this.errMessage.ContainerControl = this;
+            // 
             // cbNoTypeChambre
             // 
-            this.cbNoTypeChambre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeChambreBindingSource, "NoTypeChambre", true));
             this.cbNoTypeChambre.DataSource = this.typeChambreBindingSource;
             this.cbNoTypeChambre.DisplayMember = "NoTypeChambre";
             this.cbNoTypeChambre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNoTypeChambre.FormattingEnabled = true;
+            this.cbNoTypeChambre.ItemHeight = 13;
             this.cbNoTypeChambre.Location = new System.Drawing.Point(214, 251);
+            this.cbNoTypeChambre.MaxDropDownItems = 2;
             this.cbNoTypeChambre.Name = "cbNoTypeChambre";
             this.cbNoTypeChambre.Size = new System.Drawing.Size(100, 21);
             this.cbNoTypeChambre.TabIndex = 66;
             this.cbNoTypeChambre.ValueMember = "NoTypeChambre";
             // 
-            // errMessage
-            // 
-            this.errMessage.ContainerControl = this;
-            // 
             // frmGestionAjoutModificationChambres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 510);
+            this.ClientSize = new System.Drawing.Size(426, 510);
             this.Controls.Add(this.cbNoTypeChambre);
             this.Controls.Add(this.tbDecoration);
             this.Controls.Add(this.tbEmplacement);
@@ -234,7 +235,7 @@
         private System.Windows.Forms.BindingSource typeChambreBindingSource;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.TypeChambreTableAdapter typeChambreTableAdapter;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ComboBox cbNoTypeChambre;
         private System.Windows.Forms.ErrorProvider errMessage;
+        private System.Windows.Forms.ComboBox cbNoTypeChambre;
     }
 }
