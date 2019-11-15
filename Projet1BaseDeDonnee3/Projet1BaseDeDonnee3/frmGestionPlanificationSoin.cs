@@ -63,9 +63,11 @@ namespace Projet1BaseDeDonnee3
         {
             frmAjoutPlanifSoin frmAjoutPlanifSoin = new frmAjoutPlanifSoin();
 
-            frmAjoutPlanifSoin.ShowDialog();
+            if (frmAjoutPlanifSoin.ShowDialog() == DialogResult.OK)
+            {
 
-            DisplayData();
+                DisplayData();
+            }
         }
 
         private void DisplayData()

@@ -62,7 +62,7 @@ namespace Projet1BaseDeDonnee3
                                         Convert.ToDateTime(dtpSejourFin.Value.ToString()).ToString("yyyy-MM-dd hh:mm:ss") + "', '" + 
                                         numNbPers.Value.ToString() + "')";
 
-                MessageBox.Show(maRequeteSQL);
+                //MessageBox.Show(maRequeteSQL);
 
                 SqlCommand maCommande = new SqlCommand(maRequeteSQL, maConnexion);
                 maCommande.Transaction = maTransaction;
