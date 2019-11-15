@@ -95,7 +95,7 @@ namespace Projet1BaseDeDonnee3
             {
                 dynamic SoinSelectionne = soinBindingSource.Current;
 
-               // frmAjoutModifSoinsSeul.intNoSoin = SoinSelectionne["NoSoin"];
+               frmAjoutModifSoinsSeul.intNoSoin = SoinSelectionne["NoSoin"];
                 frmAjoutModifSoinsSeul.intNoTypeSoin = SoinSelectionne["NoTypeSoin"];
                 frmAjoutModifSoinsSeul.intDate = Convert.ToInt32(SoinSelectionne["Duree"]);
                 frmAjoutModifSoinsSeul.strDescription = SoinSelectionne["Description"];
@@ -121,6 +121,8 @@ namespace Projet1BaseDeDonnee3
 
                 this.soinTableAdapter1.Update(this.bDTP1Guelleh_MarreroDataSet.Soin);
                 //this.tableAdapterManager.UpdateAll(this.bDTP1Guelleh_MarreroDataSet);
+
+                MessageBox.Show("Champ modifié", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 

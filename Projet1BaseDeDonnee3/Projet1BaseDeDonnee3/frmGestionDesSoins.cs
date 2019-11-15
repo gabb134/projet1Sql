@@ -29,6 +29,8 @@ namespace Projet1BaseDeDonnee3
 
         private void frmGestionDesSoins_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Assistant'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.assistantTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Assistant);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Soin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.soinTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Soin);
 
@@ -85,9 +87,9 @@ namespace Projet1BaseDeDonnee3
                         SqlConnection maConnexion = new SqlConnection(maChaineDeConnexion);
                         maConnexion.Open();
                         SqlTransaction maTransaction = maConnexion.BeginTransaction();
-                        try {
+                        try { // voir comment ajouter des soins a des assistants avec les donnees recuperer dans frm ajoutmodifsoins ex: 
                             //Ajout dans la table Assistant
-
+                            
                             String strRequeteAssistant = " insert into Assistant values(@noAssistant,'klk','lkl','java','test')";
                             SqlParameter monParametreSQL = new SqlParameter("@noAssistant", unAssistant.NoAssistant);
                             SqlCommand maCommande = new SqlCommand(strRequeteAssistant, maConnexion);
@@ -176,9 +178,36 @@ namespace Projet1BaseDeDonnee3
                 catch
                 {
                     maTransaction.Rollback();
-                    MessageBox.Show("Transaction échouée");
+                    MessageBox.Show("Transaction échouée klk");
                 }
                 maConnexion.Close();
+            }
+        }
+
+        private void assistantBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void assistantBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            int noEnregistrement = assistantBindingSource.Position;
+            int nbEnregistrement = assistantBindingSource.Count;
+
+            if (noEnregistrement >= 0 && noEnregistrement < nbEnregistrement)
+            {
+                dynamic enregistrementSelectionne = assistantBindingSource.Current;
+                if (!DBNull.Value.Equals(enregistrementSelectionne["NoAssistant"]))
+                {
+                    int noEmployeSelectionne = enregistrementSelectionne["NoAssistant"];
+                    soinTableAdapter.ClearBeforeFill = true;
+                    soinTableAdapter.FillBy(bDTP1Guelleh_MarreroDataSet.Soin, noEmployeSelectionne);
+                }
+                else
+                {
+                    soinTableAdapter.ClearBeforeFill = true;
+                    // soinTableAdapter.FillSoin(bDTP1Bergeron_KoumaDataSet.Soin, null);
+                }
             }
         }
     }

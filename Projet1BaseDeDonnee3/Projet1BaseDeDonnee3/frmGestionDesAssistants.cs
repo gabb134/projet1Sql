@@ -31,6 +31,8 @@ namespace Projet1BaseDeDonnee3
 
         private void frmGestionDesAssistants_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Soin'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.soinTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Soin);
             // TODO: cette ligne de code charge les données dans la table 'bDTP1Guelleh_MarreroDataSet.Assistant'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.assistantTableAdapter.Fill(this.bDTP1Guelleh_MarreroDataSet.Assistant);
 
@@ -78,7 +80,7 @@ namespace Projet1BaseDeDonnee3
             {
                 dynamic assitantSelectionne = assistantBindingSource.Current;
 
-               // frmAjoutModifAssistant.intNoAssistant = assitantSelectionne["NoAssistant"];
+                // frmAjoutModifAssistant.intNoAssistant = assitantSelectionne["NoAssistant"];
                 frmAjoutModifAssistant.strPrenom = assitantSelectionne["Prenom"];
                 frmAjoutModifAssistant.strNom = assitantSelectionne["Nom"];
                 frmAjoutModifAssistant.strSpecialites = assitantSelectionne["Specialites"];
@@ -90,8 +92,8 @@ namespace Projet1BaseDeDonnee3
 
             if (frmAjoutModifAssistant.ShowDialog() == DialogResult.OK) //Lorsque la modification est effectué
             {
-               
-               
+
+
                 assistantDataGridView.CurrentRow.Cells[1].Value = frmAjoutModifAssistant.strPrenom;
                 assistantDataGridView.CurrentRow.Cells[2].Value = frmAjoutModifAssistant.strNom;
                 assistantDataGridView.CurrentRow.Cells[3].Value = frmAjoutModifAssistant.strSpecialites;
@@ -139,7 +141,7 @@ namespace Projet1BaseDeDonnee3
                     maCommande1.Parameters.Add(monParametreSQL1);
                     maCommande1.ExecuteNonQuery();
 
-                  ///  maTransaction.Commit();
+                    ///  maTransaction.Commit();
                     MessageBox.Show("Transaction réussie, l'assistant numéro" + noAssistant + " a été effacé!");
                     /***************************Pour l'assistant************************************/
                     String requeteNoAssistantDansAssistant = "delete from Assistant where NoAssistant =  @noAssistant";
@@ -159,6 +161,28 @@ namespace Projet1BaseDeDonnee3
                 }
 
                 maConnexion.Close();
+            }
+        }
+
+        private void assistantBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            int noEnregistrement = assistantBindingSource.Position;
+            int nbEnregistrement = assistantBindingSource.Count;
+
+            if (noEnregistrement >= 0 && noEnregistrement < nbEnregistrement)
+            {
+                dynamic enregistrementSelectionne = assistantBindingSource.Current;
+                if (!DBNull.Value.Equals(enregistrementSelectionne["NoAssistant"]))
+                {
+                    int noEmployeSelectionne = enregistrementSelectionne["NoAssistant"];
+                    soinTableAdapter.ClearBeforeFill = true;
+                    soinTableAdapter.FillBy(bDTP1Guelleh_MarreroDataSet.Soin, noEmployeSelectionne);
+                }
+                else
+                {
+                    soinTableAdapter.ClearBeforeFill = true;
+                    // soinTableAdapter.FillSoin(bDTP1Bergeron_KoumaDataSet.Soin, null);
+                }
             }
         }
     }

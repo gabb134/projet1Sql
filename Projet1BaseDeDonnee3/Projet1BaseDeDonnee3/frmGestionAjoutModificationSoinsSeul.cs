@@ -17,7 +17,7 @@ namespace Projet1BaseDeDonnee3
         public BDTP1Guelleh_MarreroDataSet.SoinRow unSoinsSeul;
         public int intDate;
         public String strDescription;
-      //  public int intNoSoin;
+        public int intNoSoin;
         public int intNoTypeSoin;
         public int intPrix;
 
@@ -71,7 +71,7 @@ namespace Projet1BaseDeDonnee3
                      cbTypeSoin.Text = 1.ToString();
                  }
 
-
+                tbSoin.Text = intNoSoin.ToString();
                 //  MessageBox.Show(cbTypeSoin.Text);
 
                tbDuree.Enabled = false;

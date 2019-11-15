@@ -46,18 +46,29 @@
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
             this.planifSoinTableAdapter1 = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.PlanifSoinTableAdapter();
             this.assistantSoinTableAdapter1 = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantSoinTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.soinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.soinTableAdapter = new Projet1BaseDeDonnee3.BDTP1Guelleh_MarreroDataSetTableAdapters.SoinTableAdapter();
+            this.soinDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bDTP1Guelleh_MarreroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soinDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(521, 38);
+            this.label1.Location = new System.Drawing.Point(246, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 32);
             this.label1.TabIndex = 5;
@@ -72,6 +83,7 @@
             // 
             this.assistantBindingSource.DataMember = "Assistant";
             this.assistantBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            this.assistantBindingSource.PositionChanged += new System.EventHandler(this.assistantBindingSource_PositionChanged);
             // 
             // assistantTableAdapter
             // 
@@ -104,7 +116,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.assistantDataGridView.DataSource = this.assistantBindingSource;
-            this.assistantDataGridView.Location = new System.Drawing.Point(311, 111);
+            this.assistantDataGridView.Location = new System.Drawing.Point(36, 96);
             this.assistantDataGridView.Name = "assistantDataGridView";
             this.assistantDataGridView.Size = new System.Drawing.Size(444, 220);
             this.assistantDataGridView.TabIndex = 6;
@@ -191,11 +203,78 @@
             // 
             this.assistantSoinTableAdapter1.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(725, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 32);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Soins";
+            // 
+            // soinBindingSource
+            // 
+            this.soinBindingSource.DataMember = "Soin";
+            this.soinBindingSource.DataSource = this.bDTP1Guelleh_MarreroDataSet;
+            // 
+            // soinTableAdapter
+            // 
+            this.soinTableAdapter.ClearBeforeFill = true;
+            // 
+            // soinDataGridView
+            // 
+            this.soinDataGridView.AutoGenerateColumns = false;
+            this.soinDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.soinDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.soinDataGridView.DataSource = this.soinBindingSource;
+            this.soinDataGridView.Location = new System.Drawing.Point(558, 106);
+            this.soinDataGridView.Name = "soinDataGridView";
+            this.soinDataGridView.Size = new System.Drawing.Size(536, 220);
+            this.soinDataGridView.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NoSoin";
+            this.dataGridViewTextBoxColumn5.HeaderText = "NoSoin";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "NoTypeSoin";
+            this.dataGridViewTextBoxColumn7.HeaderText = "NoTypeSoin";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Duree";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Duree";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Prix";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Prix";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
             // frmGestionDesAssistants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 486);
+            this.Controls.Add(this.soinDataGridView);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.assistantDataGridView);
             this.Controls.Add(this.label1);
@@ -207,6 +286,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.assistantDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soinBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soinDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +312,14 @@
         private System.Windows.Forms.ErrorProvider errMessage;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.PlanifSoinTableAdapter planifSoinTableAdapter1;
         private BDTP1Guelleh_MarreroDataSetTableAdapters.AssistantSoinTableAdapter assistantSoinTableAdapter1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource soinBindingSource;
+        private BDTP1Guelleh_MarreroDataSetTableAdapters.SoinTableAdapter soinTableAdapter;
+        private System.Windows.Forms.DataGridView soinDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

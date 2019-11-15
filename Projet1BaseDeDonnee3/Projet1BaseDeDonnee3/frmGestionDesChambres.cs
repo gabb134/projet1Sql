@@ -51,7 +51,8 @@ namespace Projet1BaseDeDonnee3
 
 
             frmGestionAjoutModifChambres.uneChambre = uneChambre;
-         
+            try
+            {
                 if (frmGestionAjoutModifChambres.ShowDialog() == DialogResult.OK)
                 {
                     if (uneChambre.NoChambre != -1)
@@ -62,6 +63,13 @@ namespace Projet1BaseDeDonnee3
                         MessageBox.Show("La chambre " + uneChambre.NoChambre.ToString() + " a été ajouté", "Ajout d'une chambre", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+            catch(Exception e2)
+            {
+                MessageBox.Show(e2.ToString());
+            }
+         
+                
 
             
             
